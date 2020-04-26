@@ -81,7 +81,10 @@ allTerms <- allTerms[allTerms != ""]
 allTerms <- as.character(na.omit(allTerms))
 
 get_search_results <- function(.x, terms) {
-  pdfsearch::keyword_search(.x, keyword = terms, ignore_case = TRUE)
+  x <- pdfsearch::keyword_search(.x, keyword = terms, ignore_case = TRUE)
+  x$line_text <- flatten_chr(x$line_text)
+  x$token_text <- NULL
+  x
 }
 out <- furrr::future_map_dfr(corpus_selected,
   get_search_results,
