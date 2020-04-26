@@ -52,21 +52,19 @@ Rpdf <- readPDF(control = list(text = "-layout"))
 
 # ---- Input Setup -----
 
-#Set output directory
-outdir<-"../../../TextAnalysis/AnalysisRuns/2020-04-23_cleanCodeTest"
-
 #Set or load terms of interest
-compoundTerms<-read.csv("../../../TextAnalysis/searchterms/searchterms_justsynonyms.csv", stringsAsFactors = F)
+compoundTerms<-readr::read_csv("SearchTerms/searchterms_kg.csv")
 compoundTerms<-c(compoundTerms$dimension, compoundTerms$attribute, compoundTerms$searchterm)
 allTerms<-tolower(unique(compoundTerms))
 allTerms<-allTerms[allTerms!=""]
+allTerms <- as.character(na.omit(allTerms))
 
 # ---- Load list of reports ----
 
-# readxl::read_xlsx() # use this!
 # dat<-read.xlsx("WDPA_English_Combined_2020-03-25_kg.xlsx")
-dat<-read.xlsx("../../../WDPA_Database/WDPA_English_Combined_2020-03-25_kg.xlsx",1)
-luCountryGroup<-read.csv("../../../TextAnalysis/luCountryGroup.csv")
+dat<-readxl::read_xlsx("WDPA_English_Combined_2020-03-25_kg.xlsx")
+names(dat) <- gsub(" ",".", names(dat))
+luCountryGroup<-read.csv("luCountryGroup.csv")
 
 dat2<-dat[,names(dat) %in% c("NAME","DESIG","WDPAID" ,"Parent.Nation", "Saved.File.Name", "Found", "Simplified.comments")]
 dat2$PA.Name<-paste(dat2$NAME, dat2$DESIG)
@@ -113,7 +111,9 @@ parkPaperByCountry<-ddply(luPaper, c("Country"),summarize, nParks=length(unique(
 parkPaperByGrouping<-ddply(luPaper, c("Grouping"),summarize, nParks=length(unique(PA.Name)), nPapers=length(unique(paper)))
 
 #Get list of PDFs and read them in
-list.of.pdfs<-paste0(dir,list.files(pattern="*.pdf$", recursive = TRUE))
+dir <- "ManagementPlans_R/"
+#list.of.pdfs<-paste0(dir,list.files(pattern="*.pdf$", recursive = TRUE))
+list.of.pdfs<-list.files(dir, pattern="*.pdf$", recursive = TRUE, full.names = TRUE)
 
 #Compare spreadspeet to files
 inXLS_butMissing<-unique(dat2$paper)[!unique(dat2$paper) %in% gsub(dir,"",list.of.pdfs)]
