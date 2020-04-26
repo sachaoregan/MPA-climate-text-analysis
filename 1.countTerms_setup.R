@@ -36,19 +36,18 @@
 
 # ---- Setup ----
 # Load packages and set up
-library(tm)
-library(pdftools)
-library(pdfsearch)
-library(tidyverse)
-library(xlsx)
-library(plyr)
-library(reshape2)
-library(tidyr)
-library(wordcloud)
-library(RColorBrewer)
-library(data.table)
+# library(tm)
+# library(pdftools)
+# library(pdfsearch)
+# library(tidyverse)
+# library(plyr)
+# library(reshape2)
+# library(tidyr)
+# library(wordcloud)
+# library(RColorBrewer)
+# library(data.table)
 
-Rpdf <- readPDF(control = list(text = "-layout"))
+Rpdf <- tm::readPDF(control = list(text = "-layout"))
 
 # ---- Input Setup -----
 
@@ -81,7 +80,7 @@ dat2 <- dat2[, !names(dat2) %in% c("Saved.File.Name")]
 # table(dat2$Simplified.comments[dat2$Found=="yes"])
 
 # split out lines for parks with multiple papers
-dat2 <- separate_rows(dat2, paper, sep = ";")
+dat2 <- tidyr::separate_rows(dat2, paper, sep = ";")
 dat2$paper <- gsub("^\\s|\\s$", "", dat2$paper)
 dat2$paper <- paste0(gsub(".pdf$", "", dat2$paper), ".pdf")
 names(dat2)[names(dat2) == "Parent.Nation"] <- c("Country")
@@ -99,16 +98,16 @@ luPaper$Grouping[luPaper$paper == "California_MPAs.pdf"] <- "California_MPAN"
 luPaper <- luPaper[!duplicated(luPaper), ]
 length(unique(luPaper$paper)) # 663 unique papers
 
-parkPaperSummary <- ddply(luPaper, c("paper"), summarize, nParks = length(unique(PA.Name)))
+parkPaperSummary <- plyr::ddply(luPaper, c("paper"), plyr::summarize, nParks = length(unique(PA.Name)))
 length(unique(parkPaperSummary$paper)) # 663 papers
 nrow(parkPaperSummary[parkPaperSummary$nParks > 1, ]) # 86 papers refer to more than 1 park
 
-paperParkSummary <- ddply(luPaper, c("PA.Name"), summarize, nPapers = length(unique(paper)))
+paperParkSummary <- plyr::ddply(luPaper, c("PA.Name"), plyr::summarize, nPapers = length(unique(paper)))
 length(unique(paperParkSummary$PA.Name)) # 935 parks
 nrow(paperParkSummary[paperParkSummary$nPapers > 1, ]) # 9 parks have more than 1 paper
 
-parkPaperByCountry <- ddply(luPaper, c("Country"), summarize, nParks = length(unique(PA.Name)), nPapers = length(unique(paper)))
-parkPaperByGrouping <- ddply(luPaper, c("Grouping"), summarize, nParks = length(unique(PA.Name)), nPapers = length(unique(paper)))
+parkPaperByCountry <- plyr::ddply(luPaper, c("Country"), plyr::summarize, nParks = length(unique(PA.Name)), nPapers = length(unique(paper)))
+parkPaperByGrouping <- plyr::ddply(luPaper, c("Grouping"), plyr::summarize, nParks = length(unique(PA.Name)), nPapers = length(unique(paper)))
 
 # Get list of PDFs and read them in
 dir <- "ManagementPlans_R/"
@@ -125,3 +124,5 @@ haveFile_butNotInXLS <- haveFile_butNotInXLS[order(haveFile_butNotInXLS)]
 # look at these - make sure all the papers you want to be searching are in the list/folder
 inXLS_butMissing
 haveFile_butNotInXLS
+
+saveRDS(list.of.pdfs, file = "data-generated/list-of-pdfs.rds")

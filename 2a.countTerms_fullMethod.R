@@ -24,14 +24,14 @@ start_time_full<-Sys.time()
 
 rootWords<-allTerms
 # make the "Corpus" - the database of documents
-corpus<-Corpus(URISource(list.of.pdfs),readerControl = list(reader = readPDF))
+corpus<-tm::Corpus(tm::URISource(list.of.pdfs),readerControl = list(reader = readPDF))
 saveRDS(corpus, file = "corpus.rds")
 corpus <- readRDS("corpus.rds")
 
 # writeCorpus(corpus) # optional - writes individual text files
 
 #remove punctuation
-corpus.1 <- tm_map(corpus, removePunctuation, ucp = TRUE)
+corpus.1 <- tm::tm_map(corpus, tm::removePunctuation, ucp = TRUE)
 
 length(list.of.pdfs) #665 in list
 length(corpus.1) # 665 loaded ## compare this to the papers that didn't parse in the search version
@@ -40,8 +40,8 @@ length(corpus.1) # 665 loaded ## compare this to the papers that didn't parse in
 # make a "term document matrix"
 # the "stemming" option does not work very well so I'm not using it
 # root words can be searched at the end once everything is compiled
-tdm <- TermDocumentMatrix(corpus.1, control = list(removePunctuation = TRUE,stopwords = TRUE,tolower = TRUE, removeNumbers = TRUE))
-inspect(tdm) #216256 terms for 665 documents
+tdm <- tm::TermDocumentMatrix(corpus.1, control = list(removePunctuation = TRUE,stopwords = TRUE,tolower = TRUE, removeNumbers = TRUE))
+tm::inspect(tdm) #216256 terms for 665 documents
 
 #convert to dataframe
 mat<-as.data.frame(as.matrix(tdm))
@@ -93,7 +93,7 @@ matchFreq<-data.frame(searchTerm=NA,term=NA, totalCountInAllPapers=NA)
 for (i in 1:length(rootWords)){
   find<-mat[grep(rootWords[i], mat$term),]
   if(nrow(find)>0){
-  findTerms<-ddply(find, c("term"), summarize,  totalCountInAllPapers=sum(totalCountInAllPapers))
+  findTerms<-plyr::ddply(find, c("term"), plyr::summarize,  totalCountInAllPapers=sum(totalCountInAllPapers))
   matchFreq<-rbind.data.frame(matchFreq,cbind.data.frame(searchTerm=rootWords[i],findTerms[order(-findTerms$totalCountInAllPapers),]))
   }
 }
