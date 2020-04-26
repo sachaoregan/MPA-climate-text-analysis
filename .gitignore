@@ -1,7 +1,9 @@
 .Rproj.user
 .Rhistory
 .RData
+*.rds
 .Ruserdata
 *.docx
 Examples/
 *.pdf
+data-generated
