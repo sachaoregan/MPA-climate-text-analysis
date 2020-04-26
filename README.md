@@ -6,7 +6,6 @@ __Group:__        Marine Spatial Ecology and Analysis
 __Location:__     Institute of Ocean Sciences   
 __Contact:__      e-mail: katie.gale@dfo-mpo.gc.ca | tel: 250-363-6411
 
-
 - [Objective](#objective)
 - [Summary](#summary)
   * [Required inputs](#required-inputs)
@@ -77,7 +76,7 @@ This script loads the packages, sets up the input and output directories, and de
 Create full "corpus" (text body) and then search that for individual words and word roots. All terms in the PDFs are extracted and included in a term-document matrix. The matrix is searched using a list of root words (e.g., ecol, commun, integr). 
 - The matches might be relevant (ecological, community, integrity), or not (ecologist, ecologische, communion, communicable,  communicates, integral, integrados, integrifolium). Irrelevant matches need to be manually removed.
 - Can summarize results by pooling all matching terms for each root word or individually by each matching term. 
-- Takes longer, but the output files are easy to query and can be used and subset in other analyses (if your search terms change, you don’t need to have all the PDFs to do another analysis).
+- Takes longer, but the output files are easy to query and can be used and subset in other analyses (if your search terms change, you don't need to have all the PDFs to do another analysis).
 - Can only match single words (not phrases/multi-word terms).
 - Can see which terms are matching the roots (e.g., "^govern" matches "governor", but you might just want government and governance)
 - Limited error reporting (i.e., papers that didn't parse)
