@@ -1,0 +1,40 @@
+attribute,component
+physical,circulation
+physical,dissolved oxygen
+physical,pH
+physical,salinity
+physical,temperature
+physical,sea ice
+physical,sea level rise
+physical,upwelling
+physical,carbon storage
+physical,seasonality
+physical,stratification
+physical,acidification
+physical,wave height
+physical,nutrient 
+physical,hypoxia
+physical,warming
+ecological,habitat complexity
+,primary production
+,physiology
+,reproduction
+,recruitment
+,abundance
+,biomass
+,body size
+,community composition
+,biodiversity
+,distribution
+,phenology
+,range shift
+,range contraction
+,range expansion
+,migration
+,connectivity
+,invasion
+,harmful algae
+,habitat suitability
+,resilience
+,tolerance
+,extinction
