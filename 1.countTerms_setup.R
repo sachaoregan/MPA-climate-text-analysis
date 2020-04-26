@@ -3,10 +3,10 @@
 #
 # Script 1: Setup
 #
-# __Main author:__  Katie Gale  
-# __Affiliation:__  Fisheries and Oceans Canada (DFO)   
-# __Group:__        Marine Spatial Ecology and Analysis   
-# __Location:__     Institute of Ocean Sciences   
+# __Main author:__  Katie Gale
+# __Affiliation:__  Fisheries and Oceans Canada (DFO)
+# __Group:__        Marine Spatial Ecology and Analysis
+# __Location:__     Institute of Ocean Sciences
 # __Contact:__      e-mail: katie.gale@dfo-mpo.gc.ca | tel: 250-363-6411
 #
 # Objective: Summarize the full text of a series of PDFs, and optionally to search for a set of terms of interest.
@@ -16,21 +16,21 @@
 
 
 # ---- Instructions ----
-# There are 4 scripts in this directory that must be run in order. Do not clear the environment between scripts, unless you run out of memory between 2a and 2b. If the set of PDFs to search is very large, R will run out of memory and will not be able to run script 2b directly after 2a. If this happens, close R completely, re-run script 1, and then run 2b. 
+# There are 4 scripts in this directory that must be run in order. Do not clear the environment between scripts, unless you run out of memory between 2a and 2b. If the set of PDFs to search is very large, R will run out of memory and will not be able to run script 2b directly after 2a. If this happens, close R completely, re-run script 1, and then run 2b.
 #
 #
 # Notes
 # - all documents must be PDFs with text. If image-based PDFs, must be OCR'd (optical character recognition))
 # - multi-document/multi-page plans should be combined into one PDF
-# - can use Adobe Acrobat Pro (not available in approved programs) for this. 
+# - can use Adobe Acrobat Pro (not available in approved programs) for this.
 # - reading the PDFs throws many errors/warnings, most of which aren't fatal to the read, just caused by some bad characters in the doc
 
 # Limitations
-# - Some PDFs with bad text encoding do not parse very well, and return unicode characters, nonsense terms, spacing issues, etc. In theory these terms could be fixed and replaced, but in practice that is too manually tedious and computationally intensive.  
+# - Some PDFs with bad text encoding do not parse very well, and return unicode characters, nonsense terms, spacing issues, etc. In theory these terms could be fixed and replaced, but in practice that is too manually tedious and computationally intensive.
 # - I have opted to just delete bad terms, since they generally occur very infrequently compared to the correctly-matched terms.
 
-# Potential additions 
-# - compare which PDFs are getting parsed through full method compared to those failing on search method 
+# Potential additions
+# - compare which PDFs are getting parsed through full method compared to those failing on search method
 # - test wildcard for search method. trailing * seem to search though in function.
 
 
@@ -52,10 +52,6 @@ Rpdf <- readPDF(control = list(text = "-layout"))
 
 # ---- Input Setup -----
 
-# Set folder where pdfs are
-dir<-"D:/Documents/Projects/MonitoringWorkingGroup/planReview/MPlanReview_fromJosie_2020-03-24/ManagementPlans_R/"
-setwd(dir)
-
 #Set output directory
 outdir<-"../../../TextAnalysis/AnalysisRuns/2020-04-23_cleanCodeTest"
 
@@ -66,6 +62,9 @@ allTerms<-tolower(unique(compoundTerms))
 allTerms<-allTerms[allTerms!=""]
 
 # ---- Load list of reports ----
+
+# readxl::read_xlsx() # use this!
+# dat<-read.xlsx("WDPA_English_Combined_2020-03-25_kg.xlsx")
 dat<-read.xlsx("../../../WDPA_Database/WDPA_English_Combined_2020-03-25_kg.xlsx",1)
 luCountryGroup<-read.csv("../../../TextAnalysis/luCountryGroup.csv")
 
@@ -114,9 +113,9 @@ parkPaperByCountry<-ddply(luPaper, c("Country"),summarize, nParks=length(unique(
 parkPaperByGrouping<-ddply(luPaper, c("Grouping"),summarize, nParks=length(unique(PA.Name)), nPapers=length(unique(paper)))
 
 #Get list of PDFs and read them in
-list.of.pdfs<-paste0(dir,list.files(pattern="*.pdf$", recursive = T))
+list.of.pdfs<-paste0(dir,list.files(pattern="*.pdf$", recursive = TRUE))
 
-#Compare spreadspeet to files 
+#Compare spreadspeet to files
 inXLS_butMissing<-unique(dat2$paper)[!unique(dat2$paper) %in% gsub(dir,"",list.of.pdfs)]
 inXLS_butMissing<-inXLS_butMissing[order(inXLS_butMissing)]
 
