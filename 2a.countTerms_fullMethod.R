@@ -15,7 +15,8 @@
 # -------------------------------------------------------------------- #
 
 # 1.countTerms_setup.R must have been run first.
-
+dir.create("data-generated", showWarnings = FALSE)
+outdir <- "data-generated"
 
 # -------- Start Analysis --------- #
 # FULL Method
@@ -24,6 +25,8 @@ start_time_full<-Sys.time()
 rootWords<-allTerms
 # make the "Corpus" - the database of documents
 corpus<-Corpus(URISource(list.of.pdfs),readerControl = list(reader = readPDF))
+saveRDS(corpus, file = "corpus.rds")
+corpus <- readRDS("corpus.rds")
 
 # writeCorpus(corpus) # optional - writes individual text files
 
