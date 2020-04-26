@@ -51,7 +51,7 @@ my_corpus <- gsub(paste0(dir, "/"), "", list.of.pdfs) %>%
 
 check_contains <- function(.x, vec) {
   out <- tryCatch({
-      result <- pdfsearch::keyword_search(.x, keyword = vec, surround_lines = 0)
+      result <- pdfsearch::keyword_search(.x, keyword = vec, ignore_case = TRUE)
       nrow(result) > 0
     },
     error = function(e) NA
@@ -60,11 +60,12 @@ check_contains <- function(.x, vec) {
 }
 
 includes_i <- furrr::future_map_lgl(my_corpus, check_contains,
-  vec = c("climate change", "global warming", "establishment")
+  vec = c("climate change", "global warming"),
+  .progress = TRUE
 )
 mean(includes_i)
 
-characters <- purrr::map_dbl(my_corpus, ~ sum(str_count(.x)))
+characters <- purrr::map_dbl(my_corpus, ~ sum(stringr::str_count(.x)))
 characters
 
 corpus_selected <- keep(my_corpus, includes_i)
@@ -80,15 +81,17 @@ allTerms <- allTerms[allTerms != ""]
 allTerms <- as.character(na.omit(allTerms))
 
 get_search_results <- function(.x, terms) {
-  result <- keyword_search(.x, keyword = terms, surround_lines = 0)
+  pdfsearch::keyword_search(.x, keyword = terms, ignore_case = TRUE)
 }
 out <- furrr::future_map_dfr(corpus_selected,
   get_search_results,
   terms = allTerms,
-  .id = "report"
+  .id = "report",
+  .progress = TRUE
 )
 out
 
+saveRDS(out, file = "data-generated/search-results.rds")
 future::plan(future::sequential)
 
 # # ----------- SEARCH method --------- #
