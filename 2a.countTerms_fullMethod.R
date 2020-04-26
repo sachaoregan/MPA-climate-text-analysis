@@ -3,10 +3,10 @@
 #
 # Script 2a: "Full method" text search
 #
-# __Main author:__  Katie Gale  
-# __Affiliation:__  Fisheries and Oceans Canada (DFO)   
-# __Group:__        Marine Spatial Ecology and Analysis   
-# __Location:__     Institute of Ocean Sciences   
+# __Main author:__  Katie Gale
+# __Affiliation:__  Fisheries and Oceans Canada (DFO)
+# __Group:__        Marine Spatial Ecology and Analysis
+# __Location:__     Institute of Ocean Sciences
 # __Contact:__      e-mail: katie.gale@dfo-mpo.gc.ca | tel: 250-363-6411
 #
 # Objective: Summarize the full text of a series of PDFs, and optionally to search for a set of terms of interest.
@@ -17,26 +17,24 @@
 # 1.countTerms_setup.R must have been run first.
 
 
-
-
-# -------- Start Analysis --------- # 
+# -------- Start Analysis --------- #
 # FULL Method
-start_time_full<-Sys.time()  
+start_time_full<-Sys.time()
 
 rootWords<-allTerms
 # make the "Corpus" - the database of documents
-corpus<-Corpus(URISource(list.of.pdfs),readerControl = list(reader = readPDF)) 
+corpus<-Corpus(URISource(list.of.pdfs),readerControl = list(reader = readPDF))
 
 # writeCorpus(corpus) # optional - writes individual text files
 
-#remove punctuation 
+#remove punctuation
 corpus.1 <- tm_map(corpus, removePunctuation, ucp = TRUE)
 
 length(list.of.pdfs) #665 in list
 length(corpus.1) # 665 loaded ## compare this to the papers that didn't parse in the search version
 
 # read PDFs
-# make a "term document matrix" 
+# make a "term document matrix"
 # the "stemming" option does not work very well so I'm not using it
 # root words can be searched at the end once everything is compiled
 tdm <- TermDocumentMatrix(corpus.1, control = list(removePunctuation = TRUE,stopwords = TRUE,tolower = TRUE, removeNumbers = TRUE))
@@ -52,7 +50,7 @@ nWordsPerPaper[nWordsPerPaper$nTerms<50,] # 0 papers need fixed
 
 write.csv(nWordsPerPaper, paste0(outdir, "/FULL_nWordsPerPaper.csv"), row.names=F) # this is the only output that is used in script 2b.
 
-# ---- * if not interested in full method results - could stop here. 
+# ---- * if not interested in full method results - could stop here.
 
 #Look at terms and count them across all papers
 head(unique(mat$term)) # there are unicode/weird characters
@@ -84,9 +82,9 @@ mat$nPapersWithTerm<-rowSums(mat[,!names(mat) %in% c("term", "totalCountInAllPap
 #   wordcloud::wordcloud(words = mat$terms, freq = mat$totalCountInAllPapers, min.freq = 100,random.order=FALSE, rot.per=0.35,colors=brewer.pal(8, "Dark2"))
 # dev.off()
 
-# ---- Process Output for terms of Interest ---- 
+# ---- Process Output for terms of Interest ----
 
-# grep root terms using get matching terms 
+# grep root terms using get matching terms
 # Will have to do manual selection of some of the terms
 matchFreq<-data.frame(searchTerm=NA,term=NA, totalCountInAllPapers=NA)
 for (i in 1:length(rootWords)){
@@ -107,13 +105,13 @@ write.csv(matchFreq, paste0(outdir,"/FULL_termFreq.csv"), row.names=F)
 keepTerms<-read.csv(paste0(outdir, "/FULL_termFreq2.csv"))
 
 # The output currently is the count of each term in each paper, including zeros
-# it has papers as columns and terms by rows. Want the reverse. 
+# it has papers as columns and terms by rows. Want the reverse.
 # It's too big - subset the matrix by only the terms we're interested in to improve performance
 dim(mat) #104080 x 705
 
 # matrix by terms (full words, not roots)
-# transpose and reformat 
-termMatrixInt_full<-data.frame(t(mat[mat$term %in% keepTerms$term,!names(mat)%in% c("totalCountInAllPapers", "nPapersWithTerm")])) 
+# transpose and reformat
+termMatrixInt_full<-data.frame(t(mat[mat$term %in% keepTerms$term,!names(mat)%in% c("totalCountInAllPapers", "nPapersWithTerm")]))
 termMatrixInt_full$paper<-row.names(termMatrixInt_full)
 row.names(termMatrixInt_full)<-NULL
 termMatrixInt_full<-termMatrixInt_full[termMatrixInt_full$paper!="term",]
@@ -142,7 +140,7 @@ head(termMatrixInt_root) # this is the matrix with roots as columns
 saveRDS(termMatrixInt_full, paste0(outdir, "/FULL-full_outputMatrix.rds"))
 saveRDS(termMatrixInt_root, paste0(outdir, "/FULL-root_outputMatrix.rds"))
 
-## -- end -- ## 
+## -- end -- ##
 end_time_full<-Sys.time()
 cat("full method took", end_time_full-start_time_full, " minutes") #24 mins
 mid_time_full-start_time_full
