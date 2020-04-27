@@ -54,14 +54,21 @@ check_contains <- function(.x, vec) {
       result <- pdfsearch::keyword_search(.x, keyword = vec, ignore_case = TRUE)
       nrow(result) > 0
     },
-    error = function(e) NA
+    error = function(e) NA, warning = function(w) browser()
   )
   out
 }
 
-includes_i <- furrr::future_map_lgl(my_corpus, check_contains,
-  vec = c("climate change", "global warming"),
-  .progress = TRUE
+check_contains2 <- function(.x, vec) {
+  sum(map_lgl(.x, grepl, pattern = "climate change"))
+}
+
+includes_i <- stringr::str_count(my_corpus, c("climate change", "global warming", "extreme events", "natural variability", "climate variability"))
+
+#includes_i <- furrr::future_map_lgl(my_corpus, check_contains,
+  includes_i <- purrr::map_lgl(my_corpus, check_contains,
+  vec = c("climate change", "global warming", "extreme events", "natural variability", "climate variability")
+  # .progress = TRUE
 )
 mean(includes_i)
 
@@ -70,15 +77,8 @@ characters
 
 corpus_selected <- keep(my_corpus, includes_i)
 
-compoundTerms <- readr::read_csv("SearchTerms/searchterms_kg.csv")
-compoundTerms <- c(
-  compoundTerms$dimension,
-  compoundTerms$attribute,
-  compoundTerms$searchterm
-)
-allTerms <- tolower(unique(compoundTerms))
-allTerms <- allTerms[allTerms != ""]
-allTerms <- as.character(na.omit(allTerms))
+components <- readr::read_csv("SearchTerms/searchcomponents.csv")
+
 
 get_search_results <- function(.x, terms) {
   x <- pdfsearch::keyword_search(.x, keyword = terms, ignore_case = TRUE)
@@ -88,7 +88,7 @@ get_search_results <- function(.x, terms) {
 }
 out <- furrr::future_map_dfr(corpus_selected,
   get_search_results,
-  terms = allTerms,
+  terms = components$components,
   .id = "report",
   .progress = TRUE
 )
