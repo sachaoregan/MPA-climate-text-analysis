@@ -1,26 +1,7 @@
-# -------------------------------------------------------------------- #
-# Text Analysis - Marine Protected Area Management Plan Review
-#
-# Script 2a: "Search method" text search
-#
-# __Main author:__  Katie Gale
-# __Affiliation:__  Fisheries and Oceans Canada (DFO)
-# __Group:__        Marine Spatial Ecology and Analysis
-# __Location:__     Institute of Ocean Sciences
-# __Contact:__      e-mail: katie.gale@dfo-mpo.gc.ca | tel: 250-363-6411
-#
-# Objective: Summarize the full text of a series of PDFs, and optionally to search for a set of terms of interest.
-#
-# Version date: 23 April 2020
-# -------------------------------------------------------------------- #
-
-# 1.countTerms_setup.R must have been run first.
-# 2a.countTerms_fullMethod.R must have been run first if you want the number of words overall in each pdf. If you don't want this, you can remove line 104 in this script, and ignore script 2a.
-
-library(future)
+# library(future)
 library(dplyr)
 library(purrr)
-future::plan(future::multisession, workers = future::availableCores() / 2)
+# future::plan(future::multisession, workers = future::availableCores() / 2)
 dir.create("data-generated/pdftools", showWarnings = FALSE)
 outdir <- "data-generated"
 dir <- "ManagementPlans_R"
@@ -29,7 +10,9 @@ list.of.pdfs <- readRDS("data-generated/list-of-pdfs.rds")
 
 parse_pdfs <- function(.x) {
   cat(.x, "\n")
-  tryCatch({f <- paste0(file.path(
+  tryCatch(
+    {
+      f <- paste0(file.path(
         outdir, "pdftools",
         gsub("\\.pdf", "", gsub(dir, "", .x))
       ), ".rds")
@@ -49,53 +32,33 @@ my_corpus <- gsub(paste0(dir, "/"), "", list.of.pdfs) %>%
   set_names() %>%
   map(parse_pdfs)
 
-check_contains <- function(.x, vec) {
-  out <- tryCatch({
-      result <- pdfsearch::keyword_search(.x, keyword = vec, ignore_case = TRUE)
-      nrow(result) > 0
-    },
-    error = function(e) NA, warning = function(w) browser()
+get_count <- function(.x, .s) {
+  .x <- unlist(.x)
+  .x <- paste(.x, collapse = " ")
+  .x <- gsub("\\\n", " ", .x)
+  .x <- gsub("\\s+", " ", stringr::str_trim(.x))
+  .y <- stringi::stri_count_fixed(.x, .s,
+    opts_fixed = stringi::stri_opts_fixed(case_insensitive = TRUE)
   )
-  out
+  tibble(term = .s, count = .y)
 }
 
-check_contains2 <- function(.x, vec) {
-  sum(map_lgl(.x, grepl, pattern = "climate change"))
-}
+vec <- c("climate change", "global warming", "extreme events", "natural variability", "climate variability")
 
-includes_i <- stringr::str_count(my_corpus, c("climate change", "global warming", "extreme events", "natural variability", "climate variability"))
+out <- map_dfr(my_corpus, get_count, .s = vec, .id = "report")
+tokeep <- group_by(out, report) %>%
+  summarise(keep_this = sum(count) > 0)
 
-#includes_i <- furrr::future_map_lgl(my_corpus, check_contains,
-  includes_i <- purrr::map_lgl(my_corpus, check_contains,
-  vec = c("climate change", "global warming", "extreme events", "natural variability", "climate variability")
-  # .progress = TRUE
-)
-mean(includes_i)
+mean(tokeep$keep_this)
+corpus_selected <- keep(my_corpus, tokeep$keep_this)
 
 characters <- purrr::map_dbl(my_corpus, ~ sum(stringr::str_count(.x)))
 characters
 
-corpus_selected <- keep(my_corpus, includes_i)
-
 components <- readr::read_csv("SearchTerms/searchcomponents.csv")
 
-
-get_search_results <- function(.x, terms) {
-  x <- pdfsearch::keyword_search(.x, keyword = terms, ignore_case = TRUE)
-  x$line_text <- flatten_chr(x$line_text)
-  x$token_text <- NULL
-  x
-}
-out <- furrr::future_map_dfr(corpus_selected,
-  get_search_results,
-  terms = components$components,
-  .id = "report",
-  .progress = TRUE
-)
-out
-
 saveRDS(out, file = "data-generated/search-results.rds")
-future::plan(future::sequential)
+# future::plan(future::sequential)
 
 # # ----------- SEARCH method --------- #
 # start_time_search<-Sys.time()
