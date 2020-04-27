@@ -46,6 +46,7 @@ get_count <- function(.x, .s) {
 vec <- c("climate change", "global warming", "extreme events", "natural variability", "climate variability")
 
 out <- map_dfr(my_corpus, get_count, .s = vec, .id = "report")
+write.csv(out, file = "first_pass_terms_rpt.csv")
 tokeep <- group_by(out, report) %>%
   summarise(keep_this = sum(count) > 0)
 

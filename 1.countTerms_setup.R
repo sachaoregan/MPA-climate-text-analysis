@@ -48,6 +48,7 @@ luPaper$Grouping <- as.character(luPaper$Grouping)
 luPaper$Grouping[luPaper$paper == "California_MPAs.pdf"] <- "California_MPAN"
 luPaper <- luPaper[!duplicated(luPaper), ]
 length(unique(luPaper$paper)) # 663 unique papers
+write.csv(luPaper, file = "mpa_metadata.csv")
 
 parkPaperSummary <- plyr::ddply(luPaper, c("paper"), plyr::summarize, nParks = length(unique(PA.Name)))
 length(unique(parkPaperSummary$paper)) # 663 papers
