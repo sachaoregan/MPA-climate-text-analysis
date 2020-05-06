@@ -1,71 +1,70 @@
-components,root_word
-circulation,circulation
-dissolved oxygen,dissolved oxygen
-pH ,pH 
-"pH,",pH 
-pH.,pH 
-salinity,salinity
-temperature,temperature
-sea ice,sea ice
-sea level rise,sea level rise
-coastal erosion,coastal erosion
-upwelling,upwelling
-carbon storage,carbon storage
-seasonality,seasonality
-stratification,stratification
-acidification,acidification
-wave height,wave height
-nutrient ,nutrient 
-hypoxia,hypoxia
-warming,warming
-habitat complexity,habitat complexity
-primary production,primary production
-physiology,physiology
-reproduction,reproduction
-recruitment,recruitment
-abundance,abundance
-biomass,biomass
-body size,body size
-community composition,community composition
-biodiversity,biodiversity
-distribution,distribution
-phenology,phenology
-range shift,range shift
-range contraction,range contraction
-range expansion,range expansion
-migration,migration
-connectivity,connectivity
-invasion,invasive
-invasive,invasive
-harmful algae,harmful algae
-habitat suitability,habitat suitability
-resilience,resilience
-tolerance,tolerance
-extinction,extinction
-coastal community,coastal community
-coastal communities,coastal community
-ecosystem services,ecosystem services
-food security,food security
-water resources,water resources
-water quality,water quality
-livelihood,livelihood
-health,health
-well-being,well-being
-infrastructure,infrastructure
-transportation,transportation
-tourism,tourism
-recreation,recreation
-cultural,culture
-culture,culture
-indigenous people,indigenous people
-economy,economy
-economies,economy
-natural hazard,natural hazard
-fisher,fisher
-harvest,harvest
-fish catch,fish catch
-resource-dependent,resource-dependence
-resource-dependence,resource-dependence
-coastal protection,coastal protection
-traditional diet,traditional diet
-network,network
+component,root_word,dimension
+circulation,circulation,physical
+dissolved oxygen,dissolved oxygen,physical
+pH ,pH ,physical
+"pH,",pH ,physical
+pH.,pH ,physical
+salinity,salinity,physical
+temperature,temperature,physical
+sea ice,sea ice,physical
+sea level rise,sea level rise,physical
+coastal erosion,coastal erosion,physical
+upwelling,upwelling,physical
+carbon storage,carbon storage,physical
+seasonality,seasonality,physical
+stratification,stratification,physical
+acidification,acidification,physical
+wave height,wave height,physical
+nutrient ,nutrient ,physical
+hypoxia,hypoxia,physical
+warming,warming,physical
+habitat complexity,habitat complexity,ecological
+primary production,primary production,ecological
+physiology,physiology,ecological
+reproduction,reproduction,ecological
+recruitment,recruitment,ecological
+abundance,abundance,ecological
+biomass,biomass,ecological
+body size,body size,ecological
+community composition,community composition,ecological
+biodiversity,biodiversity,ecological
+distribution,distribution,ecological
+phenology,phenology,ecological
+range shift,range shift,ecological
+range contraction,range contraction,ecological
+range expansion,range expansion,ecological
+migration,migration,ecological
+connectivity,connectivity,ecological
+invasion,invasive,ecological
+invasive,invasive,ecological
+harmful algae,harmful algae,ecological
+habitat suitability,habitat suitability,ecological
+resilience,resilience,ecological
+tolerance,tolerance,ecological
+extinction,extinction,ecological
+coastal community,coastal community,sociological
+coastal communities,coastal community,sociological
+ecosystem services,ecosystem services,sociological
+food security,food security,sociological
+water resources,water resources,sociological
+water quality,water quality,sociological
+livelihood,livelihood,sociological
+health,health,sociological
+well-being,well-being,sociological
+infrastructure,infrastructure,sociological
+transportation,transportation,sociological
+tourism,tourism,sociological
+recreation,recreation,sociological
+cultural,culture,sociological
+culture,culture,sociological
+indigenous people,indigenous people,sociological
+economy,economy,sociological
+economies,economy,sociological
+natural hazard,natural hazard,sociological
+fisher,fisher,sociological
+harvest,harvest,sociological
+fish catch,fish catch,sociological
+resource-dependent,resource-dependence,sociological
+resource-dependence,resource-dependence,sociological
+coastal protection,coastal protection,sociological
+traditional diet,traditional diet,sociological
