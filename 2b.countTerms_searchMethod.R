@@ -60,7 +60,11 @@ vec <- c("climate change", "global warming", "extreme events",
 out <- furrr::future_map_dfr(my_corpus, get_count, .s = vec,
   .id = "report", .progress = TRUE)
 
-#write.csv(out, file = "first_pass_terms_rpt.csv")
+metadata <- readr::read_csv("mpa_metadata.csv")
+metadata <- metadata %>% rename(report = paper)
+
+climate_terms_w_meta <- left_join(metadata, out, by = "report")
+write.csv(climate_terms_w_meta, file = "climate_terms_w_meta_rpt.csv")
 
 tokeep <- group_by(out, report) %>%
   summarise(keep_this = sum(count) > 0)
@@ -88,30 +92,27 @@ out <- left_join(components, out, by = "term") %>%
 write.csv(out, file = "components_rpt.csv")
 saveRDS(out, file = "data-generated/search-results.rds")
 
-metadata <- readr::read_csv("mpa_metadata.csv")
-metadata <- metadata %>% rename(report = paper)
-
 components_w_meta <- left_join(metadata, out, by = "report")
 write.csv(components_w_meta, file = "components_w_meta_rpt.csv")
 
 library(ggplot2)
 library(ggsidekick)
 
-# tot_term_count <- components_w_meta %>% mutate(root_word = stringr::str_to_sentence(root_word), dimension = stringr::str_to_sentence(dimension)) %>%
-#   group_by(dimension, root_word) %>%
-#   summarise(tot.count = sum(count))
+tot_term_count <- components_w_meta %>% mutate(root_word = stringr::str_to_sentence(root_word), dimension = stringr::str_to_sentence(dimension)) %>%
+  group_by(dimension, root_word) %>%
+  summarise(tot.count = sum(count))
 
 term_prop <- components_w_meta %>% mutate(root_word = stringr::str_to_sentence(root_word), dimension = stringr::str_to_sentence(dimension)) %>%
   group_by(dimension, root_word) %>%
   summarise(mean.prop = mean(prop))
 
-ggplot(filter(tot_term_count, !is.na(root_word)), aes(x = forcats::fct_reorder(root_word, tot.count), y = tot.count, fill = dimension)) +
-  geom_col() +
-  facet_wrap(~dimension, ncol = 1, scales = "free") +
-  scale_fill_manual(values = c("#31a354", "#8856a7", "#fd8d3c")) +
-  theme_sleek() +
-  theme(legend.position = "none") +
-  labs(x = "", y = "Count") + coord_flip(expand = FALSE)
+# ggplot(filter(tot_term_count, !is.na(root_word)), aes(x = forcats::fct_reorder(root_word, tot.count), y = tot.count, fill = dimension)) +
+#   geom_col() +
+#   facet_wrap(~dimension, ncol = 1, scales = "free") +
+#   scale_fill_manual(values = c("#31a354", "#8856a7", "#fd8d3c")) +
+#   theme_sleek() +
+#   theme(legend.position = "none") +
+#   labs(x = "", y = "Count") + coord_flip(expand = FALSE)
 
 ggplot(filter(tot_term_count, !is.na(root_word)), aes(x = forcats::fct_reorder(root_word, tot.count), y = tot.count)) +
   geom_segment( aes(xend = root_word, yend = 0)) +
@@ -134,6 +135,19 @@ ggplot(filter(term_prop, !is.na(root_word)), aes(x = forcats::fct_reorder(root_w
   labs(x = "", y = "Proportion") + coord_flip(expand = FALSE)
 
 ggsave("comps_v3.png", width = 5, height = 9)
+
+term_prop2 <- components_w_meta %>% mutate(root_word = stringr::str_to_sentence(root_word), dimension = stringr::str_to_sentence(dimension)) %>%
+  group_by(dimension, root_word)
+
+ggplot(filter(term_prop2, !is.na(root_word)), aes(x = forcats::fct_reorder(root_word, prop), y = prop)) +
+  geom_violin() + geom_jitter(height = 0, width = 0.1, alpha = 0.1) +
+  facet_wrap(~dimension, ncol = 1, scales = "free") +
+  scale_colour_manual(values = c("#31a354", "#8856a7", "#fd8d3c")) +
+  theme_sleek() +
+  theme(legend.position = "none") +
+  labs(x = "", y = "Proportion") + coord_flip(expand = FALSE)
+
+ggsave("comps_v4.png", width = 5, height = 9)
 
 ggplot(tot_term_count, aes(x = term, y = tot.count)) +
   geom_bar(stat = "identity", x = forcats::fct_infreq(term)) +
