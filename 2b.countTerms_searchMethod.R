@@ -1,7 +1,8 @@
 # library(future)
 library(dplyr)
 library(purrr)
-# future::plan(future::multisession, workers = future::availableCores() / 2)
+library(future)
+plan(multisession)
 dir.create("data-generated/pdftools", showWarnings = FALSE)
 outdir <- "data-generated"
 dir <- "ManagementPlans_R"
@@ -32,20 +33,33 @@ my_corpus <- gsub(paste0(dir, "/"), "", list.of.pdfs) %>%
   set_names() %>%
   map(parse_pdfs)
 
+get_total_words <- function(.x) {
+  .x <- unlist(.x)
+  .x <- paste(.x, collapse = " ")
+  .x <- gsub("\\\n", " ", .x)
+  .x <- gsub("\\s+", " ", stringr::str_trim(.x))
+  total <- stringr::str_count(.x, "\\w+")
+  tibble(total_words = total)
+}
+total_words <- furrr::future_map_dfr(my_corpus, get_total_words,
+  .id = "report", .progress = TRUE)
+
 get_count <- function(.x, .s) {
   .x <- unlist(.x)
   .x <- paste(.x, collapse = " ")
   .x <- gsub("\\\n", " ", .x)
   .x <- gsub("\\s+", " ", stringr::str_trim(.x))
-  .y <- stringi::stri_count_fixed(.x, .s,
-    opts_fixed = stringi::stri_opts_fixed(case_insensitive = TRUE)
-  )
-  tibble(term = .s, count = .y)
+  term_count <- stringi::stri_count_fixed(.x, .s,
+    opts_fixed = stringi::stri_opts_fixed(case_insensitive = TRUE))
+  tibble(term = .s, count = term_count)
 }
 
-vec <- c("climate change", "global warming", "extreme events", "natural variability", "climate variability")
+vec <- c("climate change", "global warming", "extreme events",
+  "natural variability", "climate variability")
 
-out <- map_dfr(my_corpus, get_count, .s = vec, .id = "report")
+out <- furrr::future_map_dfr(my_corpus, get_count, .s = vec,
+  .id = "report", .progress = TRUE)
+
 #write.csv(out, file = "first_pass_terms_rpt.csv")
 
 tokeep <- group_by(out, report) %>%
@@ -61,11 +75,15 @@ components <- readr::read_csv("SearchTerms/searchcomponents.csv")
 vec <- components$component
 vec[vec == "pH"] <- "pH "
 
-out <- map_dfr(corpus_selected, get_count, .s = vec, .id = "report")
+out <- furrr::future_map_dfr(corpus_selected, get_count, .s = vec,
+  .id = "report", .progress = TRUE)
+
+out <- left_join(out, total_words, by = "report")
 
 components <- components %>% rename(term = component)
 out <- left_join(components, out, by = "term") %>%
-  select(-term)
+  select(-term) %>%
+  mutate(prop = count/total_words)
 
 write.csv(out, file = "components_rpt.csv")
 saveRDS(out, file = "data-generated/search-results.rds")
@@ -79,9 +97,13 @@ write.csv(components_w_meta, file = "components_w_meta_rpt.csv")
 library(ggplot2)
 library(ggsidekick)
 
-tot_term_count <- components_w_meta %>% mutate(root_word = stringr::str_to_sentence(root_word), dimension = stringr::str_to_sentence(dimension)) %>%
+# tot_term_count <- components_w_meta %>% mutate(root_word = stringr::str_to_sentence(root_word), dimension = stringr::str_to_sentence(dimension)) %>%
+#   group_by(dimension, root_word) %>%
+#   summarise(tot.count = sum(count))
+
+term_prop <- components_w_meta %>% mutate(root_word = stringr::str_to_sentence(root_word), dimension = stringr::str_to_sentence(dimension)) %>%
   group_by(dimension, root_word) %>%
-  summarise(tot.count = sum(count))
+  summarise(mean.prop = mean(prop))
 
 ggplot(filter(tot_term_count, !is.na(root_word)), aes(x = forcats::fct_reorder(root_word, tot.count), y = tot.count, fill = dimension)) +
   geom_col() +
@@ -91,7 +113,27 @@ ggplot(filter(tot_term_count, !is.na(root_word)), aes(x = forcats::fct_reorder(r
   theme(legend.position = "none") +
   labs(x = "", y = "Count") + coord_flip(expand = FALSE)
 
-ggsave("comps.png", width = 5, height = 9)
+ggplot(filter(tot_term_count, !is.na(root_word)), aes(x = forcats::fct_reorder(root_word, tot.count), y = tot.count)) +
+  geom_segment( aes(xend = root_word, yend = 0)) +
+  geom_point(shape = 21, size = 2, colour = "black", aes(fill = dimension)) +
+  facet_wrap(~dimension, ncol = 1, scales = "free") +
+  scale_colour_manual(values = c("#31a354", "#8856a7", "#fd8d3c")) +
+  theme_sleek() +
+  theme(legend.position = "none") +
+  labs(x = "", y = "Count") + coord_flip(expand = FALSE)
+
+ggsave("comps_v2.png", width = 5, height = 9)
+
+ggplot(filter(term_prop, !is.na(root_word)), aes(x = forcats::fct_reorder(root_word, mean.prop), y = mean.prop)) +
+  geom_segment( aes(xend = root_word, yend = 0)) +
+  geom_point(shape = 21, size = 2, colour = "black", aes(fill = dimension)) +
+  facet_wrap(~dimension, ncol = 1, scales = "free") +
+  scale_colour_manual(values = c("#31a354", "#8856a7", "#fd8d3c")) +
+  theme_sleek() +
+  theme(legend.position = "none") +
+  labs(x = "", y = "Proportion") + coord_flip(expand = FALSE)
+
+ggsave("comps_v3.png", width = 5, height = 9)
 
 ggplot(tot_term_count, aes(x = term, y = tot.count)) +
   geom_bar(stat = "identity", x = forcats::fct_infreq(term)) +
