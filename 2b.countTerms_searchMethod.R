@@ -46,7 +46,8 @@ get_count <- function(.x, .s) {
 vec <- c("climate change", "global warming", "extreme events", "natural variability", "climate variability")
 
 out <- map_dfr(my_corpus, get_count, .s = vec, .id = "report")
-write.csv(out, file = "first_pass_terms_rpt.csv")
+#write.csv(out, file = "first_pass_terms_rpt.csv")
+
 tokeep <- group_by(out, report) %>%
   summarise(keep_this = sum(count) > 0)
 
@@ -57,8 +58,46 @@ characters <- purrr::map_dbl(my_corpus, ~ sum(stringr::str_count(.x)))
 characters
 
 components <- readr::read_csv("SearchTerms/searchcomponents.csv")
+vec <- components$components
+vec[vec == "pH"] <- "pH "
+
+out <- map_dfr(corpus_selected, get_count, .s = vec, .id = "report")
+#write.csv(out, file = "components_rpt.csv")
 
 saveRDS(out, file = "data-generated/search-results.rds")
+
+metadata <- readr::read_csv("mpa_metadata.csv")
+metadata <- metadata %>% rename(report = paper)
+
+components_w_meta <- left_join(metadata, out, by = "report")
+write.csv(components_w_meta, file = "components_w_meta_rpt.csv")
+
+library(ggplot2)
+library(ggsidekick)
+
+tot_term_count <- components_w_meta %>% group_by(term) %>%
+  summarise(tot.count = sum(count))
+
+ggplot(filter(tot_term_count, !is.na(term)), aes(x = forcats::fct_reorder(term, tot.count), y = tot.count)) +
+  geom_bar(stat = "identity") +
+  theme_sleek() +
+  labs(x = "Term", y = "Count") + coord_flip(expand = FALSE)
+
+ggplot(tot_term_count, aes(x = term, y = tot.count)) +
+  geom_bar(stat = "identity", x = forcats::fct_infreq(term)) +
+  theme_sleek() +
+  labs(x = "Term", y = "Count") +
+  theme(axis.text.x = element_text(angle = 90))
+
+tot_by_grouping<- components_w_meta %>% group_by(Grouping, term) %>%
+  summarise(tot.count = sum(count))
+
+ggplot(tot_term_count, aes(x = term, y = tot.count)) +
+  geom_bar(stat = "identity", x = forcats::fct_infreq(term)) +
+  theme_sleek() +
+  labs(x = "Term", y = "Count") +
+  theme(axis.text.x = element_text(angle = 90))
+
 # future::plan(future::sequential)
 
 # # ----------- SEARCH method --------- #
