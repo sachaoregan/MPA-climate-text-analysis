@@ -48,7 +48,6 @@ luPaper$Grouping <- as.character(luPaper$Grouping)
 luPaper$Grouping[luPaper$paper == "California_MPAs.pdf"] <- "California_MPAN"
 luPaper <- luPaper[!duplicated(luPaper), ]
 length(unique(luPaper$paper)) # 663 unique papers
-write.csv(luPaper, file = "mpa_metadata.csv")
 
 parkPaperSummary <- plyr::ddply(luPaper, c("paper"), plyr::summarize, nParks = length(unique(PA.Name)))
 length(unique(parkPaperSummary$paper)) # 663 papers
@@ -76,5 +75,8 @@ haveFile_butNotInXLS <- haveFile_butNotInXLS[order(haveFile_butNotInXLS)]
 # look at these - make sure all the papers you want to be searching are in the list/folder
 inXLS_butMissing
 haveFile_butNotInXLS
+
+luPaper <- luPaper %>% filter(!paper %in% inXLS_butMissing)
+#write.csv(luPaper, file = "mpa_metadata.csv")
 
 saveRDS(list.of.pdfs, file = "data-generated/list-of-pdfs.rds")
