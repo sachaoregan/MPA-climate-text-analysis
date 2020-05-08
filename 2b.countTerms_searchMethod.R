@@ -33,6 +33,41 @@ my_corpus <- gsub(paste0(dir, "/"), "", list.of.pdfs) %>%
   set_names() %>%
   map(parse_pdfs)
 
+get_years <- function(.x) {
+  .x <- unlist(.x)
+  .x <- paste(.x, collapse = " ")
+  .x <- gsub("\\\n", " ", .x)
+  .x <- gsub("\\s+", " ", stringr::str_trim(.x))
+  .x <- stringr::str_sub(.x, 1, 10000)
+  yr_pattern <- "\\b19[7-9]+[0-9]+\\b|\\b20[0-2]+[0-9]+\\b"
+  yrs <- stringr::str_extract_all(.x, pattern = yr_pattern)
+  pos <- stringr::str_locate_all(.x, pattern = yr_pattern)
+  tibble(years = yrs[[1]], position = pos[[1]][, "start"])
+}
+yrs <- furrr::future_map_dfr(my_corpus, get_years, .id = "report")
+
+first_yrs <- group_by(yrs, report) %>% summarise(first_yr = years[1])
+
+set.seed(42)
+sampled_reports <- sample_frac(first_yrs, 0.05)
+readr::write_csv(sampled_reports, path = "sampled-reports.csv")
+
+get_years_act <- function(.x) {
+  .x <- unlist(.x)
+  .x <- paste(.x, collapse = " ")
+  .x <- gsub("\\\n", " ", .x)
+  .x <- gsub("\\s+", " ", stringr::str_trim(.x))
+  .x <- tolower(stringr::str_sub(.x, 1, 10000))
+  yr_pattern <- "act \\b19[7-9]+[0-9]+\\b|\\b20[0-2]+[0-9]+\\b"
+  yrs <- stringr::str_extract_all(.x, pattern = yr_pattern)
+  pos <- stringr::str_locate_all(.x, pattern = yr_pattern)
+  tibble(act_years = yrs[[1]], position = pos[[1]][, "start"] + 4)
+}
+act_yrs <- purrr::map_dfr(my_corpus, get_years_act, .id = "report")
+
+act_first_yrs <- group_by(act_yrs, report) %>% summarise(first_yr = years[1])
+
+
 get_total_words <- function(.x) {
   .x <- unlist(.x)
   .x <- paste(.x, collapse = " ")
