@@ -8,3 +8,5 @@ Examples/
 *.pdf
 data-generated
 components_*.csv
+*.png
+*.csv
