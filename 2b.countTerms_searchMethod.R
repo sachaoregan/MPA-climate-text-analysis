@@ -41,7 +41,6 @@ clean_text <- function(.x) {
 }
 
 my_corpus <- my_corpus %>% map(clean_text)
-my_corpus[[1]] <- paste("act 1996", my_corpus[[1]] )
 
 get_years <- function(.x) {
   .x <- stringr::str_sub(.x, 1, 10000)
@@ -52,15 +51,9 @@ get_years <- function(.x) {
 }
 yrs <- map_dfr(my_corpus, get_years, .id = "report")
 
-saveRDS(first_yrs, file = "data-generated/MPAplan_pub_year.rds")
-
-set.seed(42)
-sampled_reports <- sample_frac(first_yrs, 0.05)
-readr::write_csv(sampled_reports, path = "sampled-reports.csv")
-
 get_years_act <- function(.x) {
   .x <- stringr::str_sub(.x, 1, 10000)
-  yr_pattern <- "(act|regulation) (19[7-9]+[0-9]+\\b|\\b20[0-2]+[0-9]+\\b)"
+  yr_pattern <- "(act|regulation|regulations) (19[7-9]+[0-9]+\\b|\\b20[0-2]+[0-9]+\\b)"
   .yrs <- stringr::str_extract_all(.x, pattern = yr_pattern)
   pos <- stringr::str_locate_all(.x, pattern = yr_pattern)
   tibble(act_years = .yrs[[1]], position = pos[[1]][, "end"])
@@ -70,6 +63,12 @@ act_yrs <- map_dfr(my_corpus, get_years_act, .id = "report")
 first_yrs <- anti_join(yrs, act_yrs) %>%
   group_by(report) %>%
   summarise(first_yr = years[1])
+
+saveRDS(first_yrs, file = "data-generated/MPAplan_pub_year.rds")
+
+set.seed(42)
+sampled_reports <- sample_frac(first_yrs, 0.05)
+readr::write_csv(sampled_reports, path = "sampled-reports.csv")
 
 get_total_words <- function(.x) {
   total <- stringr::str_count(.x, "\\w+")

@@ -76,7 +76,12 @@ haveFile_butNotInXLS <- haveFile_butNotInXLS[order(haveFile_butNotInXLS)]
 inXLS_butMissing
 haveFile_butNotInXLS
 
-luPaper <- luPaper %>% filter(!paper %in% inXLS_butMissing)
+luPaper <- luPaper %>% filter(!paper %in% inXLS_butMissing) %>%
+  filter(!paper %in% c("101534_BoundaryBay_WMA.pdf", "900736_Elizabeth_and_Middleton_reefs_national_nature_reserve.pdf")) #Excluding 2 PDFs with bad OCR
+
+saveRDS(luPaper, file = "data-generated/mpa_metadata.rds")
 #write.csv(luPaper, file = "mpa_metadata.csv")
 
+todrop <- c("ManagementPlans_R/101534_BoundaryBay_WMA.pdf", "ManagementPlans_R/900736_Elizabeth_and_Middleton_reefs_national_nature_reserve.pdf")
+list.of.pdfs <- purrr::map(list.of.pdfs, ~ discard(.x, ~ .x %in% todrop)) %>% purrr::compact() #Excluding 2 PDFs with bad OCR
 saveRDS(list.of.pdfs, file = "data-generated/list-of-pdfs.rds")
