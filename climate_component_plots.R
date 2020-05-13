@@ -1,13 +1,27 @@
 library(ggplot2)
 library(ggsidekick)
+library(dplyr)
 
 components_w_meta <- readRDS("data-generated/component-search-results_w_meta_rpt.rds")
 pub_years <- readRDS("data-generated/MPAplan_pub_year.rds")
-total_words <- readRDS(file = "data-generated/total_words.rds")
+
+components_w_meta <- left_join(components_w_meta, pub_years, by = "report")
+
+components_w_meta <- mutate(components_w_meta, root_word = stringr::str_to_sentence(root_word),  dimension = stringr::str_to_sentence(dimension))
+
+components_w_meta$Grouping <-  recode(components_w_meta$Grouping, California_MPAN = "USA", ABNJ = "Antarctica")
+write.csv(components_w_meta, file = "components_w_meta_w_pub_years_rpt.csv")
+
+components_w_meta$binned_year <-
+  seq(1970, 2020, 5)[findInterval(as.numeric(components_w_meta$first_yr),
+    vec = seq(1970, 2020, 5))]
+
+components_w_meta <- components_w_meta %>%
+  mutate(binned_year_chr = paste0(binned_year, "-", binned_year + 5))
+
+###############################
 
 tot_term_count <- components_w_meta %>%
-  mutate(root_word = stringr::str_to_sentence(root_word),
-    dimension = stringr::str_to_sentence(dimension)) %>%
   group_by(dimension, root_word) %>%
   summarise(
     tot.count = sum(count),
@@ -16,67 +30,23 @@ tot_term_count <- components_w_meta %>%
     # upr.prop = tryCatch(plogis(confint(glm(prop~1, family = binomial()))[[2]]), error = function(e) 0)
   )
 
-# term_prop <- components_w_meta %>% mutate(root_word = stringr::str_to_sentence(root_word), dimension = stringr::str_to_sentence(dimension)) %>%
-#   group_by(dimension, root_word) %>%
-#   summarise(mean.prop = mean(prop))
-
-# ggplot(filter(tot_term_count, !is.na(root_word)), aes(x = forcats::fct_reorder(root_word, tot.count), y = tot.count, fill = dimension)) +
-#   geom_col() +
-#   facet_wrap(~dimension, ncol = 1, scales = "free") +
-#   scale_fill_manual(values = c("#31a354", "#8856a7", "#fd8d3c")) +
-#   theme_sleek() +
-#   theme(legend.position = "none") +
-#   labs(x = "", y = "Count") + coord_flip(expand = FALSE)
-
 ggplot(filter(tot_term_count, !is.na(root_word)),
-  aes(x = forcats::fct_reorder(root_word, tot.count), y = tot.count)) +
-  geom_segment( aes(xend = root_word, yend = 0)) +
-  geom_point(shape = 21, size = 2, colour = "black", aes(fill = dimension)) +
+  aes(x = forcats::fct_reorder(root_word, mean.prop), y = mean.prop, fill = dimension)) +
+  geom_col() +
   facet_wrap(~dimension, ncol = 1, scales = "free") +
-  scale_colour_manual(values = c("#31a354", "#8856a7", "#fd8d3c")) +
+  scale_fill_manual(values = c("#31a354", "#8856a7", "#fd8d3c")) +
   theme_sleek() +
   theme(legend.position = "none") +
-  labs(x = "", y = "Count") + coord_flip(expand = FALSE)
+  labs(x = "", y = "Frequency per 10,000 words") +
+  coord_flip(expand = FALSE)
 
-ggsave("comps_v2.png", width = 5, height = 9)
+ggsave("comps.png", width = 5, height = 9)
 
-ggplot(filter(tot_term_count, !is.na(root_word)),
-  aes(x = forcats::fct_reorder(root_word, mean.prop), y = mean.prop)) +
-  geom_segment(aes(xend = root_word, yend = 0)) +
-  geom_point(shape = 21, size = 2, colour = "black", aes(fill = dimension)) +
-  facet_wrap(~dimension, ncol = 1, scales = "free") +
-  scale_colour_manual(values = c("#31a354", "#8856a7", "#fd8d3c")) +
-  theme_sleek() +
-  theme(legend.position = "none") +
-  scale_y_discrete(expand = c(0, 0, 0.03, 0)) +
-  scale_x_discrete(expand = c(0.04, 0, 0.04, 0)) +
-  labs(x = "", y = "Proportion") +
-  coord_flip()
-
-# plot_terms <- function(dat, title) {
-#   ggplot(dat, aes(x = forcats::fct_reorder(root_word, mean.prop), y = mean.prop)) +
-#   geom_segment( aes(xend = root_word, yend = 0)) +
-#   geom_point(shape = 21, size = 2, colour = "black") +
-#   scale_colour_manual(values = c("#31a354", "#8856a7", "#fd8d3c")) +
-#   theme_sleek() +
-#     ggtitle(title) +
-#   theme(legend.position = "none") +
-#   labs(x = "", y = "Proportion") + coord_flip(expand = FALSE)
-# }
-# g <- group_by(term_prop, dimension) %>%
-#   group_split() %>%
-#   purrr::map(plot_terms, title = "dsa")
-# cowplot::plot_grid(plotlist = g)
-
-ggsave("comps_v3.png", width = 5, height = 9)
-
-components_w_meta$Grouping <-  recode(components_w_meta$Grouping, California_MPAN = "USA")
 
 components_by_region <- components_w_meta %>%
   mutate(root_word = stringr::str_to_sentence(root_word), dimension = stringr::str_to_sentence(dimension)) %>%
   group_by(Grouping, dimension, root_word) %>%
   summarise(proportion = mean(count > 0))
-#filter(term!= "NA")
 
 ggplot(components_by_region, aes(x = forcats::fct_reorder(root_word, proportion), y = proportion, fill = Grouping)) +
   geom_col() +
@@ -89,38 +59,84 @@ ggplot(components_by_region, aes(x = forcats::fct_reorder(root_word, proportion)
 
 ggsave("comps_by_region.png", width = 14, height = 12)
 
-term_prop2 <- components_w_meta %>% mutate(root_word = stringr::str_to_sentence(root_word), dimension = stringr::str_to_sentence(dimension)) %>%
-  group_by(dimension, root_word)
+############################
+mypalette <- c("#41ae76", "#ffeda0", "#9e9ac8", "#d53e4f", "#4292c6", "#fe9929", "#91cf60", "#fa9fb5", "#969696", "#8c6bb1")
 
-ggplot(filter(term_prop2, !is.na(root_word)), aes(x = forcats::fct_reorder(root_word, prop), y = prop)) +
-  geom_boxplot(outlier.shape = NA) +
-  facet_wrap(~dimension, ncol = 1, scales = "free") +
-  scale_colour_manual(values = c("#31a354", "#8856a7", "#fd8d3c")) +
+components_w_meta_yr <- components_w_meta %>%
+  filter(first_yr != "NA") %>%
+  group_by(report) %>%
+  mutate(count = ifelse(!is.na(count), count, 0)) %>%
+  mutate(prop = count/total_words * 10000)
+
+ggplot(components_w_meta_yr, aes(x = as.numeric(first_yr), y = prop, colour = Grouping)) +
+  geom_point(alpha = 0.7) +
+  # facet_wrap(~Grouping, nrow = 2) +
   theme_sleek() +
-  theme(legend.position = "none") +
-  labs(x = "", y = "Proportion") + coord_flip(expand = FALSE, ylim = c(0, 10))
+  theme(legend.title = element_blank(),axis.text.x = element_text(angle = 45, hjust = 1)) +
+  labs(x = "MPA plan publication year", y = "Frequencey per 10,000 words in MPA plan") +
+  scale_color_manual(values = mypalette)
 
-ggplot(filter(term_prop2, !is.na(root_word)), aes(x = forcats::fct_reorder(root_word, prop), y = prop)) +
-  geom_jitter(height = 0, width = 0.1, alpha = 0.01) +
-  facet_wrap(~dimension, ncol = 1, scales = "free") +
-  scale_colour_manual(values = c("#31a354", "#8856a7", "#fd8d3c")) +
+ggsave("components_time.png", width = 8, height = 4)
+
+components_w_meta$first_yr <- components_w_meta$binned_year  #comment on or off for binning
+
+components_w_meta_yr_bygroup <- components_w_meta %>% filter(Grouping != "Antarctica") %>%
+  group_by(Grouping, first_yr, dimension, root_word) %>%
+  summarize(tot_count = sum(count), tot_words = sum(total_words), prop = tot_count/tot_words * 10000)
+
+ggplot(filter(components_w_meta_yr_bygroup, dimension == "Ecological"), aes(x = as.numeric(first_yr), y = prop, colour = Grouping)) +
+  geom_line(aes(colour = Grouping)) +
+  facet_wrap(~root_word, nrow = 4, scales = "free_y") +
   theme_sleek() +
-  theme(legend.position = "none") +
-  labs(x = "", y = "Proportion") + coord_flip(expand = FALSE)
+  theme(legend.title = element_blank(),axis.text.x = element_text(angle = 45, hjust = 1)) +
+  labs(x = "MPA plan publication year", y = "Frequency per 10,000 words in MPA plan") +
+  scale_color_manual(values = mypalette)
 
-ggsave("comps_v4.png", width = 5, height = 9)
+ggsave("components_time_bygroup_ecological_binned.png", width = 16, height = 9)
 
-ggplot(tot_term_count, aes(x = term, y = tot.count)) +
-  geom_bar(stat = "identity", x = forcats::fct_infreq(term)) +
+ggplot(filter(components_w_meta_yr_bygroup, dimension == "Physical"), aes(x = as.numeric(first_yr), y = prop, colour = Grouping)) +
+  geom_line(aes(colour = Grouping)) +
+  facet_wrap(~root_word, nrow = 3, scales = "free_y") +
   theme_sleek() +
-  labs(x = "Term", y = "Count") +
-  theme(axis.text.x = element_text(angle = 90))
+  theme(legend.title = element_blank(),axis.text.x = element_text(angle = 45, hjust = 1)) +
+  labs(x = "MPA plan publication year", y = "Frequency per 10,000 words in MPA plan") +
+  scale_color_manual(values = mypalette)
 
-tot_by_grouping<- components_w_meta %>% group_by(Grouping, term) %>%
-  summarise(tot.count = sum(count))
+ggsave("components_time_bygroup_physical_binned.png", width = 16, height = 9)
 
-ggplot(tot_term_count, aes(x = term, y = tot.count)) +
-  geom_bar(stat = "identity", x = forcats::fct_infreq(term)) +
+ggplot(filter(components_w_meta_yr_bygroup, dimension == "Sociological", root_word != "Traditional diet"), aes(x = as.numeric(first_yr), y = prop, colour = Grouping)) +
+  geom_line(aes(colour = Grouping)) +
+  facet_wrap(~root_word, nrow = 3, scales = "free_y") +
   theme_sleek() +
-  labs(x = "Term", y = "Count") +
-  theme(axis.text.x = element_text(angle = 90))
+  theme(legend.title = element_blank(),axis.text.x = element_text(angle = 45, hjust = 1)) +
+  labs(x = "MPA plan publication year", y = "Frequency per 10,000 words in MPA plan") +
+  scale_color_manual(values = mypalette)
+
+ggsave("components_time_bygroup_sociological_binned.png", width = 16, height = 9)
+
+ggplot(filter(components_w_meta_yr_bygroup, dimension == "Ecological", Grouping != "Asia"), aes(x = as.numeric(first_yr), y = prop)) +
+  geom_line() +
+  facet_grid(root_word~Grouping, scales = "free_y") +
+  theme_sleek() +
+  theme(legend.title = element_blank(),axis.text.x = element_text(angle = 45, hjust = 1)) +
+  labs(x = "MPA plan publication year", y = "Frequency per 10,000 words in MPA plan")
+
+ggsave("components_time_bygroup_ecological_binned_v2.png", width = 20, height = 27)
+
+ggplot(filter(components_w_meta_yr_bygroup, dimension == "Physical", Grouping != "Asia"), aes(x = as.numeric(first_yr), y = prop)) +
+  geom_line() +
+  facet_grid(root_word~Grouping, scales = "free_y") +
+  theme_sleek() +
+  theme(legend.title = element_blank(),axis.text.x = element_text(angle = 45, hjust = 1)) +
+  labs(x = "MPA plan publication year", y = "Frequency per 10,000 words in MPA plan")
+
+ggsave("components_time_bygroup_physical_binned_v2.png", width = 20, height = 20)
+
+ggplot(filter(components_w_meta_yr_bygroup, dimension == "Sociological", Grouping != "Asia"), aes(x = as.numeric(first_yr), y = prop)) +
+  geom_line() +
+  facet_grid(root_word~Grouping, scales = "free_y") +
+  theme_sleek() +
+  theme(legend.title = element_blank(),axis.text.x = element_text(angle = 45, hjust = 1)) +
+  labs(x = "MPA plan publication year", y = "Frequency per 10,000 words in MPA plan")
+
+ggsave("components_time_bygroup_sociological_binned_v2.png", width = 20, height = 26)

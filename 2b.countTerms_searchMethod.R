@@ -114,15 +114,13 @@ vec[vec == "pH"] <- "pH "
 terms <- furrr::future_map_dfr(corpus_selected, get_count, .s = vec,
   .id = "report", .progress = TRUE)
 
-# out <- left_join(out, total_words, by = "report")
-
 components <- components %>% rename(term = component)
 out <- left_join(components, terms) %>%
   filter(report != "NA") %>%
   left_join(total_words) %>%
   mutate(count = ifelse(!is.na(count), count, 0)) %>%
   select(-term) %>%
-  mutate(prop = count/total_words * 1)
+  mutate(prop = count/total_words * 10000)
 
 write.csv(out, file = "components_rpt.csv")
 

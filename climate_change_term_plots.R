@@ -22,7 +22,7 @@ climate_change_terms <- climate_change_terms %>%
   mutate(binned_year_chr = paste0(binned_year, "-", binned_year + 5))
 
 #############################
-sopal <- c("#41ae76", "#ffeda0", "#9e9ac8", "#d53e4f", "#4292c6", "#fe9929", "#91cf60", "#fa9fb5", "#969696", "#8c6bb1")
+mypalette <- c("#41ae76", "#ffeda0", "#9e9ac8", "#d53e4f", "#4292c6", "#fe9929", "#91cf60", "#fa9fb5", "#969696", "#8c6bb1")
 
 climate_terms_region <- climate_change_terms %>%
   group_by(Grouping, term) %>%
@@ -36,7 +36,7 @@ ggplot(climate_terms_region, aes(x = forcats::fct_reorder(term, proportion), y =
   theme(legend.position = "none", panel.spacing.x = unit(10, "pt"), plot.margin = margin(11/2, 11/2+5, 11/2, 11/2)) +
   scale_y_continuous(breaks = c(0, 0.25, .50, 0.75, 1), labels = c("0", "0.25", "0.50", "0.75", "1.0")) +
   labs(x = "", y = "Proportion of MPAs") + coord_flip(expand = FALSE) +
-  scale_fill_manual(values = sopal)
+  scale_fill_brewer(palette = "Set3")
 
 ggsave("climate_by_region.png", width = 8, height = 3)
 
@@ -53,8 +53,8 @@ ggplot(climate_change_terms_yr, aes(x = as.numeric(first_yr), y = prop, colour =
  # facet_wrap(~Grouping, nrow = 2) +
   theme_sleek() +
   theme(legend.title = element_blank(),axis.text.x = element_text(angle = 45, hjust = 1)) +
-  labs(x = "MPA plan publication year", y = "Proportion (term count/10,000 words in MPA plan)") +
-  scale_color_manual(values = sopal)
+  labs(x = "MPA plan publication year", y = "Frequencey per 10,000 words in MPA plan") +
+  scale_color_manual(values = mypalette)
 
 ggsave("climate_terms_time.png", width = 8, height = 4)
 
@@ -69,8 +69,8 @@ ggplot(climate_change_terms_yr_bygroup, aes(x = as.numeric(first_yr), y = prop, 
   facet_wrap(~term, nrow = 2, scales = "free_y") +
   theme_sleek() +
   theme(legend.title = element_blank(),axis.text.x = element_text(angle = 45, hjust = 1)) +
-  labs(x = "MPA plan publication year", y = "Proportion (term count/10,000 words in MPA plan)") +
-  scale_color_manual(values = sopal)
+  labs(x = "MPA plan publication year", y = "Frequency per 10,000 words in MPA plan") +
+  scale_color_manual(values = mypalette)
 
 ggsave("climate_terms_time_bygroup_binned.png", width = 8, height = 4)
 
@@ -79,7 +79,7 @@ ggplot(climate_change_terms_yr_bygroup, aes(x = as.numeric(first_yr), y = prop))
   facet_grid(term~Grouping, scales = "free_y") +
   theme_sleek() +
   theme(legend.title = element_blank(),axis.text.x = element_text(angle = 45, hjust = 1)) +
-  labs(x = "MPA plan publication year", y = "Proportion (term count/10,000 words in MPA plan)")
+  labs(x = "MPA plan publication year", y = "Frequency per 10,000 words in MPA plan")
 
 ggsave("climate_terms_time_bygroup_binned_v2.png", width = 10, height = 8)
 
@@ -110,6 +110,6 @@ ggplot(climate_change_terms_yr_globe, aes(x = as.numeric(first_yr), y = prop)) +
   theme_sleek() +
   facet_wrap(~term, scales = "free_y") +
   theme(legend.title = element_blank(),axis.text.x = element_text(angle = 45, hjust = 1)) +
-  labs(x = "Year", y = "Proportion (term count/100,000 words in MPA plans)")
+  labs(x = "Year", y = "Frequency per 10,000 words in MPA plan")
 
 ggsave("tot_climate_terms_binnedyr_globe.png", width = 10, height = 5)
