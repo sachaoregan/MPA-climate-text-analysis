@@ -1,14 +1,5 @@
 dir.create("data-generated", showWarnings = FALSE)
 
-# ---- Input Setup -----
-
-# Set or load terms of interest
-compoundTerms <- readr::read_csv("SearchTerms/searchterms_kg.csv")
-compoundTerms <- c(compoundTerms$dimension, compoundTerms$attribute, compoundTerms$searchterm)
-allTerms <- tolower(unique(compoundTerms))
-allTerms <- allTerms[allTerms != ""]
-allTerms <- as.character(na.omit(allTerms))
-
 # ---- Load list of reports ----
 
 # dat<-read.xlsx("WDPA_English_Combined_2020-03-25_kg.xlsx")
@@ -24,12 +15,6 @@ dat2$PA.Name <- paste(dat2$NAME, dat2$DESIG)
 dat2$paper <- c(as.character(dat2$Saved.File.Name))
 dat2 <- dat2[, !names(dat2) %in% c("Saved.File.Name")]
 
-# #optional - look at categories
-# table(dat2$Found[dat2$Simplified.comments!="duplicate"])
-# table(dat2$Simplified.comments[dat2$Found=="not appropriate"])
-# table(dat2$Simplified.comments[dat2$Found=="no"])
-# table(dat2$Simplified.comments[dat2$Found=="yes"])
-
 # split out lines for parks with multiple papers
 dat2 <- tidyr::separate_rows(dat2, paper, sep = ";")
 dat2$paper <- gsub("^\\s|\\s$", "", dat2$paper)
@@ -39,7 +24,7 @@ dat2$paper[dat2$paper == "NA.pdf"] <- NA
 dat2 <- merge(dat2, luCountryGroup, by = "Country", all.x = T)
 
 length(unique(dat2$PA.Name)) # 1449 parks
-length(unique(dat2$paper[!is.na(dat2$paper)])) # 663
+length(unique(dat2$paper[!is.na(dat2$paper)])) # 665
 
 # make lookup table for country and country grouping
 luPaper <- dat2[, !names(dat2) %in% c("Saved.File.Name", "Found", "Simplified.comments")]
@@ -47,14 +32,14 @@ luPaper <- luPaper[!is.na(luPaper$paper), ]
 luPaper$Grouping <- as.character(luPaper$Grouping)
 luPaper$Grouping[luPaper$paper == "California_MPAs.pdf"] <- "California_MPAN"
 luPaper <- luPaper[!duplicated(luPaper), ]
-length(unique(luPaper$paper)) # 663 unique papers
+length(unique(luPaper$paper)) # 665 unique papers
 
 parkPaperSummary <- plyr::ddply(luPaper, c("paper"), plyr::summarize, nParks = length(unique(PA.Name)))
-length(unique(parkPaperSummary$paper)) # 663 papers
+length(unique(parkPaperSummary$paper)) # 665 papers
 nrow(parkPaperSummary[parkPaperSummary$nParks > 1, ]) # 86 papers refer to more than 1 park
 
 paperParkSummary <- plyr::ddply(luPaper, c("PA.Name"), plyr::summarize, nPapers = length(unique(paper)))
-length(unique(paperParkSummary$PA.Name)) # 935 parks
+length(unique(paperParkSummary$PA.Name)) # 936 parks
 nrow(paperParkSummary[paperParkSummary$nPapers > 1, ]) # 9 parks have more than 1 paper
 
 parkPaperByCountry <- plyr::ddply(luPaper, c("Country"), plyr::summarize, nParks = length(unique(PA.Name)), nPapers = length(unique(paper)))
@@ -76,7 +61,9 @@ haveFile_butNotInXLS <- haveFile_butNotInXLS[order(haveFile_butNotInXLS)]
 inXLS_butMissing
 haveFile_butNotInXLS
 
-luPaper <- luPaper %>% filter(!paper %in% inXLS_butMissing) %>%
+luPaper <- luPaper %>% distinct(paper, Grouping, Country) %>%
+  filter(paper != "555536253_Southern_Waters_of_Gibraltar_Management_Scheme_2012.pdf" | Grouping != "UK") %>% #Database had two rows for this pdf, one with incorrectly specified grouping. Removed incorrect row b/c wanted only unique pdfs
+  filter(!paper %in% inXLS_butMissing) %>%
   filter(!paper %in% c("101534_BoundaryBay_WMA.pdf", "900736_Elizabeth_and_Middleton_reefs_national_nature_reserve.pdf")) #Excluding 2 PDFs with bad OCR
 
 saveRDS(luPaper, file = "data-generated/mpa_metadata.rds")

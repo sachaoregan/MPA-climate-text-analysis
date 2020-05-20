@@ -122,11 +122,22 @@ out <- left_join(components, terms) %>%
   select(-term) %>%
   mutate(prop = count/total_words * 10000)
 
-write.csv(out, file = "components_rpt.csv")
-
 components_w_meta <- left_join(out, metadata)
 
 write.csv(components_w_meta, file = "components_w_meta_rpt.csv")
-saveRDS(components_w_meta, file = "data-generated/component-search-results_w_meta_rpt.rds")
+saveRDS(components_w_meta, file = "data-generated/component-search-results-w-meta-rpt.rds")
+
+scienceterms <- readr::read_csv("SearchTerms/search_scienceterms.csv")
+vec <- scienceterms$scienceterm
+
+out <- furrr::future_map_dfr(corpus_selected, get_count, .s = vec,
+  .id = "report", .progress = TRUE)
+
+scienceterms_w_meta <- left_join(out, total_words) %>%
+  left_join(metadata) %>%
+  mutate(prop = count/total_words * 10000)
+
+write.csv(scienceterms_w_meta, file = "scienceterms_w_meta_rpt.csv")
+saveRDS(scienceterms_w_meta, file = "data-generated/scienceterms-search-results-w-meta-rpt.rds")
 
 

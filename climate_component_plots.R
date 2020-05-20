@@ -2,7 +2,7 @@ library(ggplot2)
 library(ggsidekick)
 library(dplyr)
 
-components_w_meta <- readRDS("data-generated/component-search-results_w_meta_rpt.rds")
+components_w_meta <- readRDS("data-generated/component-search-results-w-meta-rpt.rds")
 pub_years <- readRDS("data-generated/MPAplan_pub_year.rds")
 
 components_w_meta <- left_join(components_w_meta, pub_years, by = "report")
@@ -41,7 +41,6 @@ ggplot(filter(tot_term_count, !is.na(root_word)),
   coord_flip(expand = FALSE)
 
 ggsave("comps.png", width = 5, height = 9)
-
 
 components_by_region <- components_w_meta %>%
   mutate(root_word = stringr::str_to_sentence(root_word), dimension = stringr::str_to_sentence(dimension)) %>%

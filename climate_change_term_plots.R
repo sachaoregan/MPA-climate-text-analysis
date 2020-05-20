@@ -22,8 +22,6 @@ climate_change_terms <- climate_change_terms %>%
   mutate(binned_year_chr = paste0(binned_year, "-", binned_year + 5))
 
 #############################
-mypalette <- c("#41ae76", "#ffeda0", "#9e9ac8", "#d53e4f", "#4292c6", "#fe9929", "#91cf60", "#fa9fb5", "#969696", "#8c6bb1")
-
 climate_terms_region <- climate_change_terms %>%
   group_by(Grouping, term) %>%
   summarise(proportion = mean(count > 0)) %>%
@@ -41,6 +39,7 @@ ggplot(climate_terms_region, aes(x = forcats::fct_reorder(term, proportion), y =
 ggsave("climate_by_region.png", width = 8, height = 3)
 
 ############################
+mypalette <- c("#41ae76", "#ffeda0", "#9e9ac8", "#d53e4f", "#4292c6", "#fe9929", "#91cf60", "#fa9fb5", "#969696", "#8c6bb1")
 
 climate_change_terms_yr <- climate_change_terms %>%
   filter(first_yr != "NA") %>%
@@ -74,6 +73,17 @@ ggplot(climate_change_terms_yr_bygroup, aes(x = as.numeric(first_yr), y = prop, 
 
 ggsave("climate_terms_time_bygroup_binned.png", width = 8, height = 4)
 
+ggplot(filter(climate_change_terms_yr_bygroup, term == "Climate change"), aes(x = as.numeric(first_yr), y = prop, colour = Grouping)) + ###must run without binning for this plot
+  geom_line(aes(colour = Grouping)) +
+  facet_wrap(~Grouping, nrow = 2, scales = "free_y") +
+  theme_sleek() +
+  theme(legend.title = element_blank(),axis.text.x = element_text(angle = 45, hjust = 1)) +
+  labs(x = "MPA plan publication year", y = "Frequency per 10,000 words in MPA plan") +
+  scale_color_manual(values = mypalette) +
+  coord_cartesian(xlim = c(2000, 2020))
+
+ggsave("'climate_change'_bygroup_2000-pres.png", width = 8, height = 4)
+
 ggplot(climate_change_terms_yr_bygroup, aes(x = as.numeric(first_yr), y = prop)) +
   geom_line() +
   facet_grid(term~Grouping, scales = "free_y") +
@@ -94,9 +104,9 @@ ggplot(total_plans, aes(x = as.numeric(first_yr), y = tot_plans)) +
   facet_wrap(~Grouping, nrow = 2) +
   theme_sleek() +
   theme(legend.title = element_blank(),axis.text.x = element_text(angle = 45, hjust = 1)) +
-  labs(x = "MPA plan publication year", y = "Number of MPA plans published")
+  labs(x = "Year", y = "Number of MPA plans published")
 
-ggsave("pub_yr_total_plans_w_climate.png", width = 10, height = 5)
+ggsave("pub_yr_all_plans.png", width = 10, height = 5)
 
 climate_change_terms_yr_globe <- climate_change_terms %>%
   filter(first_yr != "NA") %>%
@@ -112,4 +122,4 @@ ggplot(climate_change_terms_yr_globe, aes(x = as.numeric(first_yr), y = prop)) +
   theme(legend.title = element_blank(),axis.text.x = element_text(angle = 45, hjust = 1)) +
   labs(x = "Year", y = "Frequency per 10,000 words in MPA plan")
 
-ggsave("tot_climate_terms_binnedyr_globe.png", width = 10, height = 5)
+ggsave("climate_terms_time_binned_globe.png", width = 10, height = 5)
