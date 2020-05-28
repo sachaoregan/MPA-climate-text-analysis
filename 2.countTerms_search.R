@@ -1,4 +1,3 @@
-# library(future)
 library(dplyr)
 library(purrr)
 library(future)
@@ -91,11 +90,11 @@ vec <- c("climate change", "global warming", "extreme events",
 out <- furrr::future_map_dfr(my_corpus, get_count, .s = vec,
   .id = "report", .progress = TRUE)
 
-metadata <- readr::read_csv("mpa_metadata.csv")
+metadata <- readRDS("data-generated/mpa-metadata.rds")
 metadata <- metadata %>% rename(report = paper)
 
 climate_terms_w_meta <- left_join(metadata, out, by = "report")
-write.csv(climate_terms_w_meta, file = "climate_terms_w_meta_rpt.csv")
+write.csv(climate_terms_w_meta, file = "climate-terms-w-meta-rpt.csv")
 saveRDS(climate_terms_w_meta, file = "data-generated/climate-search-results.rds")
 
 tokeep <- group_by(out, report) %>%
@@ -124,10 +123,10 @@ out <- left_join(components, terms) %>%
 
 components_w_meta <- left_join(out, metadata)
 
-write.csv(components_w_meta, file = "components_w_meta_rpt.csv")
+write.csv(components_w_meta, file = "components-w-meta-rpt.csv")
 saveRDS(components_w_meta, file = "data-generated/component-search-results-w-meta-rpt.rds")
 
-scienceterms <- readr::read_csv("SearchTerms/search_scienceterms.csv")
+scienceterms <- readr::read_csv("SearchTerms/search-scienceterms.csv")
 vec <- scienceterms$scienceterm
 
 out <- furrr::future_map_dfr(corpus_selected, get_count, .s = vec,
@@ -137,7 +136,7 @@ scienceterms_w_meta <- left_join(out, total_words) %>%
   left_join(metadata) %>%
   mutate(prop = count/total_words * 10000)
 
-write.csv(scienceterms_w_meta, file = "scienceterms_w_meta_rpt.csv")
+write.csv(scienceterms_w_meta, file = "scienceterms-w-meta-rpt.csv")
 saveRDS(scienceterms_w_meta, file = "data-generated/scienceterms-search-results-w-meta-rpt.rds")
 
 

@@ -1,8 +1,8 @@
+library(purrr)
+
 dir.create("data-generated", showWarnings = FALSE)
 
-# ---- Load list of reports ----
-
-# dat<-read.xlsx("WDPA_English_Combined_2020-03-25_kg.xlsx")
+# Load list of reports
 dat <- readxl::read_xlsx("WDPA_English_Combined_2020-03-25_kg.xlsx")
 names(dat) <- gsub(" ", ".", names(dat))
 luCountryGroup <- read.csv("luCountryGroup.csv")
@@ -47,7 +47,6 @@ parkPaperByGrouping <- plyr::ddply(luPaper, c("Grouping"), plyr::summarize, nPar
 
 # Get list of PDFs and read them in
 dir <- "ManagementPlans_R/"
-# list.of.pdfs<-paste0(dir,list.files(pattern="*.pdf$", recursive = TRUE))
 list.of.pdfs <- list.files(dir, pattern = "*.pdf$", recursive = TRUE, full.names = TRUE)
 
 # Compare spreadspeet to files
@@ -57,17 +56,17 @@ inXLS_butMissing <- inXLS_butMissing[order(inXLS_butMissing)]
 haveFile_butNotInXLS <- gsub(dir, "", list.of.pdfs)[!gsub(dir, "", list.of.pdfs) %in% unique(dat2$paper)]
 haveFile_butNotInXLS <- haveFile_butNotInXLS[order(haveFile_butNotInXLS)]
 
-# look at these - make sure all the papers you want to be searching are in the list/folder
+# Make sure all the papers you want to be searching are in the list/folder
 inXLS_butMissing
 haveFile_butNotInXLS
 
 luPaper <- luPaper %>% distinct(paper, Grouping, Country) %>%
-  filter(paper != "555536253_Southern_Waters_of_Gibraltar_Management_Scheme_2012.pdf" | Grouping != "UK") %>% #Database had two rows for this pdf, one with incorrectly specified grouping. Removed incorrect row b/c wanted only unique pdfs
+  filter(paper != "555536253_Southern_Waters_of_Gibraltar_Management_Scheme_2012.pdf" | Grouping != "UK") %>% #Database had two rows for this PDF, one with incorrectly specified grouping. Removed incorrect row b/c wanted only unique PDFs
   filter(!paper %in% inXLS_butMissing) %>%
   filter(!paper %in% c("101534_BoundaryBay_WMA.pdf", "900736_Elizabeth_and_Middleton_reefs_national_nature_reserve.pdf")) #Excluding 2 PDFs with bad OCR
 
-saveRDS(luPaper, file = "data-generated/mpa_metadata.rds")
-#write.csv(luPaper, file = "mpa_metadata.csv")
+saveRDS(luPaper, file = "data-generated/mpa-metadata.rds")
+#write.csv(luPaper, file = "mpa-metadata.csv") # If you want, not required
 
 todrop <- c("ManagementPlans_R/101534_BoundaryBay_WMA.pdf", "ManagementPlans_R/900736_Elizabeth_and_Middleton_reefs_national_nature_reserve.pdf")
 list.of.pdfs <- purrr::map(list.of.pdfs, ~ discard(.x, ~ .x %in% todrop)) %>% purrr::compact() #Excluding 2 PDFs with bad OCR

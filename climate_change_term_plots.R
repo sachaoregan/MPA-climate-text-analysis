@@ -77,7 +77,7 @@ ggplot(filter(climate_change_terms_yr_bygroup, term == "Climate change"), aes(x 
   geom_line(aes(colour = Grouping)) +
   facet_wrap(~Grouping, nrow = 2, scales = "free_y") +
   theme_sleek() +
-  theme(legend.title = element_blank(),axis.text.x = element_text(angle = 45, hjust = 1)) +
+  theme(legend.title = element_blank(), axis.text.x = element_text(angle = 45, hjust = 1)) +
   labs(x = "MPA plan publication year", y = "Frequency per 10,000 words in MPA plan") +
   scale_color_manual(values = mypalette) +
   coord_cartesian(xlim = c(2000, 2020))
