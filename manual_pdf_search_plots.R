@@ -5,7 +5,7 @@ library(tidyr)
 
 # Read in csv containing data from the manual PDF search. Join on the metadata, publication years, and total words.
 
-pdf_data_pull <- readr::read_csv("manual-pdf-data-pull.csv")
+pdf_data_pull <- readr::read_csv("manual-pdf-data-pull.csv", na = "na")
 metadata <- readRDS("data-generated/mpa-metadata.rds")
 metadata <- metadata %>% rename(report = paper)
 
@@ -87,6 +87,11 @@ ggplot(filter(pdf_data_by_region, dimension == "Climate objectives and strategie
   scale_fill_manual(values = mypalette)
 
 ggsave("figs/manual-pdf-search-climate-planning.png", width = 6.5, height = 3.5)
+
+pdf_data_pull %>% group_by(Grouping, dimension, variable, value) %>%
+  tally() %>%
+  group_by(Grouping, variable) %>%
+  mutate(proportion = n / sum(n)) %>% ungroup()
 
 ggplot(filter(pdf_data_by_region, dimension == "Monitoring", variable != "Metrics"), aes(x = variable, y = proportion, fill = value)) +
   geom_col(position = "stack") +
