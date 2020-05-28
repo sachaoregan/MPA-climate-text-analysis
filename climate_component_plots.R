@@ -57,7 +57,7 @@ ggplot(filter(tot_term_count, !is.na(root_word)),
   labs(x = "", y = "Mean frequency per 10,000 words") +
   coord_flip(expand = FALSE)
 
-ggsave("components.png", width = 5, height = 9)
+ggsave("figs/components.png", width = 5, height = 9)
 
 
 # Plot of the proportion of MPA plans by region that contain the climate components.
@@ -71,7 +71,7 @@ ggplot(components_by_region, aes(x = forcats::fct_reorder(root_word, proportion)
   labs(x = "", y = "Proportion of MPA plans") + coord_flip(expand = FALSE) +
   scale_fill_brewer(palette = "Set3")
 
-ggsave("component-props-by-region.png", width = 14, height = 12)
+ggsave("figs/component-props-by-region.png", width = 14, height = 12)
 
 
 # Plot of the total frequency of the climate components per 10,000 words in MPA plans by region and MPA plan publication year. Each dot is an MPA plan/PDF.
@@ -84,7 +84,7 @@ ggplot(components_w_meta_yr, aes(x = as.numeric(first_yr), y = prop, colour = Gr
   labs(x = "MPA plan publication year", y = "Frequencey per 10,000 words in MPA plan") +
   scale_color_manual(values = mypalette)
 
-ggsave("components-time.png", width = 8, height = 4)
+ggsave("figs/components-time.png", width = 8, height = 4)
 
 
 # Plots of the frequency of the individual climate components in each dimension per 10,000 words in MPA plans by region and MPA plan publication year. Years are binned to reduce noise in the trend lines.
@@ -97,7 +97,7 @@ ggplot(filter(components_w_meta_yr_bygroup, dimension == "Ecological"), aes(x = 
   labs(x = "MPA plan publication year", y = "Frequency per 10,000 words in MPA plan") +
   scale_color_manual(values = mypalette)
 
-ggsave("components-time-bygroup-ecological_binned.png", width = 16, height = 9)
+ggsave("figs/components-time-bygroup-ecological_binned.png", width = 16, height = 9)
 
 ggplot(filter(components_w_meta_yr_bygroup, dimension == "Physical"), aes(x = as.numeric(first_yr), y = prop, colour = Grouping)) +
   geom_line(aes(colour = Grouping)) +
@@ -107,7 +107,7 @@ ggplot(filter(components_w_meta_yr_bygroup, dimension == "Physical"), aes(x = as
   labs(x = "MPA plan publication year", y = "Frequency per 10,000 words in MPA plan") +
   scale_color_manual(values = mypalette)
 
-ggsave("components-time-bygroup-physical-binned.png", width = 16, height = 9)
+ggsave("figs/components-time-bygroup-physical-binned.png", width = 16, height = 9)
 
 ggplot(filter(components_w_meta_yr_bygroup, dimension == "Sociological", root_word != "Traditional diet"), aes(x = as.numeric(first_yr), y = prop, colour = Grouping)) +
   geom_line(aes(colour = Grouping)) +
@@ -117,7 +117,7 @@ ggplot(filter(components_w_meta_yr_bygroup, dimension == "Sociological", root_wo
   labs(x = "MPA plan publication year", y = "Frequency per 10,000 words in MPA plan") +
   scale_color_manual(values = mypalette)
 
-ggsave("components-time-bygroup-sociological-binned.png", width = 16, height = 9)
+ggsave("figs/components-time-bygroup-sociological-binned.png", width = 16, height = 9)
 
 
 # Plots of the frequency of the individual climate components in each dimension per 10,000 words in MPA plans by region and MPA plan publication year. Years are binned to reduce noise in the trend lines. Same data, different view from previous three plots.
@@ -129,7 +129,7 @@ ggplot(filter(components_w_meta_yr_bygroup, dimension == "Ecological", Grouping 
   theme(legend.title = element_blank(),axis.text.x = element_text(angle = 45, hjust = 1)) +
   labs(x = "MPA plan publication year", y = "Frequency per 10,000 words in MPA plan")
 
-ggsave("components-time-bygroup-ecological-binned-v2.png", width = 20, height = 27)
+ggsave("figs/components-time-bygroup-ecological-binned-v2.png", width = 20, height = 27)
 
 ggplot(filter(components_w_meta_yr_bygroup, dimension == "Physical", Grouping != "Asia"), aes(x = as.numeric(first_yr), y = prop)) +
   geom_line() +
@@ -138,7 +138,7 @@ ggplot(filter(components_w_meta_yr_bygroup, dimension == "Physical", Grouping !=
   theme(legend.title = element_blank(),axis.text.x = element_text(angle = 45, hjust = 1)) +
   labs(x = "MPA plan publication year", y = "Frequency per 10,000 words in MPA plan")
 
-ggsave("components-time-bygroup-physical-binned-v2.png", width = 20, height = 20)
+ggsave("figs/components-time-bygroup-physical-binned-v2.png", width = 20, height = 20)
 
 ggplot(filter(components_w_meta_yr_bygroup, dimension == "Sociological", Grouping != "Asia"), aes(x = as.numeric(first_yr), y = prop)) +
   geom_line() +
@@ -147,4 +147,4 @@ ggplot(filter(components_w_meta_yr_bygroup, dimension == "Sociological", Groupin
   theme(legend.title = element_blank(),axis.text.x = element_text(angle = 45, hjust = 1)) +
   labs(x = "MPA plan publication year", y = "Frequency per 10,000 words in MPA plan")
 
-ggsave("components-time-bygroup-sociological-binned-v2.png", width = 20, height = 26)
+ggsave("figs/components-time-bygroup-sociological-binned-v2.png", width = 20, height = 26)

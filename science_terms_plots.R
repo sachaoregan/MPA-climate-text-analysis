@@ -37,7 +37,7 @@ ggplot(scienceterm_prop_bygroup,
   coord_flip(expand = FALSE) +
   scale_fill_brewer(palette = "Set3")
 
-ggsave("scienceterms-by-region.png", width = 20, height = 4)
+ggsave("figs/scienceterms-by-region.png", width = 20, height = 4)
 
 
 # Histogram of the number of times the science terms appear in each MPA plan.
@@ -49,7 +49,7 @@ ggplot(filter(scienceterms_w_meta, !term %in% c("Trade-off", "Early warning syst
   theme(legend.title = element_blank(),axis.text.x = element_text(angle = 45, hjust = 1)) +
   labs(x = "Count per MPA plan", y = "")
 
-ggsave("scienceterms-count-histogram.png", width = 10, height = 10)
+ggsave("figs/scienceterms-count-histogram.png", width = 10, height = 10)
 
 
 # To generate the list of PDFs that are manually searched, filter down the 289 PDFs to a smaller subset. Only PDFs that contain at least two of the words "Metric", "Indicator", "Transects", "Survey", "Target", "Threshold" and contain at least three instances of at least one of the two words are retained.

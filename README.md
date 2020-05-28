@@ -29,7 +29,7 @@ devtools::install_github("seananderson/ggsidekick")
 ### Scripts:
 
 `1.countTerms_Setup.R`
-This script must be run 1st to generate the .rds files that feed into script 2: `list-of-pdfs.rds`, which lists all PDF files, and `mpa-metadata.rds`, which contains the metadata associated with each PDF (excluding publication year). Does not need to be run again after the .rds files are generated. 
+This script must be run 1st to generate the data and figure output directories and the .rds files that feed into script 2. The .rds files it creates are `list-of-pdfs.rds`, which lists all PDF files, and `mpa-metadata.rds`, which contains the metadata associated with each PDF (excluding publication year). Does not need to be run again after the directories and .rds files are generated. 
 
 Two PDFs were found to have bad OCR. This script excludes them from the text analysis entirely.
 

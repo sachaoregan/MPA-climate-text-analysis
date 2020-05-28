@@ -76,7 +76,7 @@ ggplot(filter(pdf_data_by_region, dimension == "Review of climate effects on par
   labs(x = "", y = "Proportion", title= "Review of climate effects on park") +
   scale_fill_manual(values = mypalette)
 
-ggsave("manual-pdf-search-climate-effects.png", width = 8, height = 4)
+ggsave("figs/manual-pdf-search-climate-effects.png", width = 8, height = 4)
 
 ggplot(filter(pdf_data_by_region, dimension == "Climate objectives and strategies"), aes(x = variable, y = proportion, fill = value)) +
   geom_col(position = "stack") +
@@ -86,7 +86,7 @@ ggplot(filter(pdf_data_by_region, dimension == "Climate objectives and strategie
   labs(x = "", y = "Proportion", title= "Climate change planning") +
   scale_fill_manual(values = mypalette)
 
-ggsave("manual-pdf-search-climate-planning.png", width = 9, height = 4)
+ggsave("figs/manual-pdf-search-climate-planning.png", width = 6.5, height = 3.5)
 
 ggplot(filter(pdf_data_by_region, dimension == "Monitoring", variable != "Metrics"), aes(x = variable, y = proportion, fill = value)) +
   geom_col(position = "stack") +
@@ -97,4 +97,4 @@ ggplot(filter(pdf_data_by_region, dimension == "Monitoring", variable != "Metric
   scale_x_discrete(labels = c("Commitment to\nclimate monitoring", "Indicators", "Indicators linked\n to climate change", "Thresholds")) +
   scale_fill_manual(values = mypalette2)
 
-ggsave("manual-pdf-search-climate_monitoring.png", width = 9, height = 4)
+ggsave("figs/manual-pdf-search-climate_monitoring.png", width = 9, height = 4)
