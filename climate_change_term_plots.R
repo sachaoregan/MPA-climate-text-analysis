@@ -126,8 +126,8 @@ ggplot(climate_change_terms_yr_globe, aes(x = as.numeric(first_yr), y = freq)) +
 ggsave("figs/climate-terms-time-binned-globe.png", width = 10, height = 5)
 
 
-# Plot of the frequency of the the term "climate change" per 10,000 words in MPA plans by region and MPA plan publication year. Run this next plot with no binning so run lines 5 to 39 again *skipping line 35*, which bins the years, and then run this plot.
-ggplot(filter(climate_change_terms_yr_bygroup, term == "Climate change"), aes(x = as.numeric(first_yr), y = freq, colour = Grouping)) +
+# Plot of the frequency of the the term "climate change" per 10,000 words in MPA plans by region and MPA plan publication year. Run this next plot with no binning so run lines 5 to 39 again *skipping line 35*, which bins the years, and then run this plot. Filtered out Asia since "climate change" only appeared in one year (one data point).
+ggplot(filter(climate_change_terms_yr_bygroup, term == "Climate change", Grouping != "Asia"), aes(x = as.numeric(first_yr), y = freq, colour = Grouping)) +
   geom_line(aes(colour = Grouping)) +
   facet_wrap(~Grouping, nrow = 2, scales = "free_y") +
   theme_sleek() +
