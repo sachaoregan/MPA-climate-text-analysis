@@ -1,130 +1,105 @@
-# Text Analysis - Marine Protected Area Management Plan Review
+# Climate change text analysis"
 
-__Main author:__  Katie Gale  
-__Affiliation:__  Fisheries and Oceans Canada (DFO)   
-__Group:__        Marine Spatial Ecology and Analysis   
-__Location:__     Institute of Ocean Sciences   
-__Contact:__      e-mail: katie.gale@dfo-mpo.gc.ca | tel: 250-363-6411
+*Author*: Sacha O'Regan\
+*Affilitation*: MC Wright and Associates Ltd.
 
-- [Objective](#objective)
-- [Summary](#summary)
-  * [Required inputs](#required-inputs)
-  * [Semi-optional inputs](#semioptional-inputs)
-  * [Outputs](#outputs)
-- [Contents](#contents)
-  * [1.countTerms_Setup.R](#content-setup)
-  * [2a.countTerms_fullMethod.R](#content-full)
-  * [2b.countTerms_searchMethod.R](#content-search)
-  * [3.countTerms_results.R](#content-results)
-- [Methods](#methods)
-  * [1.countTerms_Setup.R](#methods-setup)
-  * [2a.countTerms_fullMethod.R](#methods-full)
-  * [2b.countTerms_searchMethod.R](#methods-search)
-  * [3.countTerms_results.R](#methods-results)
-- [Caveats](#caveats)
+### Required inputs
+1) "WDPA_English_Combined_2020-03-25_kg.xlsx"
+2) "luCountryGroup.csv"
+3) "ManagementPlans_R" folder containing PDF documents
+4) "searchcomponents.csv" containing climate components
+5) "search-scienceterms.csv" containing science terms
 
+### Required packages
 
-## Objective
-The objective of this code is to summarize the full text of a series of PDFs, and to search for a set of terms of interest.
+* ggplot2
+* tidyr
+* dplyr
+* purrr
+* future
+* ggsidekick; to install:
 
-## Summary
-These scripts were created for searching marine protected area (MPA) management plans, but could be adapted for a variety of uses. As written, the script is not completely generalized (not plug and play for other uses), but could be pretty easily adapted. 
-PDFs were obtained for marine protected areas listed in the World Database on Protected Areas (WDPA, https://www.protectedplanet.net/) as of February 2019.
+```r
+# install.packages("devtools")
+devtools::install_github("seananderson/ggsidekick")
+```
 
-#### Required inputs
-- a folder of PDF documents with embedded text.
-   - If the PDFs are simple scanned images, optical character recognition (OCR) must be run first. 
-   - multi-document/multi-page plans should be combined into one PDF using program like Adobe Acrobat Pro.
-- `searchTerms...csv`: a csv of terms to search for.
+More details at https://github.com/seananderson/ggsidekick
 
-#### Semi-optional inputs
-These are not actually required to carry out the text search, but are needed for summarizing the results. Currently the script fails without them, but it could be modified to skip those steps. 
-- `WDPA_English_....xlsx`: a spreadsheet with the file names and associated attributes such as MPA name and country of origin.
-- `luCountryGroup.csv`: a helper table to link country of origin to a higher-level grouping.
+### Text Search 
+Scripts:
+#1.countTerms_Setup.R 
+This script must be run 1st to generate the .rds files that feed into script 2. Does not need to be run again. The .rds files include "list-of-pdfs.rds", which lists all PDF files and "mpa-metadata.rds", which contains the metadata associated with each PDF (excluding year of publication).  
 
-#### Outputs
-- `FULL-full_outputMatrix.rds`: paper x term matrix from full analysis, listing each returned term.                 
-- `FULL-root_outputMatrix.rds`: paper x term matrix from full analysis, rolled up for each root term searched.        
-- `FULL_nWordsPerPaper.csv`: number of words present in each paper.                                 
-- `FULL_termFreq.csv`: total count of each term across all papers.                                                                                         
-- `SEARCH_countTermOcurrencePerPaper_2020-04-23.csv`:  Park x term matrix, including other park attributes. If PDFs refer to multiple parks, there will be duplicate lines for identical PDFs. **main output** 
-- `SEARCH_countTermOcurrencePerPaperNoLookup_2020-04-23.csv`: Paper x term matrix. One line per PDF. **main output** 
-- `SEARCH_outputMatrix.rds`: paper x term matrix from search analysis.
-- `SEARCH_PDF_errorSummary_2020-04-23.csv`: error report from search analysis, listing papers that did not parse.                   
-- `SEARCH_PDF_errorSummary_wPAName_2020-04-23.csv`: error report from search analysis, listing papers that did not parse as well as their respective parks.          
-- `SEARCH_readPDFs_2020-04-23.txt`                   
+Two PDFs were found to have bad OCR. This script excludes them from the text analysis entirely.
 
-- results/%method%
-  - `_results_terms_by_Paper_2020-04-23.csv`: list of papers, with presence-absence for each term  
-  - `_results_terms_by_Park_2020-04-23.csv`: list of protected areas, with presence-absence for each term     
-  - `_results_terms_countPapers_2020-04-23.csv`: % and # of papers with each term
-  - `_results_terms_countParks_2020-04-23.csv`: % and # of protected areas with each term 
-  - `_TermsByPaper.png`: figure, % of papers with term                        
-  - `_TermsByPaper_ByGrouping.png`: figure, % of papers with term, broken down by country of origin             
-  - `_TermsByPark.png`: figure, % of protected areas with term                          
-  - `_TermsByPark_ByGrouping.png`: figure, % of protected areas with term, broken down by country of origin        
+#2.countTerms_Search.R
+This script contains the text search code. First, the code searches all PDFs for one of five climate change related terms: "climate change", "global warming", "extreme events", "natural variability", "climate variability". PDFs that contain at least one of these terms are then searched for the component words provided in "searchcomponents.csv" (e.g., abundance, diversity, recreation, etc.). PDFs that contain at least one of the climate change terms are also searched for the science terms provided in "search-scienceterms.csv" (e.g., monitor, metric). 
 
-## Contents
-There are 4 scripts that must be run in order. Do not clear the environment after running the setup. If the set of PDFs to search is very large, R will run out of memory and will not be able to run script 2b directly after 2a. If this happens, close R completely, re-run script 1, and then run 2b. 
-- The only output of 2a that is used in 2b is `FULL_nwordsPerPaper.csv`, which counts overall number of words in each pdf. This is useful to detect pdfs that did not parse correctly, or to do calculations on word prevalence. However, it's not fully necessary. So if you don't want the full corpus of each document, you could remove line 104 from script 2b, and then could skip 2a altogether.
-- note that different search term lists are appropriate for FULL vs SEARCH. FULL can take wildcards but not multiword phrases, with SEARCH being the opposite.
+This script also counts the total words in each PDF and obtains the publication year for each PDF. The year search code works by pulling out the first 4-number string in the PDF text. If the first 4-number string is preceded by the word "act", "regulation", "regulations", it takes the second 4-number string to be the year of publication. The reason for this is that the first year on some PDF title pages is the year of enactment of legislation, not the publication year. 
 
-### 1.countTerms_Setup.R
-This script loads the packages, sets up the input and output directories, and defines the search terms of interest. It must be run before scripts 2a and 2b. 
+The year of publication could not be identified for six PDFs (beyond the two with bad OCR excluded in the 1.countTerms_Setup.R) for reasons noted in "missing_yrs.csv". These PDFs were therefore excluded from plots where year of publication was a dimension of interest. 
 
-### 2a.countTerms_fullMethod.R
-Create full "corpus" (text body) and then search that for individual words and word roots. All terms in the PDFs are extracted and included in a term-document matrix. The matrix is searched using a list of root words (e.g., ecol, commun, integr). 
-- The matches might be relevant (ecological, community, integrity), or not (ecologist, ecologische, communion, communicable,  communicates, integral, integrados, integrifolium). Irrelevant matches need to be manually removed.
-- Can summarize results by pooling all matching terms for each root word or individually by each matching term. 
-- Takes longer, but the output files are easy to query and can be used and subset in other analyses (if your search terms change, you don't need to have all the PDFs to do another analysis).
-- Can only match single words (not phrases/multi-word terms).
-- Can see which terms are matching the roots (e.g., "^govern" matches "governor", but you might just want government and governance)
-- Limited error reporting (i.e., papers that didn't parse)
-- Because all terms are included, the intermediate objects are very large (gbs) and can bog down computer. 
-- Requires manual input in an intermediate step to remove words that matched but that we don't want
-- May be better at reading pdfs that have problems
+This script must be run before running the plotting scripts.
 
-### 2b.countTerms_searchMethod.R
-- The PDFs are read, but only matching terms/phrases are extracted. This is faster, but means you need to re-run the search when you change your terms (need the PDFs).
-- Can do multi-word phrases, but not wildcards.
-- Cannot accept the same root word search list as the full method - need to specify whole words. 
-- May be more sensitive to problems in the PDFs.
+### Plotting
+Scripts:
+#climate_change_term_plots.R
+Plots trends in the five climate change related terms ("climate change", "global warming", "extreme events", "natural variability", "climate variability") by geographical region (aka "Grouping" in the code) and year of publication.
 
-### 3.countTerms_results.R
-- Summarize the results into some figures and tables. 
+Plots year of publication for all PDFs (with and without climate change related terms).
 
-## Methods
+#climate_component_plots.R
+Plots trends in the climate change related components (e.g., abundance, diversity, recreation, etc.) and their dimensions (ecological, physical, sociological) by geographical region (aka "Grouping" in the code) and year of publication.
 
-### 1.countTerms_Setup.R
-- Set the working directory and define the output directory
-- Load the search terms and the spreadsheet with the list of PDFs, their respective parks, and their attributes.
-- Check to ensure that all the PDFs you want to search (those in the spreadsheet) are in the folder, and vice versa. 
- 
-### 2a.countTerms_fullMethod.R
-- Read each PDF and store the full text in a 'corpus' object (note: many errors will show up in the console - this is fine).
-- create term-document matrix, which has all terms in each PDF.
-- Count the number of terms in each PDF, and write to file (`FULL_nWordsPerPaper.csv`)
-- Clean up term list, by removing terms only in one paper and cleaning up nonsense characters.
-- Optional - print a word cloud of all terms in all PDFs.
-- Search list of all terms in each PDF for the list of terms or roots (wildcards) defined in script 1.
-- **important - a manual step is needed at line 104, to remove nonsense and bad words from the term frequency list.**
-- summarize matching words into their roots (e.g., "ecologist" and "ecology" both came from root term "ecol*"
-- write matrices of roots x PDF and matching words x PDF.
+#science_terms_plots.R
+Plots the science terms retrieved from the text search. This file also contains the code to filter the PDFs down to a final list of PDFs to be manually searched for evidence of climate change effects analysis, planning, and monitoring. Only PDFs that contained at least two of the words "Metric", "Indicator", "Transects", "Survey", "Target", "Threshold" and contained at least three instances of at least one of the two words were retained. The filter retained 221 PDFs to be searched manually (see the Manual PDF data pull methods below). The code assigns a random sort order to the PDFs.
 
-### 2b.countTerms_searchMethod.R
-- Search each PDF using the list of terms defined in script 1.
-- An error log (`SEARCH_PDF_errorSummary_DATE.csv` and `SEARCH_PDF_errorSummary_wPAName_DATE.csv`) is written to be able to identify PDFs that did not parse.
-- Create matrix of term x PDF
-- Add attributes, as well as number of words per paper (from 2a), and write results. 
-  - note that if there are PDFs that correspond to multiple protected areas, the results WITH lookup will have duplicate lines.
-  - write both lookup (duplicate lines for PDFs, but unique lines per protected area) and no lookup (1 line per PDF) versions ofthe results (`SEARCH_countTermOcurrencePerPaperNoLookup_DATE.csv` and `SEARCH_countTermOcurrencePerPaper_DATE.csv`)
+#manual_pdf_search_plots.R
+Plots trends in climate change effects analysis, planning, and monitoring using the data pulled manually from the PDFs (data sourced from the file "manual_pdf_data_pull.csv"). 
 
-### 3.countTerms_results.R
-- User specifies which outputs to create graphs and tables for (one of "full" (all matching single terms), "root" (summed root/wildcards), or "search" (multi-word phrases)) 
-- Terms are summarized by park, higher-level grouping, and paper
-- Csv and figures are written showing summaries - e.g., counts of terms in each category by country of origin.
+### Manual PDF data pull
+PDFs were searched manually (following the random sort order) for information pertaining to climate change effects analysis, planning, and monitoring. The data was collated in the file "manual_pdf_data_pull.csv". 181 of the 221 PDFs were searched; the remaining PDFS were not searched due to budget. The "manual_pdf_search_plots.R" script can be re-run as more PDFs are searched. The meaning of the column headings is described below:
 
-## Caveats
-- Some PDFs with bad text encoding do not parse very well, and return unicode characters, nonsense terms, spacing issues, etc. In theory these terms could be fixed and replaced, but in practice that is too manually tedious and computationally intensive.  
-- I have opted to just delete bad terms, since they generally occur very infrequently compared to the correctly-matched terms.
+*sort_order* - random sort order assigned to the PDFs in the script "science_terms_plots.R". PDFs were searched in this order (excluding PDF 219 ["1024_Biscayne_National_Park.pdf"], which was searched prior to generating the random order numbers)
 
+*disc_of_climate_effects_on_park_ecological* - did the PDF discuss any past, present, or future ecological effects of climate change on the park. Not discriminating on level of detail. Yes/No.
+
+*disc_of_climate_effects_on_park_physical* -  did the PDF discuss any past, present, or future physical effects of climate change on the park. Not discriminating on level of detail. Yes/No.
+
+*disc_of_climate_effects_on_park_sociological*	-  did the PDF discuss any past, present, or future sociological effects of climate change on the park. Not discriminating on level of detail. Yes/No.
+
+*climate_objectives*	- did the PDF contain one or more objectives that explicitly mentioned climate change or one of its consequences (e.g., sea level rise). Yes/No.
+
+*climate_strategies_actions*	- did the PDF contain one or more strategies that explicitly mentioned climate change or one of its consequences (e.g., sea level rise). Yes/No.
+
+*detailed_methods*	- did the PDF contain detailed survey/monitoring methods. Yes/No.
+
+*establishes_baseline_conditions*	- did the PDF discuss baseline conditions in the park(s) or state that they would be established in the future. Yes/No/Ongoing ("Ongoing" was entered if the PDF stated that they have already begun baseline monitoring).
+
+*indicators*	- did the PDF list monitoring indicators or state that they would be established in the future. Yes/No/Planned ("Planned" was entered if the PDF stated that they intend to select indicators in the future).
+
+*metrics*	- did the PDF list monitoring metrics for the indicators or state that they would be established in the future. Yes/No/Planned ("Planned" was entered if the PDF stated that they intend to select metrics in the future). Generally, it was assumed that PDFs with stated plans to establish indicators would also decide on metrics. 
+
+*thresholds*	- did the PDF list targets or thresholds for the condition of the indicators or state that they would be established in the future. Yes/No/Planned ("Planned" was entered if the PDF stated that they intend to set targets or thresholds in the future).
+
+*indicat_thresh_metrics_explicitly_linked_to_climate*	- Were the indicators/metrics/thresholds explicitly linked to climate change (i.e., do they directly track climate changes OR are "climate change" or "sea level" mentioned in the same sentence as the indicator/metric/threshold). Yes/No/NA ("NA was entered if there were no indicators listed or planned).
+
+*commitment_to_climate_monitoring* - Did the PDF explicitly commit to monitoring or adapting to climate change. Yes/No.
+
+*references_other_monitoring*	- Did the PDF mention other climate change monitoring or mitigation efforts being completed by agencies other than park staff. Yes/No.
+
+*other_monitoring* - List of agencies/initiatives (other than park staff) working on climate change monitoring or mitigation efforts that the park(s) will work with or reply upon.
+
+Note, the PDFs were not read in their entirety. For each PDF, I searched for the following key terms to take me to the sections relevant to each column: 
+
+* climate change
+* warm
+* sea level
+* objective
+* strategies
+* indicator
+* threshold
+* metric
+* parameter
+* baseline        
