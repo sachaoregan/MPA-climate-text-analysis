@@ -2,7 +2,7 @@ report,sort_order,disc_of_climate_effects_on_park_ecological,disc_of_climate_eff
 2910_BakerIsland_NWR.pdf,1,yes,yes,no,yes,yes,no,planned,yes,planned,yes,yes,yes,yes,NOAA
 1064_Gulf_Islands_National_Seashore.pdf,2,yes,yes,yes,no,yes,no,planned,yes,yes,yes,no,yes,yes,National Park Service Climate Change Response Strategy
 67767_Pitt_water_nature_reserve.pdf,3,yes,yes,no,yes,yes,no,planned,yes,yes,yes,no,yes,no,
-354076_South-east_commonwealth_marine_reserves_network.pdf,4,no,no,no,no,no,no,no,no,no,no,no,yes,yes,private and public research 
+354076_South-east_commonwealth_marine_reserves_network.pdf,4,no,no,no,no,no,no,no,no,no,no,na,yes,yes,private and public research 
 900738_TheDales.pdf,5,yes,yes,no,no,no,no,planned,yes,no,yes,no,yes,no,
 555557008_Glannau_Mon_Cors_Heli_Anglesey Coast_Saltmarsh_SAC.pdf,6,no,yes,no,no,no,no,planned,yes,yes,yes,no,no,no,
 29737_20140421_SLIPSP_ApprovedPlan.pdf,7,no,no,no,no,no,no,planned,no,no,no,na,yes,no,
@@ -64,7 +64,7 @@ Advice_555556917_Anton_Dohrn_Seamount_Combo.pdf,59,no,no,no,no,yes,no,planned,pl
 Advice_555556978_East Rockall Bank_Combo.pdf,61,no,no,no,no,no,no,planned,planned,planned,planned,yes,yes,yes,Scotland’s National Marine Plan
 4513_Golden Gate.pdf,62,yes,yes,yes,yes,yes,no,ongoing,yes,yes,yes,no,yes,yes,NPS Climate Change Action Plan
 166861_Pulu_Keeling_national_park.pdf,63,no,no,no,no,no,no,no,yes,no,yes,no,no,no,
-2867_WLF_2008_CCP.pdf,64,no,no,no,no,no,no,planned,no,no,no,no,no,no,
+2867_WLF_2008_CCP.pdf,64,no,no,no,no,no,no,planned,no,no,no,na,no,no,
 555544114_Aransas.pdf,65,no,no,no,no,yes,no,ongoing,yes,no,yes,no,yes,yes,"Agencies such as the USGS, NOAA, and others; U.S. Fish and Wildlife Service’s Rising to the Challenge: Strategic Plan for Responding to Accelerating Climate
 Change"
 Advice_555583029_South-West Deeps_Combo.pdf,66,no,no,no,no,no,no,no,no,no,no,na,no,no,
@@ -163,8 +163,8 @@ Conservation Cooperative"
 198330_Tubbataha_Reefs_Natural_Park.pdf,155,no,no,no,no,no,yes,ongoing,yes,no,yes,yes,yes,yes,
 555586805_management plan_final.pdf,156,no,no,no,no,yes,no,planned,planned,no,planned,yes,yes,yes,
 315058_Currituck_NWR.pdf,157,yes,yes,no,no,no,no,planned,planned,no,planned,no,no,no,
-369098_Grand_Bay_NWR_CCP.pdf,158,no,no,no,no,no,no,planned,no,no,no,no,no,no,
-555586032_JohnULloyd.pdf,159,no,no,no,no,no,no,planned,no,no,no,no,no,no,
+369098_Grand_Bay_NWR_CCP.pdf,158,no,no,no,no,no,no,planned,no,no,no,na,no,no,
+555586032_JohnULloyd.pdf,159,no,no,no,no,no,no,planned,no,no,no,na,no,no,
 Advice_555535784_Pen_Llyn_ar_Sarnau.pdf,160,yes,yes,no,no,no,no,no,yes,yes,yes,no,no,no,
 2936_Rose Atoll NWR Final CCP_May 2014(1).pdf,161,yes,yes,no,yes,no,no,no,planned,no,planned,yes,yes,yes,Other researchers and agencies
 21107_Bon Secour NWR CCP.pdf,162,no,no,no,no,no,no,ongoing,planned,no,planned,no,no,no,

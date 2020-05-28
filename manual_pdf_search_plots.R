@@ -5,7 +5,8 @@ library(tidyr)
 
 # Read in csv containing data from the manual PDF search. Join on the metadata, publication years, and total words.
 
-pdf_data_pull <- readr::read_csv("manual-pdf-data-pull.csv", na = "na")
+pdf_data_pull <- readr::read_csv("manual-pdf-data-pull.csv", na = c("", "na"))
+pdf_data_pull <- pdf_data_pull %>% filter(!is.na(disc_of_climate_effects_on_park_ecological))
 metadata <- readRDS("data-generated/mpa-metadata.rds")
 metadata <- metadata %>% rename(report = paper)
 
@@ -63,7 +64,7 @@ pdf_data_by_region <-  pdf_data_pull %>% group_by(Grouping, dimension, variable,
 
 
 mypalette <- c("#fb6a4a", "#41b6c4")
-mypalette2 <- c("#bdbdbd", "#fb6a4a", "#a8ddb5", "#41b6c4")
+mypalette2 <- c("#fb6a4a", "#a8ddb5", "#41b6c4")
 
 
 # Plots of the proportion of the MPA plans/PDFs manually searched that review climate effects on the parks, have climate objectives and strategies, and are undertaking or plan to undertake monitoring.
