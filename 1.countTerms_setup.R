@@ -1,6 +1,8 @@
 library(purrr)
+library(dplyr)
 
 dir.create("data-generated", showWarnings = FALSE)
+dir.create("figs", showWarnings = FALSE)
 
 # Load list of reports
 dat <- readxl::read_xlsx("WDPA_English_Combined_2020-03-25_kg.xlsx")
@@ -15,7 +17,7 @@ dat2$PA.Name <- paste(dat2$NAME, dat2$DESIG)
 dat2$paper <- c(as.character(dat2$Saved.File.Name))
 dat2 <- dat2[, !names(dat2) %in% c("Saved.File.Name")]
 
-# split out lines for parks with multiple papers
+# Split out lines for parks with multiple papers
 dat2 <- tidyr::separate_rows(dat2, paper, sep = ";")
 dat2$paper <- gsub("^\\s|\\s$", "", dat2$paper)
 dat2$paper <- paste0(gsub(".pdf$", "", dat2$paper), ".pdf")
@@ -26,7 +28,7 @@ dat2 <- merge(dat2, luCountryGroup, by = "Country", all.x = T)
 length(unique(dat2$PA.Name)) # 1449 parks
 length(unique(dat2$paper[!is.na(dat2$paper)])) # 665
 
-# make lookup table for country and country grouping
+# Make lookup table for country and country grouping
 luPaper <- dat2[, !names(dat2) %in% c("Saved.File.Name", "Found", "Simplified.comments")]
 luPaper <- luPaper[!is.na(luPaper$paper), ]
 luPaper$Grouping <- as.character(luPaper$Grouping)

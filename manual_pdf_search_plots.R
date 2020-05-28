@@ -3,12 +3,14 @@ library(ggsidekick)
 library(dplyr)
 library(tidyr)
 
-pdf_data_pull <- readr::read_csv("manual_pdf_data_pull.csv")
-metadata <- readr::read_csv("mpa_metadata.csv")
+# Read in csv containing data from the manual PDF search. Join on the metadata, publication years, and total words.
+
+pdf_data_pull <- readr::read_csv("manual-pdf-data-pull.csv")
+metadata <- readRDS("data-generated/mpa-metadata.rds")
 metadata <- metadata %>% rename(report = paper)
 
-pub_years <- readRDS("data-generated/MPAplan_pub_year.rds")
-total_words <- readRDS(file = "data-generated/total_words.rds")
+pub_years <- readRDS("data-generated/MPAplan-pub-year.rds")
+total_words <- readRDS(file = "data-generated/total-words.rds")
 
 pdf_data_pull <- left_join(pdf_data_pull, metadata, by = "report")
 pdf_data_pull <- left_join(pdf_data_pull, pub_years, by = "report")
@@ -16,7 +18,7 @@ pdf_data_pull <- left_join(pdf_data_pull, total_words, by = "report")
 
 pdf_data_pull$Grouping <-  recode(pdf_data_pull$Grouping, California_MPAN = "USA", ABNJ = "Antarctica")
 
-pdf_data_pull <- select(pdf_data_pull, -sort_order, -other_monitoring, -X1) %>%
+pdf_data_pull <- select(pdf_data_pull, -sort_order, -other_monitoring) %>%
   filter(disc_of_climate_effects_on_park_ecological != "NA")
 
 pdf_data_pull <- pdf_data_pull %>% pivot_longer(
@@ -64,6 +66,8 @@ mypalette <- c("#fb6a4a", "#41b6c4")
 mypalette2 <- c("#bdbdbd", "#fb6a4a", "#a8ddb5", "#41b6c4")
 
 
+# Plots of the proportion of the MPA plans/PDFs manually searched that review climate effects on the parks, have climate objectives and strategies, and are undertaking or plan to undertake monitoring.
+
 ggplot(filter(pdf_data_by_region, dimension == "Review of climate effects on park"), aes(x = variable, y = proportion, fill = value)) +
   geom_col(position = "stack") +
   facet_wrap(~Grouping, nrow = 2) +
@@ -72,7 +76,7 @@ ggplot(filter(pdf_data_by_region, dimension == "Review of climate effects on par
   labs(x = "", y = "Proportion", title= "Review of climate effects on park") +
   scale_fill_manual(values = mypalette)
 
-ggsave("manual_pdf_search_climate_effects.png", width = 8, height = 4)
+ggsave("manual-pdf-search-climate-effects.png", width = 8, height = 4)
 
 ggplot(filter(pdf_data_by_region, dimension == "Climate objectives and strategies"), aes(x = variable, y = proportion, fill = value)) +
   geom_col(position = "stack") +
@@ -82,7 +86,7 @@ ggplot(filter(pdf_data_by_region, dimension == "Climate objectives and strategie
   labs(x = "", y = "Proportion", title= "Climate change planning") +
   scale_fill_manual(values = mypalette)
 
-ggsave("manual_pdf_search_climate_planning.png", width = 9, height = 4)
+ggsave("manual-pdf-search-climate-planning.png", width = 9, height = 4)
 
 ggplot(filter(pdf_data_by_region, dimension == "Monitoring", variable != "Metrics"), aes(x = variable, y = proportion, fill = value)) +
   geom_col(position = "stack") +
@@ -93,4 +97,4 @@ ggplot(filter(pdf_data_by_region, dimension == "Monitoring", variable != "Metric
   scale_x_discrete(labels = c("Commitment to\nclimate monitoring", "Indicators", "Indicators linked\n to climate change", "Thresholds")) +
   scale_fill_manual(values = mypalette2)
 
-ggsave("manual_pdf_search_climate_monitoring.png", width = 9, height = 4)
+ggsave("manual-pdf-search-climate_monitoring.png", width = 9, height = 4)
