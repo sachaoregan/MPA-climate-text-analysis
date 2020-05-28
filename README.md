@@ -1,7 +1,7 @@
-# Climate change text analysis"
+# Climate change text analysis
 
-*Author*: Sacha O'Regan\
-*Affilitation*: MC Wright and Associates Ltd.
+**Author**: Sacha O'Regan\
+**Affilitation**: MC Wright and Associates Ltd.
 
 ### Required inputs
 1) "WDPA_English_Combined_2020-03-25_kg.xlsx"
@@ -28,12 +28,13 @@ More details at https://github.com/seananderson/ggsidekick
 
 ### Text Search 
 Scripts:
-#1.countTerms_Setup.R 
+
+`1.countTerms_Setup.R`
 This script must be run 1st to generate the .rds files that feed into script 2. Does not need to be run again. The .rds files include "list-of-pdfs.rds", which lists all PDF files and "mpa-metadata.rds", which contains the metadata associated with each PDF (excluding year of publication).  
 
 Two PDFs were found to have bad OCR. This script excludes them from the text analysis entirely.
 
-#2.countTerms_Search.R
+`2.countTerms_Search.R`
 This script contains the text search code. First, the code searches all PDFs for one of five climate change related terms: "climate change", "global warming", "extreme events", "natural variability", "climate variability". PDFs that contain at least one of these terms are then searched for the component words provided in "searchcomponents.csv" (e.g., abundance, diversity, recreation, etc.). PDFs that contain at least one of the climate change terms are also searched for the science terms provided in "search-scienceterms.csv" (e.g., monitor, metric). 
 
 This script also counts the total words in each PDF and obtains the publication year for each PDF. The year search code works by pulling out the first 4-number string in the PDF text. If the first 4-number string is preceded by the word "act", "regulation", "regulations", it takes the second 4-number string to be the year of publication. The reason for this is that the first year on some PDF title pages is the year of enactment of legislation, not the publication year. 
@@ -44,7 +45,8 @@ This script must be run before running the plotting scripts.
 
 ### Plotting
 Scripts:
-#climate_change_term_plots.R
+
+`climate_change_term_plots.R`
 Plots trends in the five climate change related terms ("climate change", "global warming", "extreme events", "natural variability", "climate variability") by geographical region (aka "Grouping" in the code) and year of publication.
 
 Plots year of publication for all PDFs (with and without climate change related terms).
