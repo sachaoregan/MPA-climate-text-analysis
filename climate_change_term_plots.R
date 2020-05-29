@@ -12,7 +12,7 @@ climate_change_terms <- left_join(climate_change_terms, total_words, by = "repor
 climate_change_terms <- mutate(climate_change_terms, term = stringr::str_to_sentence(term))
 
 climate_change_terms$Grouping <-  recode(climate_change_terms$Grouping, California_MPAN = "USA", ABNJ = "Antarctica")
-write.csv(climate_change_terms, file = "climate-change-terms-w-pub-years-rpt.csv")
+write.csv(climate_change_terms, file = "data-generated/climate-change-terms-w-pub-years-rpt.csv")
 
 climate_change_terms$binned_year <-
   seq(1970, 2020, 5)[findInterval(as.numeric(climate_change_terms$first_yr),
@@ -32,8 +32,12 @@ climate_change_terms_yr <- climate_change_terms %>%
   mutate(count = ifelse(!is.na(count), count, 0)) %>%
   mutate(freq = count/total_words * 10000)
 
-climate_change_terms$first_yr <- climate_change_terms$binned_year  #Comment on or off for binning
 climate_change_terms_yr_bygroup <- climate_change_terms %>% filter(Grouping != "Antarctica") %>%
+  group_by(Grouping, first_yr, term) %>%
+  summarize(tot_count = sum(count), tot_words = sum(total_words), freq = tot_count/tot_words * 10000)
+
+climate_change_terms$first_yr <- climate_change_terms$binned_year  #Turns on binning
+climate_change_terms_yr_bygroup_binned <- climate_change_terms %>% filter(Grouping != "Antarctica") %>%
   group_by(Grouping, first_yr, term) %>%
   summarize(tot_count = sum(count), tot_words = sum(total_words), freq = tot_count/tot_words * 10000)
 
@@ -68,7 +72,7 @@ ggsave("figs/climate-terms-time.png", width = 8, height = 4)
 
 # Plot of the frequency of the individual climate change terms per 10,000 words in MPA plans by region and MPA plan publication year. Years are binned to reduce noise in the trend lines.
 
-ggplot(climate_change_terms_yr_bygroup, aes(x = as.numeric(first_yr), y = freq, colour = Grouping)) +
+ggplot(climate_change_terms_yr_bygroup_binned, aes(x = as.numeric(first_yr), y = freq, colour = Grouping)) +
   geom_line(aes(colour = Grouping)) +
   facet_wrap(~term, nrow = 2, scales = "free_y") +
   theme_sleek() +
@@ -81,7 +85,7 @@ ggsave("figs/climate-terms-time-bygroup-binned.png", width = 8, height = 4)
 
 # Plot of the frequency of the individual climate change terms per 10,000 words in MPA plans by region and MPA plan publication year. Years are binned to reduce noise in the trend lines. Same data, different view from previous plot ("climate-terms-time-bygroup-binned.png").
 
-ggplot(climate_change_terms_yr_bygroup, aes(x = as.numeric(first_yr), y = freq)) +
+ggplot(climate_change_terms_yr_bygroup_binned, aes(x = as.numeric(first_yr), y = freq)) +
   geom_line() +
   facet_grid(term~Grouping, scales = "free_y") +
   theme_sleek() +
@@ -126,7 +130,7 @@ ggplot(climate_change_terms_yr_globe, aes(x = as.numeric(first_yr), y = freq)) +
 ggsave("figs/climate-terms-time-binned-globe.png", width = 10, height = 5)
 
 
-# Plot of the frequency of the the term "climate change" per 10,000 words in MPA plans by region and MPA plan publication year. Run this next plot with no binning so run lines 5 to 39 again *skipping line 35*, which bins the years, and then run this plot. Filtered out Asia since "climate change" only appeared in one year (one data point).
+# Plot of the frequency of the the term "climate change" per 10,000 words in MPA plans by region and MPA plan publication year. Note, years are not binned.
 ggplot(filter(climate_change_terms_yr_bygroup, term == "Climate change", Grouping != "Asia"), aes(x = as.numeric(first_yr), y = freq, colour = Grouping)) +
   geom_line(aes(colour = Grouping)) +
   facet_wrap(~Grouping, nrow = 2, scales = "free_y") +

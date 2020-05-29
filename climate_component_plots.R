@@ -10,7 +10,7 @@ components_w_meta <- left_join(components_w_meta, pub_years, by = "report")
 components_w_meta <- mutate(components_w_meta, root_word = stringr::str_to_sentence(root_word),  dimension = stringr::str_to_sentence(dimension))
 
 components_w_meta$Grouping <-  recode(components_w_meta$Grouping, California_MPAN = "USA", ABNJ = "Antarctica")
-write.csv(components_w_meta, file = "components-w-meta-w-pub-years-rpt.csv")
+write.csv(components_w_meta, file = "data-generated/components-w-meta-w-pub-years-rpt.csv")
 
 components_w_meta$binned_year <-
   seq(1970, 2020, 5)[findInterval(as.numeric(components_w_meta$first_yr),

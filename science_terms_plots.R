@@ -10,7 +10,7 @@ scienceterms_w_meta <- left_join(scienceterms_w_meta, pub_years, by = "report")
 scienceterms_w_meta <- mutate(scienceterms_w_meta, term = stringr::str_to_sentence(term))
 
 scienceterms_w_meta$Grouping <-  recode(scienceterms_w_meta$Grouping, California_MPAN = "USA", ABNJ = "Antarctica")
-write.csv(scienceterms_w_meta, file = "scienceterms-w-meta-w-pub-years-rpt.csv")
+write.csv(scienceterms_w_meta, file = "data-generated/scienceterms-w-meta-w-pub-years-rpt.csv")
 
 scienceterms_w_meta$binned_year <-
   seq(1970, 2020, 5)[findInterval(as.numeric(scienceterms_w_meta$first_yr),
@@ -63,5 +63,5 @@ for_manual_search <- scienceterms_w_meta %>% filter(term %in% c("Metric", "Indic
 set.seed(6)
 manual_pdf_search <- tibble(report = sample(unique(for_manual_search$report), size = length(unique(for_manual_search$report))))
 
-#readr::write_csv(manual_pdf_search, "manual-pdf-search.csv") #Unnecessary to run again for the current analysis as this was just used to generate the empty csv and sort order for the PDFs.
+#readr::write_csv(manual_pdf_search, "data-generated/manual-pdf-search.csv") #Unnecessary to run again for the current analysis as this was just used to generate the empty csv and sort order for the PDFs.
 

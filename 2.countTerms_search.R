@@ -6,7 +6,7 @@ dir.create("data-generated/pdftools", showWarnings = FALSE)
 outdir <- "data-generated"
 dir <- "ManagementPlans_R"
 
-# Read in list of 650 PDFs and create a clean text corpus
+# Read in list of 650 PDFs and create a clean text corpus. Creates an rds file so that this is only done once.
 
 list.of.pdfs <- readRDS("data-generated/list-of-pdfs.rds")
 
