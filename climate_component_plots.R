@@ -21,10 +21,7 @@ components_w_meta <- components_w_meta %>%
 
 tot_term_count <- components_w_meta %>%
   group_by(dimension, root_word) %>%
-  summarise(
-    tot.count = sum(count),
-    mean.freq = mean(freq)
-    )
+  summarise(mean.freq = mean(freq))
 
 components_by_region <- components_w_meta %>%
   mutate(root_word = stringr::str_to_sentence(root_word), dimension = stringr::str_to_sentence(dimension)) %>%

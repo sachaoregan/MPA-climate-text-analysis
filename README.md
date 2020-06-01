@@ -24,11 +24,11 @@
 # install.packages("devtools")
 devtools::install_github("seananderson/ggsidekick")
 ```
+## Setup
+To begin, open `MPA-climate-text-analysis.Rproj`. Then, either open `runall.R` to source all scripts in sequence OR open and run the text search and plotting scripts individually, as described in the following sections. 
 
 ## Text Search 
 ### Scripts:
-
-To begin, open `MPA-climate-text-analysis.Rproj`. Then, run the two scripts below. 
 
 `1.countTerms_Setup.R`
 This script must be run 1st to generate the data and figure output directories and the .rds files that feed into script 2. The .rds files it creates are `list-of-pdfs.rds`, which lists all PDF files, and `mpa-metadata.rds`, which contains the metadata associated with each PDF (excluding publication year). Does not need to be run again after the directories and .rds files are generated. 
