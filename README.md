@@ -6,17 +6,25 @@
 ## Required inputs
 
 1. `WDPA_English_Combined_2020-03-25_kg.xlsx`
-2. `luCountryGroup.csv`
+2. `luCountryGroup.csv` 
 3. `ManagementPlans_R` folder containing PDF documents
-4. `searchcomponents.csv` containing climate components
-5. `search-scienceterms.csv` containing science terms
+4. `SearchTerms/searchcomponents.csv` containing climate components
+5. `SearchTerms/search-scienceterms.csv` containing science terms
 
 ## Required packages
 
 * ggplot2
+* readr
+* readxl
+* forcats
 * tidyr
+* plyr
 * dplyr
+* pdftools
 * purrr
+* furrr
+* stringi
+* stringr
 * future
 * ggsidekick; to install:
 
