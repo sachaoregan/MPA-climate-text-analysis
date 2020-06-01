@@ -1,0 +1,11 @@
+report,manual_year_check,page,reason,decision
+900736_Elizabeth_and_Middleton_reefs_national_nature_reserve.pdf,2006,1,bad ocr,excluded from text analysis
+101534_BoundaryBay_WMA.pdf,1993,1,bad ocr,excluded from text analysis
+65371_Rathtrevor Beach_MP.pdf,1987,1,date format yy,excluded from year figures
+555624224_Molinier-Beausejour.pdf,2014,1,date format yy,excluded from year figures
+555556766_Bikini Atoll Conservation Management Plan Jan 21 2010.pdf,2010,1,should have found,excluded from year figures
+555557183_Strangford Lough_new.pdf,NA,,no date,excluded from year figures
+68276_The_Wash_and_North_Norfolk_Coast.pdf,2001,8,outside character limits,excluded from year figures
+555544114_Aransas.pdf,NA,,no date,excluded from year figures
+555586763_BigBoggy_Texas Mid_Coast.pdf,NA,,no date,excluded from year figures
+2941_DonEdwardsSFB_NWR.pdf,NA,,no date,excluded from year figures
