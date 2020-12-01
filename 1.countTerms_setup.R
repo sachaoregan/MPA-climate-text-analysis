@@ -69,7 +69,7 @@ luPaper <- luPaper %>% distinct(paper, Grouping, Country) %>%
   filter(!paper %in% c("101534_BoundaryBay_WMA.pdf", "900736_Elizabeth_and_Middleton_reefs_national_nature_reserve.pdf")) #Excluding 2 PDFs with bad OCR
 
 saveRDS(luPaper, file = "data-generated/mpa-metadata.rds")
-#write.csv(luPaper, file = "data-generated/mpa-metadata.csv") # If you want, not required
+write.csv(luPaper, file = "data-generated/mpa-metadata.csv") # If you want the csv, not required
 
 todrop <- c("ManagementPlans_R/101534_BoundaryBay_WMA.pdf", "ManagementPlans_R/900736_Elizabeth_and_Middleton_reefs_national_nature_reserve.pdf")
 list.of.pdfs <- purrr::map(list.of.pdfs, ~ discard(.x, ~ .x %in% todrop)) %>% purrr::compact() #Excluding 2 PDFs with bad OCR

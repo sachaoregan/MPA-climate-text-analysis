@@ -6,7 +6,7 @@ dir.create("data-generated/pdftools", showWarnings = FALSE)
 outdir <- "data-generated"
 dir <- "ManagementPlans_R"
 
-# Read in list of 650 PDFs and create a clean text corpus. Creates an rds file so that this is only done once.
+# Read in list of 646 PDFs and create a clean text corpus. Creates an rds file so that this is only done once.
 
 list.of.pdfs <- readRDS("data-generated/list-of-pdfs.rds")
 
@@ -56,18 +56,40 @@ yrs <- map_dfr(my_corpus, get_years, .id = "report")
 
 get_years_act <- function(.x) {
   .x <- stringr::str_sub(.x, 1, 10000)
-  yr_pattern <- "(act|regulation|regulations) (19[7-9]+[0-9]+\\b|\\b20[0-2]+[0-9]+\\b)"
+  yr_pattern <- "(act|act of|regulation|regulations|dti) (19[7-9]+[0-9]+\\b|\\b20[0-2]+[0-9]+\\b)"
   .yrs <- stringr::str_extract_all(.x, pattern = yr_pattern)
   pos <- stringr::str_locate_all(.x, pattern = yr_pattern)
   tibble(act_years = .yrs[[1]], position = pos[[1]][, "end"])
 }
 act_yrs <- map_dfr(my_corpus, get_years_act, .id = "report")
 
-first_yrs <- anti_join(yrs, act_yrs) %>%
-  group_by(report) %>%
-  summarise(first_yr = years[1])
+no_act_yrs <- anti_join(yrs, act_yrs)
 
-saveRDS(first_yrs, file = "data-generated/MPAplan-pub-year.rds")
+flagged <- no_act_yrs %>% group_by(report) %>% arrange(position) %>%
+  slice_head(n = 2) %>%
+  mutate(n = n()) %>%
+  filter(n == 2) %>%
+  filter((position[2] - position[1]) < 200) %>%
+  mutate(year_diff = (abs(as.numeric(years[2]) - as.numeric(years[1])))) %>%
+  mutate(year2 = years[2]) %>%
+  filter(year_diff >= 3) %>%
+  slice_head(n = 1) %>%
+  ungroup() %>% select(-n) %>%
+  arrange(-year_diff)
+flagged
+#write.csv(flagged, file = "data-generated/MPAplan-pub-year-flagged.csv")
+
+first_yrs <- no_act_yrs %>% right_join(tibble(report = names(my_corpus))) %>%
+  group_by(report) %>%
+  summarise(first_yrs = years[1])
+
+manually_corrected_yrs <- read.csv("manually_corrected_yrs.csv")
+pub_yrs <- merge(first_yrs, manually_corrected_yrs, by = "report", all = TRUE) %>%
+  mutate(pub_yr = ifelse(!is.na(corrected_yr), corrected_yr, first_yrs)) %>%
+  select(-first_yrs, -corrected_yr)
+
+saveRDS(pub_yrs, file = "data-generated/MPAplan-pub-year.rds")
+write.csv(pub_yrs, file = "data-generated/MPAplan-pub-year.csv")
 
 # Get the total number of words in each PDF
 
@@ -104,7 +126,7 @@ metadata <- metadata %>% rename(report = paper)
 climate_terms_w_meta <- left_join(metadata, out, by = "report")
 saveRDS(climate_terms_w_meta, file = "data-generated/climate-search-results.rds")
 
-# Keep only those 289 PDFs that contained at least one of the climate change terms and search these for the climate components
+# Keep only those 288 PDFs that contained at least one of the climate change terms and search these for the climate components
 
 tokeep <- group_by(out, report) %>%
   summarise(keep_this = sum(count) > 0)
@@ -133,7 +155,7 @@ components_w_meta <- left_join(out, metadata)
 
 saveRDS(components_w_meta, file = "data-generated/component-search-results-w-meta-rpt.rds")
 
-# Search those 289 PDFs that contained at least one of the climate change terms and search these for the science terms
+# Search those 288 PDFs that contained at least one of the climate change terms and search these for the science terms
 
 scienceterms <- readr::read_csv("SearchTerms/search-scienceterms.csv")
 vec <- scienceterms$scienceterm
