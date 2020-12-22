@@ -6,7 +6,7 @@ dir.create("data-generated/pdftools", showWarnings = FALSE)
 outdir <- "data-generated"
 dir <- "ManagementPlans_R"
 
-# Read in list of 646 PDFs and create a clean text corpus. Creates an rds file so that this is only done once.
+# Read in list of 647 PDFs and create a clean text corpus. Creates an rds file so that this is only done once.
 
 list.of.pdfs <- readRDS("data-generated/list-of-pdfs.rds")
 
@@ -113,10 +113,23 @@ get_count <- function(.x, .s) {
 # Search corpus for the climate change terms
 
 vec <- c("climate change", "global warming", "extreme events",
-  "natural variability", "climate variability")
+  "natural variability", "climate variability", "climate change canada")
 
 out <- furrr::future_map_dfr(my_corpus, get_count, .s = vec,
   .id = "report", .progress = TRUE)
+
+eccc <- filter(out, term == "climate change canada") %>%
+  rename(eccc = count) %>%
+  select(-term)
+
+out <- left_join(out, eccc)
+out <- filter(out, term != "climate change canada") %>%
+  mutate(count = if_else(term == "climate change", count - eccc, count))
+
+out_pdf_count <- out %>% group_by(report) %>% # Number of PDFs with one climate change term
+  summarise(tot_count = sum(count)) %>%
+ filter(tot_count > 0)
+length(unique(out_pdf_count$report))
 
 # Join on metadata for each PDF to the results of the climate change term search and create RDS for future plotting and analysis
 
@@ -126,7 +139,7 @@ metadata <- metadata %>% rename(report = paper)
 climate_terms_w_meta <- left_join(metadata, out, by = "report")
 saveRDS(climate_terms_w_meta, file = "data-generated/climate-search-results.rds")
 
-# Keep only those 288 PDFs that contained at least one of the climate change terms and search these for the climate components
+# Keep only those 289 PDFs that contained at least one of the climate change terms and search these for the climate components
 
 tokeep <- group_by(out, report) %>%
   summarise(keep_this = sum(count) > 0)

@@ -13,7 +13,7 @@ scienceterms_w_meta$Grouping <-  recode(scienceterms_w_meta$Grouping, California
 write.csv(scienceterms_w_meta, file = "data-generated/scienceterms-w-meta-w-pub-years-rpt.csv")
 
 scienceterms_w_meta$binned_year <-
-  seq(1970, 2020, 5)[findInterval(as.numeric(scienceterms_w_meta$first_yr),
+  seq(1970, 2020, 5)[findInterval(as.numeric(scienceterms_w_meta$pub_yr),
     vec = seq(1970, 2020, 5))]
 
 scienceterms_w_meta <- scienceterms_w_meta %>%

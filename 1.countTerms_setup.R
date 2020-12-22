@@ -25,9 +25,9 @@ names(dat2)[names(dat2) == "Parent.Nation"] <- c("Country")
 dat2$paper[dat2$paper == "NA.pdf"] <- NA
 dat2 <- merge(dat2, luCountryGroup, by = "Country", all.x = T)
 
-length(unique(dat2$PA.Name)) # 1449 parks
+length(unique(dat2$PA.Name)) # 1450 parks
 dat2 <- dat2 %>% filter(paper != "555557183_Strangford Lough.pdf") # exclude old plan for this mpa
-length(unique(dat2$paper[!is.na(dat2$paper)])) # 648
+length(unique(dat2$paper[!is.na(dat2$paper)])) # 649
 
 # Make lookup table for country and country grouping
 luPaper <- dat2[, !names(dat2) %in% c("Saved.File.Name", "Found", "Simplified.comments")]
@@ -35,10 +35,10 @@ luPaper <- luPaper[!is.na(luPaper$paper), ]
 luPaper$Grouping <- as.character(luPaper$Grouping)
 luPaper$Grouping[luPaper$paper == "California_MPAs.pdf"] <- "California_MPAN"
 luPaper <- luPaper[!duplicated(luPaper), ]
-length(unique(luPaper$paper)) # 648 unique papers
+length(unique(luPaper$paper)) # 649 unique papers
 
 parkPaperSummary <- plyr::ddply(luPaper, c("paper"), plyr::summarize, nParks = length(unique(PA.Name)))
-length(unique(parkPaperSummary$paper)) # 648 papers
+length(unique(parkPaperSummary$paper)) # 649 papers
 nrow(parkPaperSummary[parkPaperSummary$nParks > 1, ]) # 83 papers refer to more than 1 park
 
 paperParkSummary <- plyr::ddply(luPaper, c("PA.Name"), plyr::summarize, nPapers = length(unique(paper)))
