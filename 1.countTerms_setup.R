@@ -42,7 +42,7 @@ length(unique(parkPaperSummary$paper)) # 649 papers
 nrow(parkPaperSummary[parkPaperSummary$nParks > 1, ]) # 83 papers refer to more than 1 park
 
 paperParkSummary <- plyr::ddply(luPaper, c("PA.Name"), plyr::summarize, nPapers = length(unique(paper)))
-length(unique(paperParkSummary$PA.Name)) # 924 parks
+length(unique(paperParkSummary$PA.Name)) # 925 parks
 nrow(paperParkSummary[paperParkSummary$nPapers > 1, ]) # 0 parks have more than 1 paper
 
 parkPaperByCountry <- plyr::ddply(luPaper, c("Country"), plyr::summarize, nParks = length(unique(PA.Name)), nPapers = length(unique(paper)))

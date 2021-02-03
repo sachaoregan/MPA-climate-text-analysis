@@ -80,7 +80,7 @@ ggplot(filter(pdf_data_by_region, dimension == "Review of climate effects on par
   labs(x = "", y = "Proportion", title= "Review of climate effects on park") +
   scale_fill_manual(values = mypalette)
 
-ggsave("figs/manual-pdf-search-climate-effects.png", width = 8, height = 4)
+ggsave("figs/manual-pdf-search-climate-effects-v2.png", width = 8, height = 4)
 
 ggplot(filter(pdf_data_by_region, dimension == "Climate objectives and strategies"), aes(x = variable, y = proportion, fill = value)) +
   geom_col(position = "stack") +
@@ -90,7 +90,7 @@ ggplot(filter(pdf_data_by_region, dimension == "Climate objectives and strategie
   labs(x = "", y = "Proportion", title= "Climate change planning") +
   scale_fill_manual(values = mypalette)
 
-ggsave("figs/manual-pdf-search-climate-planning.png", width = 6.5, height = 3.5)
+ggsave("figs/manual-pdf-search-climate-planning-v2.png", width = 6.5, height = 3.5)
 
 pdf_data_pull %>% group_by(Grouping, dimension, variable, value) %>%
   tally() %>%
@@ -106,7 +106,7 @@ ggplot(filter(pdf_data_by_region, dimension == "Monitoring", variable != "Metric
   scale_x_discrete(labels = c("Commitment to\nclimate monitoring", "Indicators", "Indicators linked\n to climate change", "Targets", "Thresholds")) +
   scale_fill_manual(values = mypalette2)
 
-ggsave("figs/manual-pdf-search-climate_monitoring.png", width = 11, height = 4)
+ggsave("figs/manual-pdf-search-climate-monitoring-v2.png", width = 11, height = 4)
 
 # Plot of the climate change robustness indices across regions.
 
@@ -127,10 +127,11 @@ d_scored <- d %>%
 d_scored$total <- apply(d_scored[-c(1:3)], 1, sum, na.rm = TRUE)
 
 pdf_scored <- left_join(d_scored, metadata, by = "report")
+pdf_scored <- left_join(pdf_scored, pub_years, by = "report")
 pdf_scored$Grouping <-  recode(pdf_scored$Grouping, California_MPAN = "USA", ABNJ = "Antarctica")
-write.csv(pdf_scored, "manual_pdf_search_cc_robustness_index.csv")
+write.csv(pdf_scored, "manual_pdf_search_cc_robustness_index_v2.csv")
 
-xx <- group_by(pdf_scored, Grouping, total) %>% summarise(n = n(), .groups = "drop_last") %>%
+xx <- group_by(pdf_scored, Grouping, pub_yr, total) %>% summarise(n = n(), .groups = "drop_last") %>%
   arrange(total)
 #all <- expand_grid(total = seq(0, max(y$total)), Grouping = unique(d$Grouping))
 #xx <- left_join(all, xx) %>%
@@ -150,6 +151,17 @@ ggplot(xx, aes(x = total, y = n)) +
   scale_x_continuous(breaks = seq(0, 24, 4)) +
   labs(x = "Climate change robustness score", y = "Number of management plans")
 
-ggsave("figs/climate_robustness_index.png", width = 11, height = 4)
+ggsave("figs/climate_robustness_index_v2.png", width = 10, height = 4)
 
 
+xx_greater_than_8_plans <- xx %>% filter(Grouping %in% c("Oceania", "Canada", "UK", "USA"))
+
+ggplot(xx_greater_than_8_plans, aes(x = as.numeric(pub_yr), y = total)) +
+geom_point() +
+  facet_wrap(~Grouping,  nrow = 2)
+
+ggsave("figs/climate_robustness_index_over_time_v2.png", width = 11, height = 4)
+
+plans_with_park_ids <- readRDS("data-generated/plans_with_mpa_ids_for_map.rds") %>%
+  select(report, NAME, DESIG, WDPAID)
+pdf_scored_w_park_desig_and_yr <- left_join(pdf_scored, plans_with_park_ids, by = "report")

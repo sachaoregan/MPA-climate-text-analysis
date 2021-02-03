@@ -1,228 +1,228 @@
-report,jncc,sort_order,disc_of_climate_effects_on_park_ecological,disc_of_climate_effects_on_park_physical,disc_of_climate_effects_on_park_sociological,climate_objectives,climate_strategies_actions,detailed_methods,establishes_baseline_conditions,indicators,metrics,thresholds,targets,indicat_thresh_metrics_explicitly_linked_to_climate,commitment_to_climate_monitoring,references_other_monitoring,other_monitoring
-2910_BakerIsland_NWR.pdf,,1,yes,yes,no,yes,yes,no,planned,yes,yes,no,some,yes,yes,yes,NOAA
-1064_Gulf_Islands_National_Seashore.pdf,,2,yes,yes,yes,no,yes,no,planned,yes,yes,yes,no,no,yes,yes,National Park Service Climate Change Response Strategy
-67767_Pitt_water_nature_reserve.pdf,,3,yes,yes,no,yes,yes,no,planned,yes,yes,yes,yes,no,yes,no,
-354076_South-east_commonwealth_marine_reserves_network.pdf,,4,no,no,no,no,no,no,no,no,no,no,no,na,yes,yes,private and public research 
-900738_TheDales.pdf,,5,yes,yes,no,no,no,no,planned,yes,yes,no,no,no,yes,no,
-555557008_Glannau_Mon_Cors_Heli_Anglesey Coast_Saltmarsh_SAC.pdf,,6,no,yes,no,no,no,no,planned,yes,yes,yes,yes,no,no,no,
-29737_20140421_SLIPSP_ApprovedPlan.pdf,,7,no,no,no,no,no,no,planned,no,no,no,no,na,yes,no,
-312187_FlowerGarden.pdf,,8,no,no,no,yes,no,no,planned,no,no,no,no,na,yes,no,
-555586741_MonteraryBay_NMS.pdf,,9,no,no,no,no,no,no,planned,no,no,no,no,na,yes,yes,
-555586784_Monitor.pdf,,10,no,no,no,no,no,no,planned,no,no,no,no,na,yes,no,
-Advice_555556938_BraemarPockmarks_Combo.pdf,yes,11,no,no,no,no,no,no,yes,yes,yes,no,yes,no,no,no,
-555586745_Estero-Bay-AP-Management-Plan.pdf,,12,no,yes,no,no,no,no,no,no,no,no,no,na,no,yes,Charlotte Harbor National Estuary Program
-555556933_Berwickshire_and_North_Northumberland_Coast.pdf,,13,no,no,no,no,no,no,planned,planned,planned,no,no,yes,yes,yes,UK MarClim project
-555624212_Saba_Bank.pdf,,14,yes,yes,no,no,no,no,yes,yes,no,no,no,no,yes,yes,Global Coral Reef Monitoring Network
-13857_Supawna Meadows.pdf,,15,yes,yes,no,no,no,no,planned,planned,planned,no,no,yes,yes,no,
-555586803_Narrow River_SAMP_new.pdf,,16,yes,yes,yes,no,no,no,yes,no,no,no,no,na,yes,no,
-555586881_Delaware NERR_Mgmt Plan.pdf,,17,yes,yes,no,yes,yes,no,planned,planned,planned,no,no,yes,yes,yes,state and federal research
-555586811_SouthSlough.pdf,,18,no,no,no,yes,yes,no,planned,yes,yes,no,no,yes,yes,yes,NOAA; Pacific Northwest Blue Carbon Working Group
-68308_Izembek.pdf,,19,no,no,no,no,no,no,no,no,no,no,no,na,no,no,
-44449_BigBranchMarsh_ConservationPlan.pdf,,20,no,no,no,no,no,no,planned,planned,planned,no,no,no,no,no,
-305214_Gully_MPA.pdf,,21,no,no,no,no,no,no,planned,planned,planned,no,no,no,yes,no,
-18716_BirdIsland.pdf,,22,no,no,no,no,no,no,planned,planned,planned,no,planned,no,no,no,
-555586813_GrandBayNatEstuarineResearchReserve.pdf,,23,no,yes,no,yes,yes,no,planned,planned,planned,no,no,yes,yes,yes,"NERRS Climate Change Initiative, NERRS Sentinel Sites, NOAA Sentinel Sites, Ecological Effects of Sea Level Rise in the Northern Gulf of Mexico and a Coastal Training Program Initiative for Resilient Communities"
-555586810_Padilla Bay.pdf,,24,yes,yes,no,yes,yes,no,ongoing,yes,yes,no,no,yes,yes,yes,"Graduate Research Fellowship Program, Cooperative Institute for Coastal and Estuarine
+report,sort_order,disc_of_climate_effects_on_park_ecological,disc_of_climate_effects_on_park_physical,disc_of_climate_effects_on_park_sociological,climate_objectives,climate_strategies_actions,detailed_methods,establishes_baseline_conditions,indicators,metrics,thresholds,targets,indicat_thresh_metrics_explicitly_linked_to_climate,commitment_to_climate_monitoring,references_other_monitoring,other_monitoring
+2910_BakerIsland_NWR.pdf,1,yes,yes,no,yes,yes,no,planned,yes,yes,no,some,yes,yes,yes,NOAA
+1064_Gulf_Islands_National_Seashore.pdf,2,yes,yes,yes,no,yes,no,planned,yes,yes,yes,no,no,yes,yes,National Park Service Climate Change Response Strategy
+67767_Pitt_water_nature_reserve.pdf,3,yes,yes,no,yes,yes,no,planned,yes,yes,yes,yes,no,yes,no,
+354076_South-east_commonwealth_marine_reserves_network.pdf,4,no,no,no,no,no,no,no,no,no,no,no,na,yes,yes,private and public research 
+900738_TheDales.pdf,5,yes,yes,no,no,no,no,planned,yes,yes,planned,yes,no,yes,no,
+555557008_Glannau_Mon_Cors_Heli_Anglesey Coast_Saltmarsh_SAC.pdf,6,no,yes,no,no,no,no,planned,yes,yes,some,yes,no,no,no,
+29737_20140421_SLIPSP_ApprovedPlan.pdf,7,no,no,no,no,no,no,planned,yes,planned,no,some,no,yes,no,
+312187_FlowerGarden.pdf,8,no,no,no,yes,no,no,planned,no,no,no,no,na,yes,no,
+555586741_MonteraryBay_NMS.pdf,9,no,no,no,no,no,no,planned,no,no,no,no,na,yes,yes,
+555586784_Monitor.pdf,10,no,no,no,no,no,no,planned,no,no,no,no,na,yes,no,
+Advice_555556938_BraemarPockmarks_Combo.pdf,11,no,no,no,no,no,no,yes,yes,no,no,yes,no,no,no,
+555586745_Estero-Bay-AP-Management-Plan.pdf,12,no,yes,no,no,no,no,no,yes,planned,no,no,no,no,yes,Charlotte Harbor National Estuary Program
+555556933_Berwickshire_and_North_Northumberland_Coast.pdf,13,no,no,no,no,no,no,planned,planned,planned,no,no,yes,yes,yes,UK MarClim project
+555624212_Saba_Bank.pdf,14,yes,yes,no,no,no,no,yes,yes,no,no,no,no,yes,yes,Global Coral Reef Monitoring Network
+13857_Supawna Meadows.pdf,15,yes,yes,no,no,no,no,planned,yes,planned,no,some,yes,yes,no,
+555586803_Narrow River_SAMP_new.pdf,16,yes,yes,yes,no,no,no,yes,no,no,no,no,na,yes,no,
+555586881_Delaware NERR_Mgmt Plan.pdf,17,yes,yes,no,yes,yes,no,planned,yes,planned,no,no,yes,yes,yes,state and federal research
+555586811_SouthSlough.pdf,18,no,no,no,yes,yes,no,planned,yes,yes,no,no,yes,yes,yes,NOAA; Pacific Northwest Blue Carbon Working Group
+68308_Izembek.pdf,19,no,no,no,no,no,no,ongoing,planned,no,no,no,yes,no,no,
+44449_BigBranchMarsh_ConservationPlan.pdf,20,no,no,no,no,no,no,planned,yes,planned,no,no,no,no,no,
+305214_Gully_MPA.pdf,21,no,no,no,no,no,no,planned,planned,planned,no,no,no,yes,no,
+18716_BirdIsland.pdf,22,no,no,no,no,no,no,planned,yes,planned,no,planned,no,no,no,
+555586813_GrandBayNatEstuarineResearchReserve.pdf,23,no,yes,no,yes,yes,no,ongoing,yes,planned,no,no,yes,yes,yes,"NERRS Climate Change Initiative, NERRS Sentinel Sites, NOAA Sentinel Sites, Ecological Effects of Sea Level Rise in the Northern Gulf of Mexico and a Coastal Training Program Initiative for Resilient Communities"
+555586810_Padilla Bay.pdf,24,yes,yes,no,yes,yes,no,ongoing,yes,yes,no,no,yes,yes,yes,"Graduate Research Fellowship Program, Cooperative Institute for Coastal and Estuarine
 Environmental Technology (CICEET)"
-312072_Cherry Point.pdf,,25,yes,yes,no,yes,no,no,planned,yes,yes,no,no,yes,yes,yes,"Climate Impact Group of the University of Washington, Whatcom County, and others"
-2891_St Marks NWR CCP.pdf,,26,no,no,no,no,no,no,planned,planned,planned,no,no,no,no,no,
-122900_Florida Keys2.pdf,,27,no,no,no,no,yes,no,planned,planned,planned,no,no,yes,yes,yes,"NOAA will be the responsible agency. The EPA, FWS, and FDEP"
-305219_Endeavour_MPA.pdf,,28,no,no,no,no,no,no,planned,planned,planned,planned,no,no,no,no,
-555586879_WaquoitBay_NERR.pdf,,29,no,no,no,yes,yes,no,planned,planned,planned,no,no,yes,yes,no,
-3333354_Mission_Aransas.pdf,,30,yes,yes,no,no,yes,no,planned,planned,planned,no,no,yes,yes,yes,NOAA
-555586876_JacquesCousteau_NERR.pdf,,31,no,no,no,yes,yes,no,ongoing,planned,planned,no,no,no,yes,yes,National Estuarine Research Reserve System research and monitoring plan
-1076_Fire_Island_National_Seashore.pdf,,32,yes,yes,yes,yes,yes,yes,ongoing,yes,yes,no,no,no,yes,yes,NPS Climate Change Response Strategy
-Advice_555588156_Fulmar_Combo.pdf,,33,no,no,no,no,no,no,yes,no,no,no,no,na,no,no,
-26622_HosniesSpring.pdf,,34,yes,yes,no,no,no,no,planned,yes,yes,no,no,no,no,no,
-Advice_555583053_Faroe_Shetland_Sponge_Belt_Combo.pdf,,35,no,no,no,no,no,no,yes,planned,planned,some,some,no,no,no,
-444456_Shell Keys NWR CCP.pdf,,36,yes,yes,no,no,no,no,no,no,no,no,no,na,no,no,
-72397_Chumbe_Island_Coral_Park.pdf,,37,no,no,no,yes,yes,no,planned,yes,yes,no,yes,yes,yes,no,
-2861_Breton.pdf,,38,no,yes,no,no,no,no,no,no,no,no,no,na,no,no,
-555586758_Terra_Ceia_Aquatic_Preserve_Management_Plan_2009.pdf,,39,yes,yes,no,no,no,no,no,no,no,no,no,na,yes,no,
-999910_Pearl_Harbor_NWR_Final_CCP.pdf,,40,yes,yes,no,no,no,no,no,no,no,no,no,na,yes,yes,Pacific Islands Climate Change Cooperative
-555547601_South_Georgia_and_South_Sandwich_Islands.pdf,,41,yes,yes,no,yes,no,no,no,no,no,no,no,na,no,no,
-613_Auyuittuq_NP.pdf,,42,no,no,no,no,no,no,planned,yes,yes,planned,planned,yes,no,yes,Parks Canada’s Northern Bioregion Monitoring Program
-11111318_LewisAndClark_NWR.pdf,,43,yes,yes,no,no,no,no,no,no,no,no,no,na,no,no,
-21038_Ahihi-Kinau-NAR-Management-Plan.pdf,,44,no,no,no,no,no,no,planned,yes,planned,no,no,no,no,no,
-375073_StHelenaSound.pdf,,45,no,no,no,no,no,no,no,no,no,no,no,na,no,no,
-555557136_Red_Bay.pdf,yes,46,no,no,no,no,no,no,planned,yes,yes,no,yes,no,no,no,
-3005_Gateway_NRA.pdf,,47,yes,yes,yes,no,yes,no,ongoing,planned,planned,no,no,yes,yes,yes,NPS Climate Change Response Strategy and Climate Change Action Plan 2012-2014
-13865_AlligatorRiver_NWR.pdf,,48,yes,yes,no,no,no,no,ongoing,planned,planned,no,no,no,no,no,
-555624214_Glovers_Reef_Marine_Reserve.pdf,,49,no,no,no,no,no,no,ongoing,no,no,no,no,na,yes,yes,Caribbean Planning for Adaptation to Climate Change
-1111288_Siletz Bay2.pdf,,50,yes,yes,no,no,yes,no,planned,yes,yes,no,no,yes,yes,yes,
-11839_315001_555592579_AbacoMarineParks.pdf,,51,no,no,no,no,no,no,planned,planned,planned,no,no,no,yes,yes,Government and non-Government organizations
-555558376_Piccaninnie_ponds_karst_wetlands.pdf,,52,no,yes,no,no,no,no,planned,yes,yes,no,no,no,no,no,
-555624810_Ross_Sea_Region_Marine_Protected_Area.pdf,,53,no,no,no,yes,yes,no,planned,planned,planned,no,no,no,yes,no,
-Advice_555583052_East_of_Gannet_Montrose_Fields_Combo.pdf,yes,54,no,yes,no,no,yes,no,yes,yes,yes,no,yes,yes,yes,yes,Scotland's National Marine Plan
-555586832_SmithandMinorIsland.pdf,,55,yes,yes,no,yes,no,no,planned,planned,planned,no,no,no,yes,no,
-902745_Alderney_West_Coast_and_the_Burhou_Islands.pdf,,56,no,no,no,no,yes,no,planned,planned,planned,no,no,no,yes,no,
-220201_Papahanaumokuakea_NMS.pdf,,57,yes,yes,no,no,yes,no,ongoing,planned,planned,no,no,yes,yes,yes,NOAA
-555586765_555586768_555586769_555586770_IndianRiverLagoonAP.pdf,,58,yes,yes,yes,no,no,no,ongoing,planned,planned,no,no,no,yes,yes,
-Advice_555556917_Anton_Dohrn_Seamount_Combo.pdf,yes,59,no,no,no,no,yes,no,planned,planned,planned,no,yes,no,yes,yes,Scotland's National Marine Plan
-13091_Apalachicola NERR System.pdf,,60,yes,yes,no,yes,yes,no,ongoing,planned,planned,no,no,yes,yes,yes,
-Advice_555556978_East Rockall Bank_Combo.pdf,yes,61,no,no,no,no,no,no,planned,planned,planned,no,yes,yes,yes,yes,Scotland’s National Marine Plan
-4513_Golden Gate.pdf,,62,yes,yes,yes,yes,yes,no,ongoing,yes,yes,no,yes,no,yes,yes,NPS Climate Change Action Plan
-166861_Pulu_Keeling_national_park.pdf,,63,no,no,no,no,no,no,no,yes,yes,no,no,no,no,no,
-2867_WLF_2008_CCP.pdf,,64,no,no,no,no,no,no,planned,no,no,no,no,na,no,no,
-555544114_Aransas.pdf,,65,no,no,no,no,yes,no,ongoing,yes,yes,no,no,no,yes,yes,"Agencies such as the USGS, NOAA, and others; U.S. Fish and Wildlife Service’s Rising to the Challenge: Strategic Plan for Responding to Accelerating Climate
+312072_Cherry Point.pdf,25,yes,yes,no,yes,no,no,ongoing,yes,planned,no,some,yes,yes,yes,"Climate Impact Group of the University of Washington, Whatcom County, and others"
+2891_St Marks NWR CCP.pdf,26,no,no,no,no,no,no,planned,yes,planned,no,planned,no,no,no,
+122900_Florida Keys2.pdf,27,no,no,no,no,yes,no,planned,planned,planned,no,no,yes,yes,yes,"NOAA will be the responsible agency. The EPA, FWS, and FDEP"
+305219_Endeavour_MPA.pdf,28,no,no,no,no,no,no,planned,planned,planned,planned,no,no,no,no,
+555586879_WaquoitBay_NERR.pdf,29,no,no,no,yes,yes,no,ongoing,yes,yes,no,no,yes,yes,no,NERRS Science Collaborative and 2) the NERR System-Wide Monitoring Program (SWMP).
+3333354_Mission_Aransas.pdf,30,yes,yes,no,no,yes,no,ongoing,yes,yes,no,no,yes,yes,yes,NOAA
+555586876_JacquesCousteau_NERR.pdf,31,no,no,no,yes,yes,no,ongoing,yes,yes,no,no,no,yes,yes,National Estuarine Research Reserve System research and monitoring plan
+1076_Fire_Island_National_Seashore.pdf,32,yes,yes,yes,yes,yes,yes,ongoing,yes,yes,no,some,no,yes,yes,NPS Climate Change Response Strategy
+Advice_555588156_Fulmar_Combo.pdf,33,no,no,no,no,no,no,yes,yes,no,no,yes,no,no,no,
+26622_HosniesSpring.pdf,34,yes,yes,no,no,no,no,planned,yes,yes,planned,yes,no,no,no,
+Advice_555583053_Faroe_Shetland_Sponge_Belt_Combo.pdf,35,no,no,no,no,no,no,yes,yes,no,no,yes,no,no,no,
+444456_Shell Keys NWR CCP.pdf,36,yes,yes,no,no,no,no,no,planned,planned,no,no,no,no,no,
+72397_Chumbe_Island_Coral_Park.pdf,37,no,no,no,yes,yes,no,ongoing,yes,yes,some,yes,yes,yes,no,
+2861_Breton.pdf,38,no,yes,no,no,no,no,ongoing,yes,planned,no,no,no,no,no,
+555586758_Terra_Ceia_Aquatic_Preserve_Management_Plan_2009.pdf,39,yes,yes,no,no,no,no,planned,yes,planned,no,no,no,yes,no,
+999910_Pearl_Harbor_NWR_Final_CCP.pdf,40,yes,yes,no,no,no,no,no,yes,planned,no,some,yes,yes,yes,Pacific Islands Climate Change Cooperative; The University of Hawai‘i System
+555547601_South_Georgia_and_South_Sandwich_Islands.pdf,41,yes,yes,no,yes,no,no,no,no,no,no,no,na,no,no,
+613_Auyuittuq_NP.pdf,42,no,no,no,no,no,no,planned,yes,yes,planned,planned,yes,no,yes,Parks Canada’s Northern Bioregion Monitoring Program
+11111318_LewisAndClark_NWR.pdf,43,yes,yes,no,no,no,no,no,yes,planned,no,some,no,no,no,
+21038_Ahihi-Kinau-NAR-Management-Plan.pdf,44,no,no,no,no,no,no,planned,yes,yes,some,no,no,no,no,
+375073_StHelenaSound.pdf,45,no,no,no,no,no,no,no,yes,planned,no,no,no,no,no,
+555557136_Red_Bay.pdf,46,no,no,no,no,no,no,planned,yes,yes,no,yes,no,no,no,
+3005_Gateway_NRA.pdf,47,yes,yes,yes,no,yes,no,ongoing,planned,planned,no,no,yes,yes,yes,NPS Climate Change Response Strategy and Climate Change Action Plan 2012-2014
+13865_AlligatorRiver_NWR.pdf,48,yes,yes,no,no,no,no,ongoing,yes,planned,no,no,no,no,no,
+555624214_Glovers_Reef_Marine_Reserve.pdf,49,no,no,no,no,no,no,ongoing,yes,yes,no,no,no,yes,yes,Caribbean Planning for Adaptation to Climate Change
+1111288_Siletz Bay2.pdf,50,yes,yes,no,no,yes,no,planned,yes,yes,no,yes,yes,yes,yes,
+11839_315001_555592579_AbacoMarineParks.pdf,51,no,no,no,no,no,no,planned,planned,planned,no,no,no,yes,yes,Government and non-Government organizations
+555558376_Piccaninnie_ponds_karst_wetlands.pdf,52,no,yes,no,no,no,no,planned,yes,yes,planned,planned,no,no,no,
+555624810_Ross_Sea_Region_Marine_Protected_Area.pdf,53,no,no,no,yes,yes,no,planned,yes,planned,no,no,no,yes,no,
+Advice_555583052_East_of_Gannet_Montrose_Fields_Combo.pdf,54,no,yes,no,no,yes,no,yes,yes,no,no,yes,yes,yes,yes,Scotland's National Marine Plan
+555586832_SmithandMinorIsland.pdf,55,yes,yes,no,yes,no,no,planned,yes,planned,no,no,no,yes,no,
+902745_Alderney_West_Coast_and_the_Burhou_Islands.pdf,56,no,no,no,no,yes,no,planned,yes,planned,no,no,no,yes,no,
+220201_Papahanaumokuakea_NMS.pdf,57,yes,yes,no,no,yes,no,ongoing,yes,planned,no,no,yes,yes,yes,NOAA
+555586765_555586768_555586769_555586770_IndianRiverLagoonAP.pdf,58,yes,yes,yes,no,no,no,ongoing,yes,yes,no,no,no,yes,yes,
+Advice_555556917_Anton_Dohrn_Seamount_Combo.pdf,59,no,no,no,no,yes,no,planned,yes,no,no,yes,no,yes,yes,Scotland's National Marine Plan
+13091_Apalachicola NERR System.pdf,60,yes,yes,no,yes,yes,no,ongoing,yes,planned,no,no,yes,yes,yes,
+Advice_555556978_East Rockall Bank_Combo.pdf,61,no,no,no,no,no,no,planned,yes,no,no,yes,yes,yes,yes,Scotland’s National Marine Plan
+4513_Golden Gate.pdf,62,yes,yes,yes,yes,yes,no,ongoing,yes,yes,some,yes,no,yes,yes,NPS Climate Change Action Plan
+166861_Pulu_Keeling_national_park.pdf,63,no,no,no,no,no,no,ongoing,yes,planned,no,no,no,no,no,
+2867_WLF_2008_CCP.pdf,64,no,no,no,no,no,no,planned,yes,planned,no,no,no,no,no,
+555544114_Aransas.pdf,65,no,no,no,no,yes,no,ongoing,yes,yes,no,no,no,yes,yes,"Agencies such as the USGS, NOAA, and others; U.S. Fish and Wildlife Service’s Rising to the Challenge: Strategic Plan for Responding to Accelerating Climate
 Change"
-Advice_555583029_South-West Deeps_Combo.pdf,yes,66,no,no,no,no,no,no,planned,planned,planned,no,yes,no,no,no,
-555586010_DelnorWiggs.pdf,,67,no,no,no,no,no,no,planned,no,no,no,no,na,no,no,
-555542259_Wadden_Sea_Waddenzee.pdf,,68,yes,yes,yes,no,yes,yes,planned,yes,yes,no,no,no,yes,no,
-555586061_02.15.2013_WBSSSP_AP.pdf,,69,no,no,no,no,no,no,ongoing,planned,planned,no,no,yes,yes,yes,
-21059_WeeksBayNERR.pdf,,70,no,no,no,yes,yes,no,ongoing,planned,planned,no,no,yes,yes,yes,"NERRS Climate Change Initiative, NERRS Sentinel Sites Program, NOAA’s Northern Gulf of Mexico Sentinel Site Cooperative, Ecological Effects of Sea Level Rise in the Northern Gulf of Mexico project, and a Coastal Training Program Initiative for Resilient Communities"
-10561_Willapa.pdf,,71,yes,yes,no,no,yes,no,planned,planned,planned,no,no,no,yes,yes,NOAA; UW Climate Impacts Group
-2880_ Merritt Island.pdf,,72,yes,yes,no,no,no,no,ongoing,planned,planned,no,no,yes,yes,yes,U.S. Geological Survey’s Sirenia Project
-2868_Pinckney Island_Savannah Coastal Complex.pdf,,73,yes,yes,no,yes,yes,no,planned,planned,planned,no,no,yes,yes,yes,"USGS Climate Change and Wildlife Science Center; universities; and other local, state, and federal partners"
-555624213_Port_Honduras.pdf,,74,yes,yes,no,yes,yes,no,ongoing,yes,yes,no,no,yes,yes,no,
-5555586747_48_49_50_56_Charlotte-Harbor-AP-Management-Plan.pdf,,75,yes,yes,yes,no,no,no,ongoing,yes,yes,no,no,no,no,yes,NOAA
-2906_BackBayNWR.pdf,,76,no,no,no,no,no,no,planned,planned,planned,no,no,no,no,no,
-555512144_BasinHead_MPA.pdf,,77,no,no,no,no,no,no,ongoing,yes,yes,yes,no,no,no,no,
-555624206_Man o War Shoal Marine Park.pdf,,78,yes,no,no,no,no,no,planned,planned,planned,no,no,no,yes,no,
-315079_StellwagenBank_NMS.pdf,,79,yes,yes,yes,no,yes,no,ongoing,planned,planned,no,no,yes,yes,no,
-555586055_StumpPassBeach.pdf,,80,no,yes,no,no,no,no,ongoing,planned,planned,no,no,no,yes,yes,
-13792_LowerFloridaKeys_NWR.pdf,,81,yes,yes,no,no,no,no,planned,planned,planned,no,no,no,yes,no,
-Advice_555583049_Firth_of_Forth_Banks_Complex_Combo.pdf,yes,82,no,no,no,no,no,no,planned,planned,planned,no,yes,yes,yes,yes,Scotland’s National Marine Plan
-555556977_East_Mingulay.pdf,,83,no,no,no,yes,no,no,no,no,no,no,no,na,yes,yes,The Scottish Climate Change Adaptation Programme
-555586809_HudsonRiver_NERR.pdf,,84,yes,yes,no,yes,yes,no,planned,planned,planned,no,no,no,yes,yes,
-900706_Pointe_Sable_Environmental_Protection_Area.pdf,,85,no,no,no,no,no,no,no,no,no,no,no,na,no,no,
-312867_Fidalgo Bay.pdf,,86,yes,yes,no,yes,yes,no,ongoing,yes,yes,no,no,no,yes,yes,
-312370_outdatedplan_Ashepoo-Combahee-Edisto (ACE) Basin.pdf,,87,no,no,no,no,no,no,planned,planned,planned,no,no,yes,yes,yes,
-Advice_555557201_Dee Estuary.pdf,,88,no,yes,no,no,no,no,ongoing,yes,yes,no,yes,yes,yes,yes,
-555557098_Murlough.pdf,yes,89,no,no,no,no,yes,yes,yes,yes,yes,no,yes,no,yes,yes,Northern Ireland Climate Change Adaptation Programme
-971_Everglades.pdf,,90,yes,yes,yes,no,yes,no,planned,planned,planned,no,planned,yes,yes,yes,National Park Service Climate Change Response Strategy
-1069_Canaveral_National_Seashore.pdf,,91,yes,yes,yes,no,yes,no,planned,planned,planned,planned,no,yes,yes,yes,"National Park Service Climate Change
+Advice_555583029_South-West Deeps_Combo.pdf,66,no,no,no,no,no,no,planned,yes,no,no,yes,no,no,no,
+555586010_DelnorWiggs.pdf,67,no,no,no,no,no,no,ongoing,yes,yes,no,no,no,no,no,
+555542259_Wadden_Sea_Waddenzee.pdf,68,yes,yes,yes,no,yes,yes,planned,yes,yes,no,planned,no,yes,no,
+555586061_02.15.2013_WBSSSP_AP.pdf,69,no,no,no,no,no,no,ongoing,yes,planned,no,some,yes,yes,yes,
+21059_WeeksBayNERR.pdf,70,no,no,no,yes,yes,no,ongoing,planned,planned,no,no,yes,yes,yes,"NERRS Climate Change Initiative, NERRS Sentinel Sites Program, NOAA’s Northern Gulf of Mexico Sentinel Site Cooperative, Ecological Effects of Sea Level Rise in the Northern Gulf of Mexico project, and a Coastal Training Program Initiative for Resilient Communities"
+10561_Willapa.pdf,71,yes,yes,no,no,yes,no,planned,yes,planned,no,some,no,yes,yes,NOAA; UW Climate Impacts Group
+2880_ Merritt Island.pdf,72,yes,yes,no,no,no,no,ongoing,yes,planned,no,some,yes,yes,yes,U.S. Geological Survey’s Sirenia Project
+2868_Pinckney Island_Savannah Coastal Complex.pdf,73,yes,yes,no,yes,yes,no,planned,yes,planned,no,no,yes,yes,yes,"USGS Climate Change and Wildlife Science Center; universities; and other local, state, and federal partners"
+555624213_Port_Honduras.pdf,74,yes,yes,no,yes,yes,no,ongoing,yes,yes,no,no,yes,yes,no,
+5555586747_48_49_50_56_Charlotte-Harbor-AP-Management-Plan.pdf,75,yes,yes,yes,no,no,no,ongoing,yes,yes,no,no,no,no,yes,NOAA
+2906_BackBayNWR.pdf,76,no,no,no,no,no,no,planned,yes,planned,no,some,no,no,no,
+555512144_BasinHead_MPA.pdf,77,no,no,no,no,no,no,ongoing,yes,yes,yes,no,no,no,no,
+555624206_Man o War Shoal Marine Park.pdf,78,yes,no,no,no,no,no,planned,planned,planned,no,no,no,yes,no,
+315079_StellwagenBank_NMS.pdf,79,yes,yes,yes,no,yes,no,ongoing,planned,planned,no,no,yes,yes,no,
+555586055_StumpPassBeach.pdf,80,no,yes,no,no,no,no,ongoing,yes,yes,no,some,no,yes,yes,
+13792_LowerFloridaKeys_NWR.pdf,81,yes,yes,no,no,no,no,ongoing,yes,planned,no,no,yes,yes,no,
+Advice_555583049_Firth_of_Forth_Banks_Complex_Combo.pdf,82,no,no,no,no,no,no,yes,yes,no,no,yes,yes,yes,yes,Scotland’s National Marine Plan
+555556977_East_Mingulay.pdf,83,no,no,no,yes,no,no,yes,yes,planned,no,yes,no,yes,yes,The Scottish Climate Change Adaptation Programme
+555586809_HudsonRiver_NERR.pdf,84,yes,yes,no,yes,yes,no,ongoing,planned,planned,no,no,no,yes,yes,
+900706_Pointe_Sable_Environmental_Protection_Area.pdf,85,no,no,no,no,no,no,no,no,no,no,no,na,no,no,
+312867_Fidalgo Bay.pdf,86,yes,yes,no,yes,yes,no,ongoing,yes,yes,no,no,no,yes,yes,
+312370_outdatedplan_Ashepoo-Combahee-Edisto (ACE) Basin.pdf,87,no,no,no,no,no,no,planned,planned,planned,no,no,yes,yes,yes,
+Advice_555557201_Dee Estuary.pdf,88,no,yes,no,no,no,no,ongoing,yes,yes,no,yes,yes,yes,yes,
+555557098_Murlough.pdf,89,no,no,no,no,yes,yes,yes,yes,yes,no,yes,no,yes,yes,Northern Ireland Climate Change Adaptation Programme
+971_Everglades.pdf,90,yes,yes,yes,no,yes,no,planned,yes,planned,no,planned,yes,yes,yes,National Park Service Climate Change Response Strategy
+1069_Canaveral_National_Seashore.pdf,91,yes,yes,yes,no,yes,no,planned,planned,planned,planned,no,yes,yes,yes,"National Park Service Climate Change
 Response Strategy"
-10573_MackayIsland_NWR.pdf,,92,yes,yes,no,no,no,no,planned,planned,planned,no,no,no,no,no,
-555547389_Zella M. Schultz_Protection Island.pdf,,93,yes,yes,no,yes,yes,no,ongoing,planned,planned,no,planned,yes,yes,no,
-555586901_RookeryBay_AP-NERR.pdf,,94,yes,yes,no,yes,yes,no,planned,planned,planned,no,no,yes,yes,yes,
-Advice_555557108_North Norfolk Sandbanks and Saturn Reef_Combo.pdf,yes,95,no,no,no,no,no,no,yes,yes,yes,no,yes,no,yes,no,
-Advice_555557112_North West Rockall Bank_Combo.pdf,yes,96,no,no,no,no,no,no,planned,planned,planned,no,yes,yes,yes,yes,Scotland’s National Marine Plan
-Channel Islands National Park.pdf,,97,yes,yes,no,yes,yes,no,planned,planned,planned,no,no,no,yes,yes,"National Park Service Climate Change
+10573_MackayIsland_NWR.pdf,92,yes,yes,no,no,no,no,planned,yes,planned,no,some,no,no,no,
+555547389_Zella M. Schultz_Protection Island.pdf,93,yes,yes,no,yes,yes,no,ongoing,yes,planned,no,no,yes,yes,no,
+555586901_RookeryBay_AP-NERR.pdf,94,yes,yes,no,yes,yes,no,ongoing,yes,planned,no,no,yes,yes,yes,
+Advice_555557108_North Norfolk Sandbanks and Saturn Reef_Combo.pdf,95,no,no,no,no,no,no,yes,yes,no,no,yes,no,yes,no,
+Advice_555557112_North West Rockall Bank_Combo.pdf,96,no,no,no,no,no,no,planned,yes,no,no,yes,yes,yes,yes,Scotland’s National Marine Plan
+Channel Islands National Park.pdf,97,yes,yes,no,yes,yes,no,planned,planned,planned,no,no,no,yes,yes,"National Park Service Climate Change
 Response Strategy"
-555585663_Seabranch.pdf,,98,no,no,no,no,no,no,planned,planned,planned,no,no,no,yes,no,
-315470_ProtectionIsland_NWR.pdf,,99,no,no,no,yes,yes,no,ongoing,yes,yes,no,no,yes,yes,yes,
-10570_PrimeHook.pdf,,100,yes,yes,no,yes,yes,no,planned,planned,planned,no,no,yes,yes,yes,"NOAA, USGS, others"
-California_MPAs.pdf,,101,no,no,no,no,no,no,ongoing,planned,planned,no,no,no,yes,yes,
-555624230_Tobago_Cays_Marine_Park.pdf,,102,no,no,no,no,no,no,planned,planned,planned,no,no,no,yes,no,
-Advice_555557063_Liverpool_Bay_Bae_Lerpwl.pdf,,103,no,no,no,no,no,no,planned,yes,yes,no,yes,no,no,no,
-67794_Roebuck_bay.pdf,,104,no,no,no,no,yes,no,planned,yes,yes,no,yes,yes,yes,no,
-555586988_ChesapeakeMD.pdf,,105,no,no,no,no,yes,no,planned,planned,planned,no,no,yes,yes,no,
-372457_North Inlet_Winyah Bay.pdf,,106,no,no,no,yes,yes,no,planned,planned,planned,no,no,yes,yes,no,
-315063_GuamFinalCCP.pdf,,107,yes,yes,no,yes,yes,no,planned,yes,planned,no,no,yes,yes,no,
-2973_Featherstone.pdf,,108,yes,yes,no,no,yes,no,planned,yes,planned,no,no,no,yes,yes,
-315060_Grays Harbor.pdf,,109,yes,yes,no,no,yes,no,ongoing,yes,yes,no,no,no,yes,yes,"Other Service programs, other Federal and State agencies, NGOs, and universities"
-666669_StSebastian.pdf,,110,no,no,no,no,no,no,ongoing,planned,planned,no,no,no,yes,yes,
-Advice_555535783_Pembrokeshire_Marine.pdf,,111,no,no,no,no,no,no,planned,planned,planned,no,no,no,no,no,
-68316_Delaware Estuary_CCMP.pdf,,112,yes,yes,yes,no,yes,no,planned,planned,planned,no,no,yes,yes,yes,
-Advice_555583057_Norwegian_Boundary_Sediment_Plain_Combo.pdf,yes,113,no,no,no,no,no,no,yes,yes,yes,no,yes,no,yes,yes,Scotland’s National Marine Plan
-2884_Cape Romain.pdf,,114,yes,yes,no,yes,yes,no,planned,no,no,no,no,na,yes,yes,Fish and Wildlife Service Climate Change Strategic Plan
-300103_Sirmilik_NP.pdf,,115,no,no,no,no,no,no,ongoing,planned,planned,no,yes,no,yes,no,
-1047_Buck_Island_Reef_National_Monument.pdf,,116,yes,yes,yes,no,no,no,no,no,no,no,no,na,yes,yes,NPS Inventorying and Monitoring Program
-75513_EntireDocument_LowResolutionforWebPosting.pdf,,117,yes,yes,no,no,yes,no,ongoing,planned,planned,no,planned,yes,yes,yes,Fish and Wildlife Service Climate Change Strategic Plan
-Advice_555556947_Cardigan_Bay_CCW.pdf,,118,no,no,no,no,no,no,no,yes,yes,no,yes,no,no,no,
-478034_Gough_and_Inaccessible_Island.pdf,,119,yes,yes,no,no,yes,no,ongoing,planned,planned,no,no,yes,yes,no,
-555586755_St-Martins-Marsh-AP-Management-Plan.pdf,,120,yes,yes,yes,no,no,no,planned,planned,planned,no,no,no,no,no,
-Advice_555583056_North-east_Faroe_Shetland_Channel_Combo.pdf,yes,121,no,no,no,no,no,no,yes,yes,yes,no,yes,no,yes,yes,Scotland’s National Marine Plan
-555587021_RedfishRocks_MR.pdf,,122,no,no,no,no,yes,no,ongoing,no,no,no,no,na,no,no,
-Advice_555556965_Deben Estuary_NaturalEngland.pdf,,123,no,no,no,no,no,no,planned,yes,yes,no,yes,no,no,no,
-666642_Crystal River.pdf,,124,no,no,no,no,yes,no,ongoing,no,no,no,no,na,no,yes,
-10565_Chassahowitzka_Conservation plan.pdf,,125,yes,yes,no,no,yes,no,planned,planned,planned,no,planned,no,yes,yes,The Southeast Climate Science Centre; Peninsular Florida LCC and other service and university climate change researchers
-100676_Aulavik_National_Park_of_Canada.pdf,,126,no,no,no,no,no,no,no,no,no,no,no,na,yes,no,
-2900_Anahuac.pdf,,127,no,no,no,yes,yes,no,planned,planned,planned,no,no,no,yes,no,
-Advice_555583059_The_Barra_Fan_and_Hebrides_Terrace_Seamount_Combo.pdf,yes,128,no,no,no,no,no,no,planned,planned,planned,no,yes,no,yes,yes,Scotland’s National Marine Plan
-61706_DryTortugas_NP.pdf,,129,no,no,no,no,no,no,ongoing,planned,planned,no,planned,no,no,no,
-555586754_St_Joseph_Bay_Aquatic_Preserve_Management_Plan_2008.pdf,,130,no,no,no,no,no,no,ongoing,planned,planned,no,no,no,yes,yes,St. Joseph Bay State Buffer Preserve
-315470_ProtectionIsland_AquaticReserve.pdf,,131,yes,yes,no,no,no,no,ongoing,yes,yes,no,yes,no,yes,yes,Fish and Wildlife Service Draft Rising to the Challenge: Strategic Plan for Responding to Accelerating Climate Change
-555586812_WNERR_management-plan_2013_complete_low-res.pdf,,132,no,no,no,yes,yes,no,ongoing,planned,planned,no,no,yes,yes,no,
-Advice_555557166_Solway_Firth.pdf,,133,no,no,no,no,no,no,planned,yes,yes,no,yes,no,no,no,
-Advice_555583058_Rosemary_Bank_Seamount_Combo.pdf,yes,134,no,no,no,no,no,no,planned,planned,planned,no,yes,no,yes,yes,Scotland’s National Marine Plan
-2952_SVN_2012_CCP.pdf,,135,no,yes,no,yes,yes,no,planned,planned,planned,no,no,yes,yes,yes,
-13396_Quttinirpaaq_NP.pdf,,136,no,no,no,no,yes,no,planned,planned,planned,no,planned,no,yes,no,
-555586873_fbnms_mp_eis.pdf,,137,yes,yes,no,yes,yes,no,planned,yes,yes,no,no,yes,yes,yes,
-2941_DonEdwardsSFB_NWR.pdf,,138,no,yes,no,yes,yes,no,ongoing,no,no,no,no,na,yes,yes,External researcher
-67795_Eighty-mile_beach.pdf,,139,no,no,no,no,yes,no,planned,yes,yes,no,planned,yes,yes,no,
-555586066_Cedar Keys Scrub state reservet.pdf,,140,no,no,no,no,no,no,planned,planned,planned,no,no,yes,yes,no,
-555557133_Rathlin_Island.pdf,,141,no,no,no,no,yes,no,planned,yes,yes,no,yes,no,yes,yes,Climate Change Risk Assessment for Northern Ireland
-555557060_Limestone_Coast_of_South_West_Wales_Arfordir_Calchfaen_de_Orllewin_Cymru.pdf,,142,no,no,no,no,no,no,planned,yes,yes,yes,no,no,no,no,
-555586773_Mosquito-Lagoon-AP-Management-Plan-2009.pdf,,143,yes,yes,no,no,yes,no,planned,planned,planned,no,no,no,no,no,
-166885_Bolinas.pdf,,144,yes,yes,no,no,no,no,planned,planned,planned,no,no,no,no,no,
-13793_Crocodile Lake NWR CCP.pdf,,145,no,no,no,no,no,no,planned,planned,planned,no,no,no,no,no,
-1111277_NestuccaBay_NWR.pdf,,146,yes,yes,no,no,yes,no,planned,planned,planned,no,no,yes,yes,yes,Fish and Wildlife Service Draft Rising to the Challenge: Strategic Plan for Responding to Accelerating Climate Change; North Pacific Coast Landscape Conservation Cooperative
-68276_The_Wash_and_North_Norfolk_Coast.pdf,,147,no,no,no,no,no,no,planned,planned,planned,no,planned,no,no,no,
-Advice_555583055_Hatton_Rockall_Basin_Combo.pdf,yes,148,no,no,no,no,no,no,planned,planned,planned,no,yes,no,yes,yes,Scotland’s National Marine Plan
-1111270_FarallonNWR.pdf,,149,yes,yes,no,yes,yes,no,ongoing,yes,yes,no,no,yes,yes,no,
-555586835_St. Thomas East End.pdf,,150,no,no,no,yes,yes,yes,ongoing,yes,yes,no,no,yes,yes,yes,"NOAA, USGS, others"
-555586763_BigBoggy_Texas Mid_Coast.pdf,,151,yes,yes,yes,yes,yes,no,ongoing,yes,yes,no,no,yes,yes,yes,Fish and Wildlife Service Rising to the Challenge: Strategic Plan for Responding to Accelerating Climate Change
-13024_10w_CCP_Entire_Document(7545KB).pdf,,152,yes,yes,yes,yes,yes,no,ongoing,planned,planned,planned,no,yes,yes,yes,"North Atlantic Landscape
+555585663_Seabranch.pdf,98,no,no,no,no,no,no,ongoing,yes,planned,no,some,no,yes,no,
+315470_ProtectionIsland_NWR.pdf,99,no,no,no,yes,yes,no,ongoing,yes,planned,no,yes,yes,yes,yes,
+10570_PrimeHook.pdf,100,yes,yes,no,yes,yes,no,planned,yes,planned,no,some,yes,yes,yes,"NOAA, USGS, others"
+California_MPAs.pdf,101,no,no,no,no,no,no,ongoing,planned,planned,no,no,no,yes,yes,
+555624230_Tobago_Cays_Marine_Park.pdf,102,no,no,no,no,no,no,planned,yes,yes,no,no,no,yes,no,
+Advice_555557063_Liverpool_Bay_Bae_Lerpwl.pdf,103,no,no,no,no,no,no,planned,yes,yes,no,yes,no,no,no,
+67794_Roebuck_bay.pdf,104,no,no,no,no,yes,no,planned,yes,yes,no,yes,yes,yes,no,
+555586988_ChesapeakeMD.pdf,105,no,no,no,no,yes,no,planned,planned,planned,no,no,yes,yes,no,
+372457_North Inlet_Winyah Bay.pdf,106,no,no,no,yes,yes,no,planned,planned,planned,no,no,yes,yes,no,
+315063_GuamFinalCCP.pdf,107,yes,yes,no,yes,yes,no,planned,yes,planned,no,no,yes,yes,no,
+2973_Featherstone.pdf,108,yes,yes,no,no,yes,no,planned,yes,planned,no,some,no,yes,yes,
+315060_Grays Harbor.pdf,109,yes,yes,no,no,yes,no,ongoing,yes,planned,no,some,no,yes,yes,"Other Service programs, other Federal and State agencies, NGOs, and universities"
+666669_StSebastian.pdf,110,no,no,no,no,no,no,ongoing,yes,planned,no,no,no,yes,yes,
+Advice_555535783_Pembrokeshire_Marine.pdf,111,no,no,no,no,no,no,planned,planned,planned,no,planned,no,no,no,
+68316_Delaware Estuary_CCMP.pdf,112,yes,yes,yes,no,yes,no,ongoing,yes,planned,no,no,yes,yes,yes,
+Advice_555583057_Norwegian_Boundary_Sediment_Plain_Combo.pdf,113,no,no,no,no,no,no,yes,yes,no,no,yes,no,yes,yes,Scotland’s National Marine Plan
+2884_Cape Romain.pdf,114,yes,yes,no,yes,yes,no,planned,yes,planned,no,some,no,yes,yes,Fish and Wildlife Service Climate Change Strategic Plan
+300103_Sirmilik_NP.pdf,115,no,no,no,no,no,no,ongoing,planned,planned,no,yes,no,yes,no,
+1047_Buck_Island_Reef_National_Monument.pdf,116,yes,yes,yes,no,no,no,ongoing,planned,planned,no,no,no,yes,yes,NPS Inventorying and Monitoring Program
+75513_EntireDocument_LowResolutionforWebPosting.pdf,117,yes,yes,no,no,yes,no,ongoing,yes,planned,no,some,yes,yes,yes,Fish and Wildlife Service Climate Change Strategic Plan
+Advice_555556947_Cardigan_Bay_CCW.pdf,118,no,no,no,no,no,no,no,yes,yes,no,yes,no,no,no,
+478034_Gough_and_Inaccessible_Island.pdf,119,yes,yes,no,no,yes,no,ongoing,yes,planned,no,some,yes,yes,no,
+555586755_St-Martins-Marsh-AP-Management-Plan.pdf,120,yes,yes,yes,no,no,no,ongoing,yes,planned,no,no,no,no,no,
+Advice_555583056_North-east_Faroe_Shetland_Channel_Combo.pdf,121,no,no,no,no,no,no,yes,yes,no,no,yes,no,yes,yes,Scotland’s National Marine Plan
+555587021_RedfishRocks_MR.pdf,122,no,no,no,no,yes,no,ongoing,planned,planned,no,no,no,no,no,
+Advice_555556965_Deben Estuary_NaturalEngland.pdf,123,no,no,no,no,no,no,planned,yes,yes,no,yes,no,no,no,
+666642_Crystal River.pdf,124,no,no,no,no,yes,no,ongoing,yes,planned,no,some,no,no,yes,
+10565_Chassahowitzka_Conservation plan.pdf,125,yes,yes,no,no,yes,no,planned,yes,planned,no,planned,no,yes,yes,The Southeast Climate Science Centre; Peninsular Florida LCC and other service and university climate change researchers
+100676_Aulavik_National_Park_of_Canada.pdf,126,no,no,no,no,no,no,no,no,no,no,no,na,yes,no,
+2900_Anahuac.pdf,127,no,no,no,yes,yes,no,planned,yes,planned,no,no,no,yes,no,
+Advice_555583059_The_Barra_Fan_and_Hebrides_Terrace_Seamount_Combo.pdf,128,no,no,no,no,no,no,planned,yes,no,no,yes,no,yes,yes,Scotland’s National Marine Plan
+61706_DryTortugas_NP.pdf,129,no,no,no,no,no,no,ongoing,planned,planned,no,planned,no,no,no,
+555586754_St_Joseph_Bay_Aquatic_Preserve_Management_Plan_2008.pdf,130,no,no,no,no,no,no,ongoing,yes,planned,no,no,no,yes,yes,St. Joseph Bay State Buffer Preserve
+315470_ProtectionIsland_AquaticReserve.pdf,131,yes,yes,no,no,no,no,ongoing,yes,planned,no,no,no,yes,yes,Fish and Wildlife Service Draft Rising to the Challenge: Strategic Plan for Responding to Accelerating Climate Change
+555586812_WNERR_management-plan_2013_complete_low-res.pdf,132,no,no,no,yes,yes,no,ongoing,planned,planned,no,no,yes,yes,no,
+Advice_555557166_Solway_Firth.pdf,133,no,no,no,no,no,no,planned,yes,yes,no,yes,no,no,no,
+Advice_555583058_Rosemary_Bank_Seamount_Combo.pdf,134,no,no,no,no,no,no,planned,yes,no,no,yes,no,yes,yes,Scotland’s National Marine Plan
+2952_SVN_2012_CCP.pdf,135,no,yes,no,yes,yes,no,planned,yes,planned,no,no,yes,yes,yes,
+13396_Quttinirpaaq_NP.pdf,136,no,no,no,no,yes,no,planned,planned,planned,no,planned,no,yes,no,
+555586873_fbnms_mp_eis.pdf,137,yes,yes,no,yes,yes,no,planned,yes,yes,no,no,yes,yes,yes,
+2941_DonEdwardsSFB_NWR.pdf,138,no,yes,no,yes,yes,no,ongoing,yes,planned,no,some,yes,yes,yes,External researcher
+67795_Eighty-mile_beach.pdf,139,no,no,no,no,yes,no,planned,yes,yes,no,planned,yes,yes,no,
+555586066_Cedar Keys Scrub state reservet.pdf,140,no,no,no,no,no,no,ongoing,yes,planned,no,some,yes,yes,no,
+555557133_Rathlin_Island.pdf,141,no,no,no,no,yes,no,planned,yes,yes,no,yes,no,yes,yes,Climate Change Risk Assessment for Northern Ireland
+555557060_Limestone_Coast_of_South_West_Wales_Arfordir_Calchfaen_de_Orllewin_Cymru.pdf,142,no,no,no,no,no,no,planned,yes,yes,some,yes,no,no,no,
+555586773_Mosquito-Lagoon-AP-Management-Plan-2009.pdf,143,yes,yes,no,no,yes,no,planned,yes,planned,no,no,no,no,no,
+166885_Bolinas.pdf,144,yes,yes,no,no,no,no,planned,planned,planned,no,no,no,no,no,
+13793_Crocodile Lake NWR CCP.pdf,145,no,no,no,no,no,no,ongoing,yes,planned,no,some,no,no,no,
+1111277_NestuccaBay_NWR.pdf,146,yes,yes,no,no,yes,no,planned,yes,planned,no,yes,yes,yes,yes,Fish and Wildlife Service Draft Rising to the Challenge: Strategic Plan for Responding to Accelerating Climate Change; North Pacific Coast Landscape Conservation Cooperative
+68276_The_Wash_and_North_Norfolk_Coast.pdf,147,no,no,no,no,no,no,planned,planned,planned,no,planned,no,no,no,
+Advice_555583055_Hatton_Rockall_Basin_Combo.pdf,148,no,no,no,no,no,no,planned,yes,no,no,yes,no,yes,yes,Scotland’s National Marine Plan
+1111270_FarallonNWR.pdf,149,yes,yes,no,yes,yes,no,ongoing,yes,planned,no,some,yes,yes,no,
+555586835_St. Thomas East End.pdf,150,no,no,no,yes,yes,yes,ongoing,yes,yes,no,no,yes,yes,yes,"NOAA, USGS, others"
+555586763_BigBoggy_Texas Mid_Coast.pdf,151,yes,yes,yes,yes,yes,no,ongoing,yes,yes,no,no,yes,yes,yes,Fish and Wildlife Service Rising to the Challenge: Strategic Plan for Responding to Accelerating Climate Change
+13024_10w_CCP_Entire_Document(7545KB).pdf,152,yes,yes,yes,yes,yes,no,ongoing,yes,planned,planned,some,yes,yes,yes,"North Atlantic Landscape
 Conservation Cooperative"
-2854_Pinellas_NWR.pdf,,153,yes,yes,no,no,no,no,planned,planned,planned,no,no,no,yes,no,
-555586878_NorthCarolina_NERR.pdf,,154,yes,yes,no,no,yes,no,ongoing,yes,yes,no,no,no,yes,no,
-198330_Tubbataha_Reefs_Natural_Park.pdf,,155,no,no,no,no,no,yes,ongoing,yes,yes,no,no,yes,yes,yes,
-555586805_management plan_final.pdf,,156,no,no,no,no,yes,no,planned,planned,planned,no,no,yes,yes,yes,
-315058_Currituck_NWR.pdf,,157,yes,yes,no,no,no,no,planned,planned,planned,no,no,no,no,no,
-369098_Grand_Bay_NWR_CCP.pdf,,158,no,no,no,no,no,no,planned,no,no,no,no,na,no,no,
-555586032_JohnULloyd.pdf,,159,no,no,no,no,no,no,planned,no,no,no,no,na,no,no,
-Advice_555535784_Pen_Llyn_ar_Sarnau.pdf,,160,yes,yes,no,no,no,no,no,yes,planned,no,yes,no,no,no,
-2936_Rose Atoll NWR Final CCP_May 2014(1).pdf,,161,yes,yes,no,yes,no,no,no,planned,planned,no,no,yes,yes,yes,Other researchers and agencies
-21107_Bon Secour NWR CCP.pdf,,162,no,no,no,no,no,no,ongoing,planned,planned,no,no,no,no,no,
-555586991_Ebeys Landing.pdf,,163,no,no,no,no,no,no,ongoing,no,no,no,no,na,no,no,
-555586968_Salt Ponds Region.pdf,,164,yes,yes,yes,no,no,no,planned,no,no,no,no,na,no,no,
-2926_HowlandIsland_NWR.pdf,,165,no,no,no,no,no,no,planned,planned,planned,no,no,yes,yes,yes,NOAA
-555512156_MusquashEstuary_MPA.pdf,,166,no,no,no,no,no,no,no,planned,planned,no,no,no,no,no,
-Advice_555583028_North East of Farnes Deep_Combo.pdf,yes,167,no,no,no,no,no,no,yes,yes,yes,no,yes,no,no,no,
-10569_CedarIsland_NWR.pdf,,168,yes,yes,no,no,no,no,no,no,no,no,no,na,no,no,
-555557128_Poole Harbour.pdf,,169,yes,yes,yes,yes,no,no,no,no,no,no,no,na,yes,no,
-555558198_TariumNiryutait_MPA.pdf,,170,yes,yes,no,no,no,no,no,planned,planned,no,planned,yes,no,no,
-Advice_555556974_Duddon_Estuary_NaturalEngland.pdf,,171,no,no,no,no,no,no,no,yes,yes,no,yes,no,no,no,
-555586804_OlympicCoast_NMS.pdf,,172,no,no,no,no,yes,no,planned,planned,planned,no,no,yes,yes,yes,
-21116_JNDingDarling_Tritaik_2010_CCP.pdf,,173,yes,yes,yes,yes,yes,no,planned,planned,planned,no,no,yes,yes,yes,Comprehensive Southwest Florida/Charlotte Harbor Climate Change Vulnerability Assessment
-2851_Pine_Island_and_Matlalcha_Pass_ConservationPlan.pdf,,174,yes,yes,yes,yes,yes,no,planned,planned,planned,no,no,yes,yes,yes,"Other service programs, other Federal and State agencies, and universities"
-13863_13864_35897_5555793_5555799_LongIsland_NWR.pdf,,175,yes,yes,no,no,yes,no,planned,planned,planned,no,no,no,no,no,
-23034_555586778_555585996_LittleTalbot_BigTalbot_AmeliaIsland.pdf,,176,no,no,no,no,no,no,planned,planned,planned,no,no,no,no,no,
-368262_ElkhornSlough.pdf,,177,no,no,no,no,no,no,planned,planned,planned,no,no,no,no,no,
-902399_Tijuana River.pdf,,178,no,no,no,no,no,no,ongoing,planned,planned,no,no,yes,yes,yes,Non-staff researchers
-555542730_Aldabra_Atoll.pdf,,179,no,no,no,no,yes,no,planned,yes,yes,no,yes,yes,yes,no,
-Advice_555557156_Severn_Estuary.pdf,,180,yes,yes,no,no,no,no,ongoing,yes,yes,no,yes,no,no,no,
-1111260_BandonMarsh_NWR.pdf,,181,yes,yes,no,no,yes,no,ongoing,yes,yes,no,no,yes,yes,yes,Fish and Wildlife Service Rising to the Challenge: Strategic Plan and Action Plan for Responding to Accelerating Climate Change; North Pacific Coast Landscape Conservation Cooperative; other academic research
-10574_PelicanIsland.pdf,,182,no,no,no,no,no,no,planned,planned,no,no,no,yes,no,no,
-555557162_Skerries_and_Causeway.pdf,,183,no,no,no,no,no,no,planned,yes,yes,no,yes,no,no,yes,Northern Ireland Climate Change Adaptation Programme
-Advice_555557225_Y Fenai a Bae Conwy_Menai Strait and Conwy Bay.pdf,,184,yes,yes,no,no,no,no,planned,yes,planned,no,yes,no,no,no,
-555557075_Lundy.pdf,,185,yes,yes,no,yes,no,no,yes,yes,no,some,no,yes,yes,no,
-629_Kejimkujik_NP.pdf,,186,no,no,no,no,no,no,no,planned,planned,planned,no,no,yes,yes,Parks Canada monitoring
-Advice_555556927_Bassurelle Sandbank_Combo.pdf,yes,187,no,no,no,no,no,no,yes,yes,yes,no,yes,no,no,no,
-628_PacRim_NP.pdf,,188,no,no,no,no,no,no,no,yes,planned,no,planned,no,no,yes,State of the Park Report contains monitoring results
-555586885_Kaho'olawe.pdf,,189,yes,no,no,no,no,yes,planned,yes,yes,yes,no,no,no,yes,University of Hawai‘i and TNC
-2931_JarvisIsland_NWR.pdf,,190,yes,yes,no,no,yes,no,planned,yes,yes,no,yes,yes,yes,no,NOAA
-365317_apalachicola-river.pdf,,191,yes,yes,no,yes,yes,no,planned,no,no,no,no,na,yes,no,FWC-FWRI Climate Change Adaptation Initiative
-372716_OldWomanCreek_NERR.pdf,,192,yes,yes,no,yes,yes,no,ongoing,yes,planned,no,no,yes,yes,no,
-13820_Rachel_Carson.pdf,,193,yes,yes,no,yes,yes,no,planned,yes,planned,no,yes,yes,yes,no,
-Advice_555557017_Hatton Bank_Combo.pdf,yes,194,no,no,no,no,no,no,planned,planned,planned,no,yes,no,yes,yes,Scotland’s National Marine Plan
-11111518_Olympic_NP.pdf,,195,yes,yes,no,no,yes,no,ongoing,planned,planned,planned,no,no,yes,yes,U.S. Geological Survey
-666672_WaccasassaBayPreserveStatePark.pdf,,196,yes,yes,yes,no,yes,no,yes,planned,planned,no,no,no,yes,no,
-555586814_GreatBay_NERR.pdf,,197,yes,yes,no,yes,no,no,no,planned,planned,no,no,no,no,yes,
-6666277_Guana Tolomato Matanzas.pdf,,198,no,no,no,yes,yes,no,planned,planned,planned,no,no,no,yes,yes,National Weather Service; National Estuarine Research Reserves System-Wide Monitoring Program
-555512149_GilbertBay_MPA.pdf,,199,no,no,no,no,no,no,yes,yes,yes,planned,no,yes,no,no,
-555586877_NarragansettBay_NERR.pdf,,200,no,no,no,yes,yes,no,yes,planned,planned,no,no,yes,yes,yes,"NOAA, other partners"
-13916_13034_Wallops_Chincoteague.pdf,,201,yes,yes,yes,yes,yes,yes,yes,yes,planned,some,some,yes,yes,yes,"NASA Wallops Flight Facility, The Marine Science Consortium, and the USFWS; North Atlantic LCC; others"
-555586775_North-Fork-St-Lucie-AP-Management-Plan.pdf,,202,yes,yes,no,yes,yes,no,planned,planned,planned,some,some,yes,yes,yes,
-95312_CT_CELCP_Plan_January_2015.pdf,,203,yes,yes,yes,no,no,no,no,no,no,no,no,na,no,yes,NOAA sea level rise viewer
-555586880_SFB_NERR.pdf,,204,yes,yes,yes,yes,yes,no,no,no,no,no,no,na,yes,yes,
-555557068_Loch_nam_Madadh.pdf,,205,no,no,no,no,no,no,planned,yes,planned,no,yes,no,yes,no,
-666621_Swanquarter_NWR.pdf,,206,yes,yes,no,no,no,no,planned,planned,planned,no,no,no,yes,no,
-555586834_Nisqually Reach.pdf,,207,yes,yes,no,yes,yes,no,planned,yes,planned,no,some,no,yes,yes,
-315003_Moriah Harbour Cay National Park.pdf,,208,no,no,no,no,no,no,no,no,no,no,no,na,yes,yes,Bahamas National Trust
-5555752_GreatBay_NWR.pdf,,209,yes,yes,no,yes,yes,no,planned,planned,planned,planned,some,yes,yes,yes,Fish and Wildlife Service Rising to the Challenge: Strategic Plan and Action Plan for Responding to Accelerating Climate Change; North Pacific Coast Landscape Conservation Cooperative; other academic research
-75004_Dungeness.pdf,,210,yes,yes,no,no,yes,no,planned,planned,planned,no,some,yes,yes,yes,Fish and Wildlife Service Rising to the Challenge: Strategic Plan and Action Plan for Responding to Accelerating Climate Change
-Advice_68296_Carmarthen_Bay_CCW.pdf,,211,yes,yes,no,no,no,no,planned,yes,planned,no,yes,no,no,no,
-75128_SealBeachNWR.pdf,,212,yes,yes,no,yes,yes,no,planned,planned,planned,no,planned,yes,yes,yes,North Orange County Integrated Regional Watershed Management Plan
-220003_HawaiianIslands_NMS.pdf,,213,yes,yes,no,yes,yes,no,planned,planned,planned,planned,no,yes,yes,yes,"University of Hawaii Sea Grant program, the Pacific Islands Climate Change Cooperative, the Environmental Protection Agency, and other state and federal agencies; Resilience to a Changing Climate Action Plan"
-555585657_AncloteKeyPreserveSP.pdf,,214,no,no,no,no,no,no,ongoing,yes,yes,no,some,no,yes,yes,
-Advice_555556953_Colne Estuary_Mid-Essex Coast Phase 2.pdf,,215,yes,yes,no,no,no,no,planned,yes,yes,no,yes,yes,yes,no,
-555586740_Channel_Islands_National_Marine_Sanctuary.pdf,,216,yes,yes,yes,yes,yes,no,planned,planned,planned,no,no,yes,yes,yes,
-312071_Maury Island.pdf,,217,yes,yes,no,no,no,no,ongoing,yes,yes,no,planned,no,no,no,
-55551618_CHN_DFO_2019_SK-B_MgmtPlan.pdf,,218,no,no,no,no,no,no,planned,planned,planned,planned,planned,no,no,no,
-1024_Biscayne_National_Park.pdf,,219,yes,yes,yes,yes,yes,no,planned,yes,yes,planned,no,no,yes,yes,NPS Climate Change Response Strategy
-555586989_Chesapeake Bay National Estuarine Research Reserve_Virginia.pdf,,220,yes,yes,no,yes,yes,no,ongoing,planned,planned,no,no,yes,yes,yes,NOAA NGS and CO-OPS
-67763_Kakadu_national_park.pdf,,221,yes,yes,yes,yes,yes,no,ongoing,planned,planned,planned,planned,yes,yes,no,
-Farallones_NMS_FMP_12_04_14.pdf,,222,no,no,no,yes,yes,no,ongoing,planned,planned,no,no,yes,yes,yes,
+2854_Pinellas_NWR.pdf,153,yes,yes,no,no,no,no,planned,yes,planned,no,some,no,yes,no,
+555586878_NorthCarolina_NERR.pdf,154,yes,yes,no,no,yes,no,ongoing,yes,yes,no,no,no,yes,no,
+198330_Tubbataha_Reefs_Natural_Park.pdf,155,no,no,no,no,no,yes,ongoing,yes,yes,no,no,yes,yes,yes,
+555586805_management plan_final.pdf,156,no,no,no,no,yes,no,planned,planned,planned,no,no,yes,yes,yes,
+315058_Currituck_NWR.pdf,157,yes,yes,no,no,no,no,planned,yes,planned,no,some,no,no,no,
+369098_Grand_Bay_NWR_CCP.pdf,158,no,no,no,no,no,no,planned,yes,planned,no,yes,no,no,no,
+555586032_JohnULloyd.pdf,159,no,no,no,no,no,no,ongoing,yes,yes,no,some,no,no,no,
+Advice_555535784_Pen_Llyn_ar_Sarnau.pdf,160,yes,yes,no,no,no,no,no,yes,planned,no,yes,no,no,no,
+2936_Rose Atoll NWR Final CCP_May 2014(1).pdf,161,yes,yes,no,yes,no,no,ongoing,yes,planned,no,some,yes,yes,yes,Other researchers and agencies
+21107_Bon Secour NWR CCP.pdf,162,no,no,no,no,no,no,ongoing,yes,planned,no,some,no,no,no,
+555586991_Ebeys Landing.pdf,163,no,no,no,no,no,no,planned,planned,planned,no,no,no,no,no,
+555586968_Salt Ponds Region.pdf,164,yes,yes,yes,no,no,no,planned,no,no,no,no,na,no,no,
+2926_HowlandIsland_NWR.pdf,165,no,no,no,no,no,no,ongoing,yes,planned,no,some,yes,yes,yes,NOAA
+555512156_MusquashEstuary_MPA.pdf,166,no,no,no,no,no,no,no,planned,planned,no,no,no,no,no,
+Advice_555583028_North East of Farnes Deep_Combo.pdf,167,no,no,no,no,no,no,yes,yes,no,no,yes,no,no,no,
+10569_CedarIsland_NWR.pdf,168,yes,yes,no,no,no,no,no,yes,planned,no,some,no,no,no,
+555557128_Poole Harbour.pdf,169,yes,yes,yes,yes,no,no,ongoing,yes,no,no,no,no,yes,no,
+555558198_TariumNiryutait_MPA.pdf,170,yes,yes,no,no,no,no,no,planned,planned,no,planned,yes,no,no,
+Advice_555556974_Duddon_Estuary_NaturalEngland.pdf,171,no,no,no,no,no,no,no,yes,yes,no,yes,no,no,no,
+555586804_OlympicCoast_NMS.pdf,172,no,no,no,no,yes,no,planned,planned,planned,no,no,yes,yes,yes,
+21116_JNDingDarling_Tritaik_2010_CCP.pdf,173,yes,yes,yes,yes,yes,no,ongoing,yes,planned,no,some,yes,yes,yes,Comprehensive Southwest Florida/Charlotte Harbor Climate Change Vulnerability Assessment
+2851_Pine_Island_and_Matlalcha_Pass_ConservationPlan.pdf,174,yes,yes,yes,yes,yes,no,planned,yes,planned,no,no,yes,yes,yes,"Other service programs, other Federal and State agencies, and universities"
+13863_13864_35897_5555793_5555799_LongIsland_NWR.pdf,175,yes,yes,no,no,yes,no,planned,yes,planned,no,some,no,no,no,
+23034_555586778_555585996_LittleTalbot_BigTalbot_AmeliaIsland.pdf,176,no,no,no,no,no,no,ongoing,yes,yes,no,no,no,no,no,
+368262_ElkhornSlough.pdf,177,no,no,no,no,no,no,ongoing,yes,planned,no,no,no,no,no,
+902399_Tijuana River.pdf,178,no,no,no,no,no,no,ongoing,yes,planned,no,no,yes,yes,yes,Non-staff researchers
+555542730_Aldabra_Atoll.pdf,179,no,no,no,no,yes,no,ongoing,yes,yes,no,yes,yes,yes,no,
+Advice_555557156_Severn_Estuary.pdf,180,yes,yes,no,no,no,no,ongoing,yes,yes,no,yes,no,no,no,
+1111260_BandonMarsh_NWR.pdf,181,yes,yes,no,no,yes,no,ongoing,yes,planned,no,some,yes,yes,yes,Fish and Wildlife Service Rising to the Challenge: Strategic Plan and Action Plan for Responding to Accelerating Climate Change; North Pacific Coast Landscape Conservation Cooperative; other academic research
+10574_PelicanIsland.pdf,182,no,no,no,no,no,no,planned,yes,planned,no,no,yes,no,no,
+555557162_Skerries_and_Causeway.pdf,183,no,no,no,no,no,no,planned,yes,yes,no,yes,no,no,yes,Northern Ireland Climate Change Adaptation Programme
+Advice_555557225_Y Fenai a Bae Conwy_Menai Strait and Conwy Bay.pdf,184,yes,yes,no,no,no,no,planned,yes,planned,no,yes,no,no,no,
+555557075_Lundy.pdf,185,yes,yes,no,yes,no,no,yes,yes,no,no,planned,yes,yes,no,
+629_Kejimkujik_NP.pdf,186,no,no,no,no,no,no,no,planned,planned,planned,no,no,yes,yes,Parks Canada monitoring
+Advice_555556927_Bassurelle Sandbank_Combo.pdf,187,no,no,no,no,no,no,yes,yes,no,no,yes,no,no,no,
+628_PacRim_NP.pdf,188,no,no,no,no,no,no,no,yes,planned,no,planned,no,no,yes,State of the Park Report contains monitoring results
+555586885_Kaho'olawe.pdf,189,yes,no,no,no,no,yes,planned,yes,yes,yes,yes,no,no,yes,University of Hawai‘i and TNC
+2931_JarvisIsland_NWR.pdf,190,yes,yes,no,no,yes,no,planned,yes,planned,no,some,yes,yes,no,NOAA
+365317_apalachicola-river.pdf,191,yes,yes,no,yes,yes,no,ongoing,yes,planned,no,planned,no,yes,no,FWC-FWRI Climate Change Adaptation Initiative
+372716_OldWomanCreek_NERR.pdf,192,yes,yes,no,yes,yes,no,ongoing,yes,planned,no,no,yes,yes,no,
+13820_Rachel_Carson.pdf,193,yes,yes,no,yes,yes,no,planned,yes,planned,no,no,yes,yes,no,
+Advice_555557017_Hatton Bank_Combo.pdf,194,no,no,no,no,no,no,planned,yes,no,no,yes,no,yes,yes,Scotland’s National Marine Plan
+11111518_Olympic_NP.pdf,195,yes,yes,no,no,yes,no,ongoing,planned,planned,planned,no,no,yes,yes,U.S. Geological Survey
+666672_WaccasassaBayPreserveStatePark.pdf,196,yes,yes,yes,no,yes,no,yes,planned,planned,no,no,no,yes,no,
+555586814_GreatBay_NERR.pdf,197,yes,yes,no,yes,no,no,ongoing,yes,planned,no,no,no,no,yes,
+6666277_Guana Tolomato Matanzas.pdf,198,no,no,no,yes,yes,no,ongoing,yes,planned,no,no,no,yes,yes,National Weather Service; National Estuarine Research Reserves System-Wide Monitoring Program
+555512149_GilbertBay_MPA.pdf,199,no,no,no,no,no,no,yes,yes,yes,planned,no,yes,no,no,
+555586877_NarragansettBay_NERR.pdf,200,no,no,no,yes,yes,no,yes,yes,planned,no,no,yes,yes,yes,"NOAA, other partners"
+13916_13034_Wallops_Chincoteague.pdf,201,yes,yes,yes,yes,yes,yes,yes,yes,planned,some,some,yes,yes,yes,"NASA Wallops Flight Facility, The Marine Science Consortium, and the USFWS; North Atlantic LCC; others"
+555586775_North-Fork-St-Lucie-AP-Management-Plan.pdf,202,yes,yes,no,yes,yes,no,planned,yes,planned,some,some,yes,yes,yes,
+95312_CT_CELCP_Plan_January_2015.pdf,203,yes,yes,yes,no,no,no,no,no,no,no,no,na,no,yes,NOAA sea level rise viewer
+555586880_SFB_NERR.pdf,204,yes,yes,yes,yes,yes,no,ongoing,yes,no,no,no,no,yes,yes,
+555557068_Loch_nam_Madadh.pdf,205,no,no,no,no,no,no,ongoing,yes,planned,no,yes,no,yes,no,
+666621_Swanquarter_NWR.pdf,206,yes,yes,no,no,no,no,planned,yes,planned,no,some,no,yes,no,
+555586834_Nisqually Reach.pdf,207,yes,yes,no,yes,yes,no,planned,yes,planned,no,no,no,yes,yes,
+315003_Moriah Harbour Cay National Park.pdf,208,no,no,no,no,no,no,no,no,no,no,no,na,yes,yes,Bahamas National Trust
+5555752_GreatBay_NWR.pdf,209,yes,yes,no,yes,yes,no,planned,yes,planned,planned,some,yes,yes,yes,Fish and Wildlife Service Rising to the Challenge: Strategic Plan and Action Plan for Responding to Accelerating Climate Change; North Pacific Coast Landscape Conservation Cooperative; other academic research
+75004_Dungeness.pdf,210,yes,yes,no,no,yes,no,planned,yes,planned,no,some,yes,yes,yes,Fish and Wildlife Service Rising to the Challenge: Strategic Plan and Action Plan for Responding to Accelerating Climate Change
+Advice_68296_Carmarthen_Bay_CCW.pdf,211,yes,yes,no,no,no,no,planned,yes,planned,no,yes,no,no,no,
+75128_SealBeachNWR.pdf,212,yes,yes,no,yes,yes,no,planned,yes,planned,no,planned,yes,yes,yes,North Orange County Integrated Regional Watershed Management Plan
+220003_HawaiianIslands_NMS.pdf,213,yes,yes,no,yes,yes,no,planned,planned,planned,planned,no,yes,yes,yes,"University of Hawaii Sea Grant program, the Pacific Islands Climate Change Cooperative, the Environmental Protection Agency, and other state and federal agencies; Resilience to a Changing Climate Action Plan"
+555585657_AncloteKeyPreserveSP.pdf,214,no,no,no,no,no,no,ongoing,yes,yes,no,some,no,yes,yes,
+Advice_555556953_Colne Estuary_Mid-Essex Coast Phase 2.pdf,215,yes,yes,no,no,no,no,planned,yes,yes,no,yes,yes,yes,no,
+555586740_Channel_Islands_National_Marine_Sanctuary.pdf,216,yes,yes,yes,yes,yes,no,planned,planned,planned,no,no,yes,yes,yes,
+312071_Maury Island.pdf,217,yes,yes,no,no,no,no,ongoing,yes,yes,no,no,no,no,no,
+55551618_CHN_DFO_2019_SK-B_MgmtPlan.pdf,218,no,no,no,no,no,no,planned,planned,yes,planned,planned,no,no,no,
+1024_Biscayne_National_Park.pdf,219,yes,yes,yes,yes,yes,no,planned,yes,yes,planned,no,no,yes,yes,NPS Climate Change Response Strategy
+555586989_Chesapeake Bay National Estuarine Research Reserve_Virginia.pdf,220,yes,yes,no,yes,yes,no,ongoing,yes,planned,no,no,yes,yes,yes,NOAA NGS and CO-OPS
+67763_Kakadu_national_park.pdf,221,yes,yes,yes,yes,yes,no,ongoing,yes,yes,planned,no,yes,yes,no,
+Farallones_NMS_FMP_12_04_14.pdf,222,no,no,no,yes,yes,no,ongoing,planned,planned,no,no,yes,yes,yes,

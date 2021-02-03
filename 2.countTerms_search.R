@@ -168,7 +168,7 @@ components_w_meta <- left_join(out, metadata)
 
 saveRDS(components_w_meta, file = "data-generated/component-search-results-w-meta-rpt.rds")
 
-# Search those 288 PDFs that contained at least one of the climate change terms and search these for the science terms
+# Search those 289 PDFs that contained at least one of the climate change terms and search these for the science terms
 
 scienceterms <- readr::read_csv("SearchTerms/search-scienceterms.csv")
 vec <- scienceterms$scienceterm
