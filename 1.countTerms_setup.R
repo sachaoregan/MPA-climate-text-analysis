@@ -50,13 +50,14 @@ parkPaperByGrouping <- plyr::ddply(luPaper, c("Grouping"), plyr::summarize, nPar
 
 # Get list of PDFs and read them in
 dir <- "ManagementPlans_R/"
+list.of.pdfs_nofolder <- list.files(dir, pattern = "*.pdf$", recursive = TRUE)
 list.of.pdfs <- list.files(dir, pattern = "*.pdf$", recursive = TRUE, full.names = TRUE)
 
 # Compare spreadspeet to files
-inXLS_butMissing <- unique(dat2$paper)[!unique(dat2$paper) %in% gsub(dir, "", list.of.pdfs)]
+inXLS_butMissing <- unique(dat2$paper)[!unique(dat2$paper) %in% gsub(dir, "", list.of.pdfs_nofolder)]
 inXLS_butMissing <- inXLS_butMissing[order(inXLS_butMissing)]
 
-haveFile_butNotInXLS <- gsub(dir, "", list.of.pdfs)[!gsub(dir, "", list.of.pdfs) %in% unique(dat2$paper)]
+haveFile_butNotInXLS <- gsub(dir, "", list.of.pdfs_nofolder)[!gsub(dir, "", list.of.pdfs_nofolder) %in% unique(dat2$paper)]
 haveFile_butNotInXLS <- haveFile_butNotInXLS[order(haveFile_butNotInXLS)]
 
 # Make sure all the papers you want to be searching are in the list/folder

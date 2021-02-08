@@ -34,6 +34,11 @@ my_corpus <- gsub(paste0(dir, "/"), "", list.of.pdfs) %>%
   set_names() %>%
   map(parse_pdfs)
 
+if (grepl("/", names(my_corpus)[[1]])) {
+  names(my_corpus) <- gsub("\\/", "", names(my_corpus))
+}
+
+
 clean_text <- function(.x) {
   .x <- unlist(.x)
   .x <- paste(.x, collapse = " ")
@@ -164,6 +169,9 @@ out <- left_join(components, terms) %>%
   select(-term) %>%
   mutate(freq = count/total_words * 10000)
 
+if (grepl("/", out$report[1])) {
+  out$report <- gsub("\\/", "", out$report)
+}
 components_w_meta <- left_join(out, metadata)
 
 saveRDS(components_w_meta, file = "data-generated/component-search-results-w-meta-rpt.rds")

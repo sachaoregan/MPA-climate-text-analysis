@@ -60,6 +60,9 @@ pdf_data_pull$variable <- recode(pdf_data_pull$variable,
 
 pdf_data_pull <- mutate(pdf_data_pull, value = stringr::str_to_sentence(value))
 
+# Make these NAs Nos:
+pdf_data_pull <- mutate(pdf_data_pull, value = ifelse(variable == "Indicators linked to climate change" & is.na(value), "No", value))
+
 pdf_data_by_region <-  pdf_data_pull %>% group_by(Grouping, dimension, variable, value) %>%
   tally() %>%
   group_by(Grouping, variable) %>%
@@ -79,7 +82,6 @@ ggplot(filter(pdf_data_by_region, dimension == "Review of climate effects on par
   theme(legend.title = element_blank(), axis.text.x = element_text(angle = 40, hjust = 1)) +
   labs(x = "", y = "Proportion", title= "Review of climate effects on park") +
   scale_fill_manual(values = mypalette)
-
 ggsave("figs/manual-pdf-search-climate-effects-v2.png", width = 8, height = 4)
 
 ggplot(filter(pdf_data_by_region, dimension == "Climate objectives and strategies"), aes(x = variable, y = proportion, fill = value)) +
@@ -89,24 +91,58 @@ ggplot(filter(pdf_data_by_region, dimension == "Climate objectives and strategie
   theme(legend.title = element_blank(), axis.text.x = element_text(angle = 35, hjust = 1)) +
   labs(x = "", y = "Proportion", title= "Climate change planning") +
   scale_fill_manual(values = mypalette)
-
 ggsave("figs/manual-pdf-search-climate-planning-v2.png", width = 6.5, height = 3.5)
+
+# tigure versions: -----------------------------------------------------
+
+make_panel <- function(component) {
+  dat <- filter(pdf_data_by_region, dimension == component, value == 'Yes')
+  dat2 <- filter(pdf_data_by_region, dimension == component)
+  lu <- distinct(select(dat2, Grouping, variable))
+  dat <- left_join(lu, dat)
+  dat$proportion <- ifelse(is.na(dat$proportion), 0, dat$proportion)
+  ggplot(dat, aes(x = Grouping, y = variable, fill = proportion)) +
+    theme_sleek() +
+    geom_tile(colour = "grey70") +
+    geom_text(aes(label= gsub("0.00", "", sprintf("%.2f", round(proportion, 2)), "")),
+      color='grey10', size = 2.5)+
+    scale_fill_distiller(palette = "Blues", direction = 1, limits = c(0, 1.2)) +
+    labs(y = "", x = "", fill = "Proportion") +
+    scale_x_discrete(position = "top") +
+    coord_cartesian(expand = FALSE) +
+    guides(fill = FALSE) +
+    theme(axis.text.x.top = element_text(angle = 45, hjust = 0))
+  }
+g1 <- make_panel('Climate objectives and strategies')
+g2 <- make_panel('Review of climate effects on park')
+g <- cowplot::plot_grid(g2,g1, ncol = 1L, labels = c("A: Review of climate effects on park","B: Climate objectives and strategies"), label_fontface = "plain", label_x = -0.12, label_y = 0.94, align = "v", label_size = 10)
+ggsave("figs/manual-search-tigure.pdf", width=7, height=4)
+ggsave("figs/manual-search-tigure.png", width=7, height=4)
+
+# ---------------------------------------------
 
 pdf_data_pull %>% group_by(Grouping, dimension, variable, value) %>%
   tally() %>%
   group_by(Grouping, variable) %>%
   mutate(proportion = n / sum(n)) %>% ungroup()
 
-ggplot(filter(pdf_data_by_region, dimension == "Monitoring", variable != "Metrics"), aes(x = variable, y = proportion, fill = value)) +
+pdf_data_by_region %>%
+  filter(dimension == "Monitoring", variable != "Metrics") %>%
+  mutate(variable = gsub("Indicators linked", "Indicators linked\n", variable)) %>%
+  mutate(variable = gsub("Commitment to", "Commitment to\n", variable)) %>%
+  mutate(variable = gsub("targets", "Targets", variable)) %>%
+  ggplot(aes(x = forcats::fct_rev(variable), y = proportion, fill = value)) +
   geom_col(position = "stack") +
   facet_wrap(~Grouping,  nrow = 2) +
   theme_sleek() +
-  theme(legend.title = element_blank(), axis.text.x = element_text(angle = 45, hjust = 1)) +
-  labs(x = "", y = "Proportion", title= "Climate monitoring") +
-  scale_x_discrete(labels = c("Commitment to\nclimate monitoring", "Indicators", "Indicators linked\n to climate change", "Targets", "Thresholds")) +
-  scale_fill_manual(values = mypalette2)
+  theme(legend.title = element_blank(), axis.text.x = element_text(angle = 0, hjust = 1), legend.position = "top", legend.margin = margin(t = 0, r = 0, b = -5, l = 0, unit = "pt"), legend.justification = c(0, 0), panel.spacing.x = unit(15, "pt")) +
+  labs(x = "", y = "Proportion") +
+  scale_fill_manual(values = mypalette2) +
+  coord_flip(expand = FALSE) +
+  scale_y_continuous(breaks = c(0, 0.5, 1))
 
-ggsave("figs/manual-pdf-search-climate-monitoring-v2.png", width = 11, height = 4)
+ggsave("figs/manual-pdf-search-climate-monitoring-v3.png", width = 9, height = 4)
+ggsave("figs/manual-pdf-search-climate-monitoring-v3.pdf", width = 9, height = 4)
 
 # Plot of the climate change robustness indices across regions.
 
@@ -145,23 +181,39 @@ ggplot(xx, aes(x = total, y = n)) +
   facet_wrap(~Grouping,  nrow = 2) +
   theme_sleek() +
   theme(legend.title = element_blank()) +
-  coord_cartesian(expand = FALSE, xlim = c(0, 24), ylim = c(0, 13)) +
+  coord_cartesian(expand = FALSE, xlim = c(0, 24), ylim = c(0, 16)) +
   theme(panel.spacing.x = grid::unit(10, "pt")) +
-  scale_y_continuous(breaks = seq(0, 14, 2)) +
+  scale_y_continuous(breaks = seq(0, 16, 2)) +
   scale_x_continuous(breaks = seq(0, 24, 4)) +
   labs(x = "Climate change robustness score", y = "Number of management plans")
 
 ggsave("figs/climate_robustness_index_v2.png", width = 10, height = 4)
-
-
-xx_greater_than_8_plans <- xx %>% filter(Grouping %in% c("Oceania", "Canada", "UK", "USA"))
-
-ggplot(xx_greater_than_8_plans, aes(x = as.numeric(pub_yr), y = total)) +
-geom_point() +
-  facet_wrap(~Grouping,  nrow = 2)
-
-ggsave("figs/climate_robustness_index_over_time_v2.png", width = 11, height = 4)
+ggsave("figs/climate_robustness_index_v2.pdf", width = 10, height = 4)
 
 plans_with_park_ids <- readRDS("data-generated/plans_with_mpa_ids_for_map.rds") %>%
   select(report, NAME, DESIG, WDPAID)
 pdf_scored_w_park_desig_and_yr <- left_join(pdf_scored, plans_with_park_ids, by = "report")
+
+unique(pdf_scored_w_park_desig_and_yr$DESIG) %>% sort() %>% dput()
+
+parks <- c("National Wildlife Refuge", "National Estuarine Research Reserve", "Marine Protected Area (OSPAR)", "Special Protection Area (Birds Directive)", "Ramsar Site, Wetland of International Importance", "Marine Protected Area", "National Park")
+
+pdf_scored_w_park_desig_and_yr %>% filter(DESIG %in% parks, Grouping %in% c("Canada", "Oceania", "UK", "USA")) %>%
+  ggplot(aes(x = as.numeric(pub_yr), y = total)) +
+  geom_jitter(aes(colour = DESIG), width = 0.2, height = 0, alpha = 0.9) +
+  geom_jitter(data = pdf_scored_w_park_desig_and_yr %>% filter(!DESIG %in% parks, Grouping %in% c("Canada", "Oceania", "UK", "USA")), width = 0.2, height = 0, colour = "grey50", alpha = 0.6) +
+ geom_smooth(aes(colour = DESIG, fill = DESIG), method = MASS::glm.nb, alpha = 0.1) +
+  geom_smooth(aes(colour = DESIG, fill = DESIG), method = MASS::glm.nb, se= FALSE) +
+  facet_wrap(~Grouping,  nrow = 2) +
+  theme_sleek() +
+  theme(panel.spacing.x = unit(20, "pt")) +
+  scale_y_continuous(breaks = seq(0, 24, 4)) +
+  scale_color_brewer(palette = "Dark2") +
+  scale_fill_brewer(palette = "Dark2") +
+  labs(x = "MPA plan publication year", y = "Climate change robustness score", colour = "MPA Designation", fill = "MPA Designation")
+
+ggsave("figs/climate_robustness_index_over_time.png", width = 9, height = 4)
+ggsave("figs/climate_robustness_index_over_time.pdf", width = 9, height = 4)
+
+write.csv(pdf_scored_w_park_desig_and_yr, "pdf_scored_w_park_desig_and_yr.csv")
+

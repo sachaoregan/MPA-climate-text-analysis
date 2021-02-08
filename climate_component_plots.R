@@ -22,7 +22,7 @@ components_w_meta <- components_w_meta %>%
 tot_term_count <- components_w_meta %>%
   group_by(dimension, root_word) %>%
   summarise(mean.freq = mean(freq))
-
+5
 components_by_region <- components_w_meta %>%
   mutate(root_word = stringr::str_to_sentence(root_word), dimension = stringr::str_to_sentence(dimension)) %>%
   group_by(Grouping, dimension, root_word) %>%
@@ -42,11 +42,13 @@ components_w_meta_yr_bygroup <- components_w_meta %>% filter(Grouping != "Antarc
 mypalette <- c("#41ae76", "#ffeda0", "#9e9ac8", "#d53e4f", "#4292c6", "#fe9929", "#91cf60", "#fa9fb5", "#969696", "#8c6bb1")
 
 
+.blue <- RColorBrewer::brewer.pal(6, "Blues")[5]
+
 # Plot of the mean frequency of the climate components per 10,000 words by dimension.
 
 ggplot(filter(tot_term_count, !is.na(root_word)),
-  aes(x = forcats::fct_reorder(root_word, mean.freq), y = mean.freq, fill = dimension)) +
-  geom_col() +
+  aes(x = forcats::fct_reorder(root_word, mean.freq), y = mean.freq)) +
+  geom_col(fill = .blue) +
   facet_wrap(~dimension, ncol = 1, scales = "free") +
   scale_fill_manual(values = c("#31a354", "#8856a7", "#fd8d3c")) +
   theme_sleek() +
@@ -55,6 +57,7 @@ ggplot(filter(tot_term_count, !is.na(root_word)),
   coord_flip(expand = FALSE)
 
 ggsave("figs/components.png", width = 5, height = 9)
+ggsave("figs/components.pdf", width = 5, height = 9)
 
 
 # Plot of the proportion of MPA plans by region that contain the climate components.
@@ -70,6 +73,31 @@ ggplot(components_by_region, aes(x = forcats::fct_reorder(root_word, proportion)
 
 ggsave("figs/component-props-by-region.png", width = 14, height = 12)
 
+# tigure  version
+
+
+make_panel <- function(component='Ecological') {
+  dat <- filter(components_by_region,dimension %in% component)
+  dat$root_word <- forcats::fct_reorder(dat$root_word, dat$proportion)
+  ggplot(dat, aes(x = Grouping, y = root_word, fill = proportion)) +
+    theme_sleek() +
+    geom_tile(colour = "grey70") +
+    geom_text(aes(label= gsub("0.00", "", sprintf("%.2f", round(proportion, 2)), "")),
+      color='grey10', size = 2.5)+
+    scale_fill_distiller(palette = "Blues", direction = 1, limits = c(0, 1.2)) +
+    labs(y = "", x = "", fill = "Proportion") +
+    scale_x_discrete(position = "top") +
+    coord_cartesian(expand = FALSE) +
+    guides(fill = FALSE) +
+    theme(axis.text.x.top = element_text(angle = 45, hjust = 0))
+    # ggtitle(component)
+}
+g1 <- make_panel('Ecological')
+g2 <- make_panel('Physical')
+g3 <- make_panel('Sociological')
+g <- cowplot::plot_grid(g1,g2,g3, ncol = 3L, labels = c("A: Ecological", "B: Physical", "C: Sociological"), label_fontface = "plain", label_x = 0, label_y = 0.97)
+ggsave("figs/component-tigure.pdf", width=13, height=5)
+ggsave("figs/component-tigure.png", width=13, height=5)
 
 # Plot of the total frequency of the climate components per 10,000 words in MPA plans by region and MPA plan publication year. Each dot is an MPA plan/PDF.
 
