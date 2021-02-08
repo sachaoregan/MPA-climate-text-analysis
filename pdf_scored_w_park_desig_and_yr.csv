@@ -1,0 +1,434 @@
+"","report","sort_order","disc_of_climate_effects_on_park_ecological","disc_of_climate_effects_on_park_physical","disc_of_climate_effects_on_park_sociological","climate_objectives","climate_strategies_actions","detailed_methods","establishes_baseline_conditions","indicators","metrics","thresholds","targets","indicat_thresh_metrics_explicitly_linked_to_climate","commitment_to_climate_monitoring","references_other_monitoring","other_monitoring","total","Country","Grouping","pub_yr","NAME","DESIG","WDPAID"
+"1","2910_BakerIsland_NWR.pdf",1,2,2,0,2,2,0,1,2,2,0,1,2,2,2,NA,18,"United States","USA","2007","Baker Island","National Wildlife Refuge",2910
+"2","1064_Gulf_Islands_National_Seashore.pdf",2,2,2,2,0,2,0,1,2,2,2,0,0,2,2,NA,17,"United States","USA","2014","Gulf Islands","National Seashore",1064
+"3","67767_Pitt_water_nature_reserve.pdf",3,2,2,0,2,2,0,1,2,2,2,2,0,2,0,NA,17,"Australia","Oceania","2010","Pitt Water-Orielton Lagoon","Ramsar Site, Wetland of International Importance",67767
+"4","354076_South-east_commonwealth_marine_reserves_network.pdf",4,0,0,0,0,0,0,0,0,0,0,0,NA,2,2,NA,4,"Australia","Oceania","2013","Apollo","Commonwealth Marine Reserve",354076
+"5","354076_South-east_commonwealth_marine_reserves_network.pdf",4,0,0,0,0,0,0,0,0,0,0,0,NA,2,2,NA,4,"Australia","Oceania","2013","Beagle","Commonwealth Marine Reserve",354077
+"6","354076_South-east_commonwealth_marine_reserves_network.pdf",4,0,0,0,0,0,0,0,0,0,0,0,NA,2,2,NA,4,"Australia","Oceania","2013","Boags","Commonwealth Marine Reserve",354078
+"7","354076_South-east_commonwealth_marine_reserves_network.pdf",4,0,0,0,0,0,0,0,0,0,0,0,NA,2,2,NA,4,"Australia","Oceania","2013","East Gippsland","Commonwealth Marine Reserve",354080
+"8","354076_South-east_commonwealth_marine_reserves_network.pdf",4,0,0,0,0,0,0,0,0,0,0,0,NA,2,2,NA,4,"Australia","Oceania","2013","Flinders","Commonwealth Marine Reserve",354081
+"9","354076_South-east_commonwealth_marine_reserves_network.pdf",4,0,0,0,0,0,0,0,0,0,0,0,NA,2,2,NA,4,"Australia","Oceania","2013","Franklin","Commonwealth Marine Reserve",354082
+"10","354076_South-east_commonwealth_marine_reserves_network.pdf",4,0,0,0,0,0,0,0,0,0,0,0,NA,2,2,NA,4,"Australia","Oceania","2013","Freycinet","Commonwealth Marine Reserve",354083
+"11","354076_South-east_commonwealth_marine_reserves_network.pdf",4,0,0,0,0,0,0,0,0,0,0,0,NA,2,2,NA,4,"Australia","Oceania","2013","Huon","Commonwealth Marine Reserve",354085
+"12","354076_South-east_commonwealth_marine_reserves_network.pdf",4,0,0,0,0,0,0,0,0,0,0,0,NA,2,2,NA,4,"Australia","Oceania","2013","Macquarie Island","Commonwealth Marine Reserve",354086
+"13","354076_South-east_commonwealth_marine_reserves_network.pdf",4,0,0,0,0,0,0,0,0,0,0,0,NA,2,2,NA,4,"Australia","Oceania","2013","Murray","Commonwealth Marine Reserve",354087
+"14","354076_South-east_commonwealth_marine_reserves_network.pdf",4,0,0,0,0,0,0,0,0,0,0,0,NA,2,2,NA,4,"Australia","Oceania","2013","Nelson","Commonwealth Marine Reserve",354088
+"15","354076_South-east_commonwealth_marine_reserves_network.pdf",4,0,0,0,0,0,0,0,0,0,0,0,NA,2,2,NA,4,"Australia","Oceania","2013","South Tasman Rise","Commonwealth Marine Reserve",354089
+"16","354076_South-east_commonwealth_marine_reserves_network.pdf",4,0,0,0,0,0,0,0,0,0,0,0,NA,2,2,NA,4,"Australia","Oceania","2013","Tasman Fracture","Commonwealth Marine Reserve",354090
+"17","354076_South-east_commonwealth_marine_reserves_network.pdf",4,0,0,0,0,0,0,0,0,0,0,0,NA,2,2,NA,4,"Australia","Oceania","2013","Zeehan","Commonwealth Marine Reserve",354091
+"18","900738_TheDales.pdf",5,2,2,0,0,0,0,1,2,2,1,2,0,2,0,NA,12,"Australia","Oceania","2010","The Dales","Ramsar Site, Wetland of International Importance",900738
+"19","555557008_Glannau_Mon_Cors_Heli_Anglesey Coast_Saltmarsh_SAC.pdf",6,0,2,0,0,0,0,1,2,2,1,2,0,0,0,NA,10,"United Kingdom","UK","2008","Glannau Môn: Cors heli / Anglesey Coast: Saltmarsh","Marine Protected Area (OSPAR)",555557008
+"20","29737_20140421_SLIPSP_ApprovedPlan.pdf",7,0,0,0,0,0,0,1,2,1,0,1,0,2,0,NA,7,"United States","USA","2014","St. Lucie Inlet","Preserve State Park",29737
+"21","312187_FlowerGarden.pdf",8,0,0,0,2,0,0,1,0,0,0,0,NA,2,0,NA,5,"United States","USA","2012","Flower Garden Banks","National Marine Sanctuary",312187
+"22","555586741_MonteraryBay_NMS.pdf",9,0,0,0,0,0,0,1,0,0,0,0,NA,2,2,NA,5,"United States","USA","2008","Monterey Bay","National Marine Sanctuary",555586741
+"23","555586784_Monitor.pdf",10,0,0,0,0,0,0,1,0,0,0,0,NA,2,0,NA,3,"United States","USA","2013","NOAA's Monitor","National Marine Sanctuary",555586784
+"24","Advice_555556938_BraemarPockmarks_Combo.pdf",11,0,0,0,0,0,0,2,2,0,0,2,0,0,0,NA,6,"United Kingdom","UK","2018","Braemar Pockmarks","Marine Protected Area (OSPAR)",555556938
+"25","555586745_Estero-Bay-AP-Management-Plan.pdf",12,0,2,0,0,0,0,0,2,1,0,0,0,0,2,NA,7,"United States","USA","2015","Estero Bay","Aquatic Preserve",555586745
+"26","555556933_Berwickshire_and_North_Northumberland_Coast.pdf",13,0,0,0,0,0,0,1,1,1,0,0,2,2,2,NA,9,"United Kingdom","UK","2014","Berwickshire and North Northumberland Coast","Marine Protected Area (OSPAR)",555556933
+"27","555624212_Saba_Bank.pdf",14,2,2,0,0,0,0,2,2,0,0,0,0,2,2,NA,10,"Netherlands","Europe","2008","Saba","Specially Protected Area (Cartagena Convention)",555624212
+"28","13857_Supawna Meadows.pdf",15,2,2,0,0,0,0,1,2,1,0,1,2,2,0,NA,11,"United States","USA","2011","Supawna Meadows","National Wildlife Refuge",13857
+"29","555586803_Narrow River_SAMP_new.pdf",16,2,2,2,0,0,0,2,0,0,0,0,NA,2,0,NA,8,"United States","USA","1999","Narrow River","Narrow River",555586803
+"30","555586881_Delaware NERR_Mgmt Plan.pdf",17,2,2,0,2,2,0,1,2,1,0,0,2,2,2,NA,16,"United States","USA","2012","Delaware","National Estuarine Research Reserve",555586881
+"31","555586811_SouthSlough.pdf",18,0,0,0,2,2,0,1,2,2,0,0,2,2,2,NA,15,"United States","USA","2017","South Slough","National Estuarine Research Reserve",555586811
+"32","68308_Izembek.pdf",19,0,0,0,0,0,0,2,1,0,0,0,2,0,0,NA,5,"United States","USA","2010","Izembek Lagoon National Wildlife Refuge","Ramsar Site, Wetland of International Importance",68308
+"33","44449_BigBranchMarsh_ConservationPlan.pdf",20,0,0,0,0,0,0,1,2,1,0,0,0,0,0,NA,4,"United States","USA","2007","Big Branch Marsh","National Wildlife Refuge",44449
+"34","305214_Gully_MPA.pdf",21,0,0,0,0,0,0,1,1,1,0,0,0,2,0,NA,5,"Canada","Canada","2007","Gully Marine Protected Area","Marine Protected Area",305214
+"35","18716_BirdIsland.pdf",22,0,0,0,0,0,0,1,2,1,0,1,0,0,0,NA,5,"United States","USA","2015","Bird Island","Marine Sanctuary",18716
+"36","555586813_GrandBayNatEstuarineResearchReserve.pdf",23,0,2,0,2,2,0,2,2,1,0,0,2,2,2,NA,17,"United States","USA","2013","Grand Bay","National Estuarine Research Reserve",555586813
+"37","555586810_Padilla Bay.pdf",24,2,2,0,2,2,0,2,2,2,0,0,2,2,2,NA,18,"United States","USA","2008","Padilla Bay","National Estuarine Research Reserve",555586810
+"38","312072_Cherry Point.pdf",25,2,2,0,2,0,0,2,2,1,0,1,2,2,2,NA,16,"United States","USA","2010","Cherry Point","Aquatic Reserve",312072
+"39","2891_St Marks NWR CCP.pdf",26,0,0,0,0,0,0,1,2,1,0,1,0,0,0,NA,5,"United States","USA","2006","St. Marks","National Wildlife Refuge",2891
+"40","122900_Florida Keys2.pdf",27,0,0,0,0,2,0,1,1,1,0,0,2,2,2,NA,11,"United States","USA","1996","Florida Keys","National Marine Sanctuary",122900
+"41","305219_Endeavour_MPA.pdf",28,0,0,0,0,0,0,1,1,1,1,0,0,0,0,NA,4,"Canada","Canada","2010","Endeavour Hydrothermal Vents Marine Protected Area","Marine Protected Area",305219
+"42","555586879_WaquoitBay_NERR.pdf",29,0,0,0,2,2,0,2,2,2,0,0,2,2,0,NA,14,"United States","USA","2014","Waquoit Bay","National Estuarine Research Reserve",555586879
+"43","3333354_Mission_Aransas.pdf",30,2,2,0,0,2,0,2,2,2,0,0,2,2,2,NA,16,"United States","USA","2015","Mission-Aransas","National Estuarine Research Reserve",3333354
+"44","555586876_JacquesCousteau_NERR.pdf",31,0,0,0,2,2,0,2,2,2,0,0,0,2,2,NA,14,"United States","USA","2009","Jacques Cousteau","National Estuarine Research Reserve",555586876
+"45","1076_Fire_Island_National_Seashore.pdf",32,2,2,2,2,2,2,2,2,2,0,1,0,2,2,NA,21,"United States","USA","2015","Fire Island","National Seashore",1076
+"46","Advice_555588156_Fulmar_Combo.pdf",33,0,0,0,0,0,0,2,2,0,0,2,0,0,0,NA,6,"United Kingdom","UK","2018","Fulmar","Marine Conservation Zone",555588156
+"47","26622_HosniesSpring.pdf",34,2,2,0,0,0,0,1,2,2,1,2,0,0,0,NA,10,"Australia","Oceania","2010","Hosnie’s Spring","Ramsar Site, Wetland of International Importance",26622
+"48","Advice_555583053_Faroe_Shetland_Sponge_Belt_Combo.pdf",35,0,0,0,0,0,0,2,2,0,0,2,0,0,0,NA,6,"United Kingdom","UK","2018","Faroe-Shetland Sponge Belt","Marine Protected Area (OSPAR)",555583053
+"49","444456_Shell Keys NWR CCP.pdf",36,2,2,0,0,0,0,0,1,1,0,0,0,0,0,NA,4,"United States","USA","2008","Shell Keys","National Wildlife Refuge",444456
+"50","72397_Chumbe_Island_Coral_Park.pdf",37,0,0,0,2,2,0,2,2,2,1,2,2,2,0,NA,17,"Tanzania","Africa","2017","Chumbe Island Coral Park (CHICOP)","Sanctuary and Closed Forest Reserve",72397
+"51","2861_Breton.pdf",38,0,2,0,0,0,0,2,2,1,0,0,0,0,0,NA,7,"United States","USA","2000","Breton","National Wildlife Refuge",2861
+"52","555586758_Terra_Ceia_Aquatic_Preserve_Management_Plan_2009.pdf",39,2,2,0,0,0,0,1,2,1,0,0,0,2,0,NA,8,"United States","USA","2009","Terra Ceia","Aquatic Preserve",555586758
+"53","999910_Pearl_Harbor_NWR_Final_CCP.pdf",40,2,2,0,0,0,0,0,2,1,0,1,2,2,2,NA,12,"United States","USA","2010","Pearl Harbor","National Wildlife Refuge",999910
+"54","555547601_South_Georgia_and_South_Sandwich_Islands.pdf",41,2,2,0,2,0,0,0,0,0,0,0,NA,0,0,NA,4,"United Kingdom","UK","2012","South Georgia and South Sandwich Islands Marine Protected Area","Marine Protected Area",555547601
+"55","613_Auyuittuq_NP.pdf",42,0,0,0,0,0,0,1,2,2,1,1,2,0,2,NA,11,"Canada","Canada","2010","Auyuittuq National Park Of Canada","National Park",613
+"56","11111318_LewisAndClark_NWR.pdf",43,2,2,0,0,0,0,0,2,1,0,1,0,0,0,NA,6,"United States","USA","2010","Lewis And Clark","National Wildlife Refuge",11111318
+"57","21038_Ahihi-Kinau-NAR-Management-Plan.pdf",44,0,0,0,0,0,0,1,2,2,1,0,0,0,0,NA,6,"United States","USA","2012","Ahihi-Kinau","Natural Area Reserve",21038
+"58","375073_StHelenaSound.pdf",45,0,0,0,0,0,0,0,2,1,0,0,0,0,0,NA,3,"United States","USA","2016","St. Helena Sound","St. Helena Sound",375073
+"59","555557136_Red_Bay.pdf",46,0,0,0,0,0,0,1,2,2,0,2,0,0,0,NA,7,"United Kingdom","UK","2017","Red Bay","Marine Protected Area (OSPAR)",555557136
+"60","3005_Gateway_NRA.pdf",47,2,2,2,0,2,0,2,1,1,0,0,2,2,2,NA,16,"United States","USA","2014","Gateway","National Recreation Area",3005
+"61","13865_AlligatorRiver_NWR.pdf",48,2,2,0,0,0,0,2,2,1,0,0,0,0,0,NA,7,"United States","USA","2008","Alligator River","National Wildlife Refuge",13865
+"62","555624214_Glovers_Reef_Marine_Reserve.pdf",49,0,0,0,0,0,0,2,2,2,0,0,0,2,2,NA,10,"Belize","Central America","2008","Glover's Reef","Specially Protected Area (Cartagena Convention)",555624214
+"63","1111288_Siletz Bay2.pdf",50,2,2,0,0,2,0,1,2,2,0,2,2,2,2,NA,17,"United States","USA","2013","Siletz Bay","National Wildlife Refuge",1111288
+"64","11839_315001_555592579_AbacoMarineParks.pdf",51,0,0,0,0,0,0,1,1,1,0,0,0,2,2,NA,7,"Bahamas","Caribbean","2017","Fowl Cays National Park","National Park",555592579
+"65","11839_315001_555592579_AbacoMarineParks.pdf",51,0,0,0,0,0,0,1,1,1,0,0,0,2,2,NA,7,"Bahamas","Caribbean","2017","Pelican Cays Land And Sea Park","National Park",11839
+"66","11839_315001_555592579_AbacoMarineParks.pdf",51,0,0,0,0,0,0,1,1,1,0,0,0,2,2,NA,7,"Bahamas","Caribbean","2017","Walker's Cay National Park","National Park",315001
+"67","555558376_Piccaninnie_ponds_karst_wetlands.pdf",52,0,2,0,0,0,0,1,2,2,1,1,0,0,0,NA,9,"Australia","Oceania","2011","Piccaninnie Ponds Karst Wetlands","Ramsar Site, Wetland of International Importance",555558376
+"68","555624810_Ross_Sea_Region_Marine_Protected_Area.pdf",53,0,0,0,2,2,0,1,2,1,0,0,0,2,0,NA,10,"Areas beyond national jurisdiction","Antarctica","2016","Ross Sea Region Marine Protected Area","Marine Protected Area (CCAMLR)",555624810
+"69","Advice_555583052_East_of_Gannet_Montrose_Fields_Combo.pdf",54,0,2,0,0,2,0,2,2,0,0,2,2,2,2,NA,16,"United Kingdom","UK","2018","East of Gannet & Montrose Fields","Marine Protected Area (OSPAR)",555583052
+"70","555586832_SmithandMinorIsland.pdf",55,2,2,0,2,0,0,1,2,1,0,0,0,2,0,NA,10,"United States","USA","2010","Smith and Minor Island","Aquatic Reserve",555586832
+"71","902745_Alderney_West_Coast_and_the_Burhou_Islands.pdf",56,0,0,0,0,2,0,1,2,1,0,0,0,2,0,NA,8,"United Kingdom","UK","2012","Alderney West Coast and the Burhou Islands","Ramsar Site, Wetland of International Importance",902745
+"72","220201_Papahanaumokuakea_NMS.pdf",57,2,2,0,0,2,0,2,2,1,0,0,2,2,2,NA,15,"United States","USA","2008","Papahanaumokuakea Marine National Monument","Marine National Monument",220201
+"73","555586765_555586768_555586769_555586770_IndianRiverLagoonAP.pdf",58,2,2,2,0,0,0,2,2,2,0,0,0,2,2,NA,14,"United States","USA","2016","Banana River","Aquatic Preserve",555586765
+"74","555586765_555586768_555586769_555586770_IndianRiverLagoonAP.pdf",58,2,2,2,0,0,0,2,2,2,0,0,0,2,2,NA,14,"United States","USA","2016","Indian River - Malabar to Vero Beach","Aquatic Preserve",555586768
+"75","555586765_555586768_555586769_555586770_IndianRiverLagoonAP.pdf",58,2,2,2,0,0,0,2,2,2,0,0,0,2,2,NA,14,"United States","USA","2016","Indian River - Vero Beach to Ft. Pierce","Aquatic Preserve",555586769
+"76","555586765_555586768_555586769_555586770_IndianRiverLagoonAP.pdf",58,2,2,2,0,0,0,2,2,2,0,0,0,2,2,NA,14,"United States","USA","2016","Jensen Beach to Jupiter Inlet","Aquatic Preserve",555586770
+"77","Advice_555556917_Anton_Dohrn_Seamount_Combo.pdf",59,0,0,0,0,2,0,1,2,0,0,2,0,2,2,NA,11,"United Kingdom","UK","2018","Anton Dohrn Seamount","Marine Protected Area (OSPAR)",555556917
+"78","13091_Apalachicola NERR System.pdf",60,2,2,0,2,2,0,2,2,1,0,0,2,2,2,NA,17,"United States","USA","2014","Apalachicola Bay","Aquatic Preserve",555586900
+"79","13091_Apalachicola NERR System.pdf",60,2,2,0,2,2,0,2,2,1,0,0,2,2,2,NA,17,"United States","USA","2014","Apalachicola National Estuarine Research Reserve Outstanding Florida Water","National Estuarine Research Reserve",13091
+"80","Advice_555556978_East Rockall Bank_Combo.pdf",61,0,0,0,0,0,0,1,2,0,0,2,2,2,2,NA,11,"United Kingdom","UK","2018","East Rockall Bank","Marine Protected Area (OSPAR)",555556978
+"81","4513_Golden Gate.pdf",62,2,2,2,2,2,0,2,2,2,1,2,0,2,2,NA,21,"United States","USA","2014","Golden Gate","National Recreation Area",555605483
+"82","166861_Pulu_Keeling_national_park.pdf",63,0,0,0,0,0,0,2,2,1,0,0,0,0,0,NA,5,"Australia","Oceania","2004","Pulu Keeling National Park","Ramsar Site, Wetland of International Importance",166861
+"83","2867_WLF_2008_CCP.pdf",64,0,0,0,0,0,0,1,2,1,0,0,0,0,0,NA,4,"United States","USA","2008","Wolf Island","National Wildlife Refuge",2867
+"84","555544114_Aransas.pdf",65,0,0,0,0,2,0,2,2,2,0,0,0,2,2,NA,12,"United States","USA","2009","Aransas","National Wildlife Refuge",555544114
+"85","Advice_555583029_South-West Deeps_Combo.pdf",66,0,0,0,0,0,0,1,2,0,0,2,0,0,0,NA,5,"United Kingdom","UK","2018","South West Deeps (West)","Marine Protected Area (OSPAR)",555583029
+"86","555586010_DelnorWiggs.pdf",67,0,0,0,0,0,0,2,2,2,0,0,0,0,0,NA,6,"United States","USA","2009","Delnor-Wiggins Pass","State Park",555586010
+"87","555542259_Wadden_Sea_Waddenzee.pdf",68,2,2,2,0,2,2,1,2,2,0,1,0,2,0,NA,16,"Netherlands","Europe","2010","Wadden Sea","Ramsar Site, Wetland of International Importance",68102
+"88","555542259_Wadden_Sea_Waddenzee.pdf",68,2,2,2,0,2,2,1,2,2,0,1,0,2,0,NA,16,"Netherlands","Europe","2010","Waddenzee","Site of Community Importance (Habitats Directive)",555536918
+"89","555542259_Wadden_Sea_Waddenzee.pdf",68,2,2,2,0,2,2,1,2,2,0,1,0,2,0,NA,16,"Netherlands","Europe","2010","Waddenzee","Special Protection Area (Birds Directive)",555542259
+"90","555586061_02.15.2013_WBSSSP_AP.pdf",69,0,0,0,0,0,0,2,2,1,0,1,2,2,2,NA,12,"United States","USA","2013","Werner-Boyce Salt Springs","State Park",555586061
+"91","21059_WeeksBayNERR.pdf",70,0,0,0,2,2,0,2,1,1,0,0,2,2,2,NA,14,"United States","USA","2017","Weeks Bay","National Estuarine Research Reserve",21059
+"92","10561_Willapa.pdf",71,2,2,0,0,2,0,1,2,1,0,1,0,2,2,NA,13,"United States","USA","2011","Willapa","National Wildlife Refuge",10561
+"93","2880_ Merritt Island.pdf",72,2,2,0,0,0,0,2,2,1,0,1,2,2,2,NA,14,"United States","USA","2008","Merritt Island","National Wildlife Refuge",2880
+"94","2868_Pinckney Island_Savannah Coastal Complex.pdf",73,2,2,0,2,2,0,1,2,1,0,0,2,2,2,NA,16,"United States","USA","2011","Blackbeard Island","National Wildlife Refuge",2864
+"95","2868_Pinckney Island_Savannah Coastal Complex.pdf",73,2,2,0,2,2,0,1,2,1,0,0,2,2,2,NA,16,"United States","USA","2011","Harris Neck","National Wildlife Refuge",2865
+"96","2868_Pinckney Island_Savannah Coastal Complex.pdf",73,2,2,0,2,2,0,1,2,1,0,0,2,2,2,NA,16,"United States","USA","2011","Pinckney Island","National Wildlife Refuge",2868
+"97","2868_Pinckney Island_Savannah Coastal Complex.pdf",73,2,2,0,2,2,0,1,2,1,0,0,2,2,2,NA,16,"United States","USA","2011","Tybee","National Wildlife Refuge",376225
+"98","2868_Pinckney Island_Savannah Coastal Complex.pdf",73,2,2,0,2,2,0,1,2,1,0,0,2,2,2,NA,16,"United States","USA","2011","Wassaw","National Wildlife Refuge",2869
+"99","555624213_Port_Honduras.pdf",74,2,2,0,2,2,0,2,2,2,0,0,2,2,0,NA,16,"Belize","Central America","2011","Port Honduras","Specially Protected Area (Cartagena Convention)",555624213
+"100","5555586747_48_49_50_56_Charlotte-Harbor-AP-Management-Plan.pdf",75,2,2,2,0,0,0,2,2,2,0,0,0,0,2,NA,12,"United States","USA","2017","Cape Haze","Aquatic Preserve",555586756
+"101","5555586747_48_49_50_56_Charlotte-Harbor-AP-Management-Plan.pdf",75,2,2,2,0,0,0,2,2,2,0,0,0,0,2,NA,12,"United States","USA","2017","Gasparilla Sound - Charlotte Harbor","Aquatic Preserve",555586747
+"102","5555586747_48_49_50_56_Charlotte-Harbor-AP-Management-Plan.pdf",75,2,2,2,0,0,0,2,2,2,0,0,0,0,2,NA,12,"United States","USA","2017","Lemon Bay","Aquatic Preserve",555586748
+"103","5555586747_48_49_50_56_Charlotte-Harbor-AP-Management-Plan.pdf",75,2,2,2,0,0,0,2,2,2,0,0,0,0,2,NA,12,"United States","USA","2017","Matlacha Pass","Aquatic Preserve",555586749
+"104","5555586747_48_49_50_56_Charlotte-Harbor-AP-Management-Plan.pdf",75,2,2,2,0,0,0,2,2,2,0,0,0,0,2,NA,12,"United States","USA","2017","Pine Island Sound","Aquatic Preserve",555586750
+"105","2906_BackBayNWR.pdf",76,0,0,0,0,0,0,1,2,1,0,1,0,0,0,NA,5,"United States","USA","2010","Back Bay","National Wildlife Refuge",2906
+"106","555512144_BasinHead_MPA.pdf",77,0,0,0,0,0,0,2,2,2,2,0,0,0,0,NA,8,"Canada","Canada","2014","Basin Head Marine Protected Area","Marine Protected Area",555512144
+"107","555624206_Man o War Shoal Marine Park.pdf",78,2,0,0,0,0,0,1,1,1,0,0,0,2,0,NA,5,"Netherlands","Europe","2011","Man o War Shoal Marine Park","Specially Protected Area (Cartagena Convention)",555624206
+"108","315079_StellwagenBank_NMS.pdf",79,2,2,2,0,2,0,2,1,1,0,0,2,2,0,NA,14,"United States","USA","2010","Gerry E. Studds/Stellwagen Bank","National Marine Sanctuary",315079
+"109","555586055_StumpPassBeach.pdf",80,0,2,0,0,0,0,2,2,2,0,1,0,2,2,NA,13,"United States","USA","2013","Stump Pass Beach","State Park",555586055
+"110","13792_LowerFloridaKeys_NWR.pdf",81,2,2,0,0,0,0,2,2,1,0,0,2,2,0,NA,11,"United States","USA","2009","Great White Heron","National Wildlife Refuge",13792
+"111","13792_LowerFloridaKeys_NWR.pdf",81,2,2,0,0,0,0,2,2,1,0,0,2,2,0,NA,11,"United States","USA","2009","Key West","National Wildlife Refuge",13020
+"112","13792_LowerFloridaKeys_NWR.pdf",81,2,2,0,0,0,0,2,2,1,0,0,2,2,0,NA,11,"United States","USA","2009","National Key Deer","Refuge",13019
+"113","Advice_555583049_Firth_of_Forth_Banks_Complex_Combo.pdf",82,0,0,0,0,0,0,2,2,0,0,2,2,2,2,NA,12,"United Kingdom","UK","2018","Firth of Forth Banks Complex","Marine Protected Area (OSPAR)",555583049
+"114","555556977_East_Mingulay.pdf",83,0,0,0,2,0,0,2,2,1,0,2,0,2,2,NA,13,"United Kingdom","UK","2019","East Mingulay","Marine Protected Area (OSPAR)",555556977
+"115","555586809_HudsonRiver_NERR.pdf",84,2,2,0,2,2,0,2,1,1,0,0,0,2,2,NA,14,"United States","USA","2019","Hudson River","National Estuarine Research Reserve",555586809
+"116","900706_Pointe_Sable_Environmental_Protection_Area.pdf",85,0,0,0,0,0,0,0,0,0,0,0,NA,0,0,NA,0,"St. Lucia","Caribbean","2009","Mankòté Mangrove","Ramsar Site, Wetland of International Importance",900707
+"117","900706_Pointe_Sable_Environmental_Protection_Area.pdf",85,0,0,0,0,0,0,0,0,0,0,0,NA,0,0,NA,0,"St. Lucia","Caribbean","2009","Savannes Bay","Ramsar Site, Wetland of International Importance",900706
+"118","312867_Fidalgo Bay.pdf",86,2,2,0,2,2,0,2,2,2,0,0,0,2,2,NA,16,"United States","USA","2019","Fidalgo Bay","Aquatic Reserve",312867
+"119","312370_outdatedplan_Ashepoo-Combahee-Edisto (ACE) Basin.pdf",87,0,0,0,0,0,0,1,1,1,0,0,2,2,2,NA,9,"United States","USA","2011","Ashepoo-Combahee-Edisto (ACE) Basin","National Estuarine Research Reserve",312370
+"120","Advice_555557201_Dee Estuary.pdf",88,0,2,0,0,0,0,2,2,2,0,2,2,2,2,NA,16,"United Kingdom","UK","2010","The Dee Estuary","Special Protection Area (Birds Directive)",555541844
+"121","Advice_555557201_Dee Estuary.pdf",88,0,2,0,0,0,0,2,2,2,0,2,2,2,2,NA,16,"United Kingdom","UK","2010","The Dee Estuary","Marine Protected Area (OSPAR)",555557201
+"122","555557098_Murlough.pdf",89,0,0,0,0,2,2,2,2,2,0,2,0,2,2,NA,16,"United Kingdom","UK","2017","Murlough","Marine Protected Area (OSPAR)",555557098
+"123","971_Everglades.pdf",90,2,2,2,0,2,0,1,2,1,0,1,2,2,2,NA,17,"United States","USA","2015","Everglades","National Park",971
+"124","971_Everglades.pdf",90,2,2,2,0,2,0,1,2,1,0,1,2,2,2,NA,17,"United States","USA","2015","Everglades National Park","Ramsar Site, Wetland of International Importance",68310
+"125","1069_Canaveral_National_Seashore.pdf",91,2,2,2,0,2,0,1,1,1,1,0,2,2,2,NA,16,"United States","USA","2015","Canaveral","National Seashore",1069
+"126","10573_MackayIsland_NWR.pdf",92,2,2,0,0,0,0,1,2,1,0,1,0,0,0,NA,7,"United States","USA","2008","Mackay Island","National Wildlife Refuge",10573
+"127","555547389_Zella M. Schultz_Protection Island.pdf",93,2,2,0,2,2,0,2,2,1,0,0,2,2,0,NA,15,"United States","USA","2010","Zella M. Schultz/Protection Island","Seabird Sanctuary",555547389
+"128","555586901_RookeryBay_AP-NERR.pdf",94,2,2,0,2,2,0,2,2,1,0,0,2,2,2,NA,17,"United States","USA","2009","Cape Romano - Ten Thousand Islands","Aquatic Preserve",555586760
+"129","555586901_RookeryBay_AP-NERR.pdf",94,2,2,0,2,2,0,2,2,1,0,0,2,2,2,NA,17,"United States","USA","2009","Rookery Bay","National Estuarine Research Reserve",13090
+"130","555586901_RookeryBay_AP-NERR.pdf",94,2,2,0,2,2,0,2,2,1,0,0,2,2,2,NA,17,"United States","USA","2009","Rookery Bay","Aquatic Preserve",555586901
+"131","Advice_555557108_North Norfolk Sandbanks and Saturn Reef_Combo.pdf",95,0,0,0,0,0,0,2,2,0,0,2,0,2,0,NA,8,"United Kingdom","UK","2017","North Norfolk Sandbanks and Saturn Reef","Marine Protected Area (OSPAR)",555557108
+"132","Advice_555557112_North West Rockall Bank_Combo.pdf",96,0,0,0,0,0,0,1,2,0,0,2,2,2,2,NA,11,"United Kingdom","UK","2018","North West Rockall Bank","Marine Protected Area (OSPAR)",555557112
+"133","Channel Islands National Park.pdf",97,2,2,0,2,2,0,1,1,1,0,0,0,2,2,NA,13,"United States","USA","2015","Anacapa Island","State Marine Conservation Area",312329
+"134","Channel Islands National Park.pdf",97,2,2,0,2,2,0,1,1,1,0,0,0,2,2,NA,13,"United States","USA","2015","Anacapa Island","State Marine Reserve",352751
+"135","Channel Islands National Park.pdf",97,2,2,0,2,2,0,1,1,1,0,0,0,2,2,NA,13,"United States","USA","2015","Anacapa Island","Special Closure (B)",555586889
+"136","Channel Islands National Park.pdf",97,2,2,0,2,2,0,1,1,1,0,0,0,2,2,NA,13,"United States","USA","2015","Anacapa Island Special Closure (A)","Special Closure (A)",555586895
+"137","555585663_Seabranch.pdf",98,0,0,0,0,0,0,2,2,1,0,1,0,2,0,NA,8,"United States","USA","2014","Seabranch","Preserve State Park",555585663
+"138","315470_ProtectionIsland_NWR.pdf",99,0,0,0,2,2,0,2,2,1,0,2,2,2,2,NA,17,"United States","USA","2010","Protection Island","National Wildlife Refuge",315470
+"139","10570_PrimeHook.pdf",100,2,2,0,2,2,0,1,2,1,0,1,2,2,2,NA,17,"United States","USA","2013","Prime Hook","National Wildlife Refuge",10570
+"140","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Abalone Cove","State Marine Conservation Area",555586843
+"141","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Ano Nuevo","State Marine Conservation Area",555586717
+"142","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Arrow Point to Lion Head Point (Catalina Island)","State Marine Conservation Area",555586846
+"143","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Asilomar","State Marine Reserve",555547391
+"144","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Batiquitos Lagoon","State Marine Conservation Area",11116356
+"145","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Begg Rock (San Nicolas Island Quad)","State Marine Reserve",555586841
+"146","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Big Creek","State Marine Reserve",312356
+"147","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Big Creek","State Marine Conservation Area",555586724
+"148","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Big Flat","State Marine Conservation Area",555586867
+"149","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Big River Estuary","State Marine Conservation Area",555586870
+"150","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Blue Cavern (Catalina Island)","State Marine Conservation Area",555586847
+"151","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Bodega Head","State Marine Reserve",555547365
+"152","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Bolsa Bay","State Marine Conservation Area",555586844
+"153","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Bolsa Chica Basin","State Marine Conservation Area",555586845
+"154","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Cabrillo","State Marine Reserve",555586858
+"155","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Cambria","State Marine Conservation Area",555586725
+"156","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Campus Point","State Marine Conservation Area",555586839
+"157","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Carmel Bay","State Marine Conservation Area",555586723
+"158","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Carmel Pinnacles","State Marine Reserve",555547392
+"159","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Carrington Point (Santa Rosa Island)","State Marine Reserve",352746
+"160","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Casino Point (Catalina Island)","State Marine Conservation Area",555586850
+"161","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Castle Rock","Special Closure",555587008
+"162","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Cat Harbor (Catalina Island)","State Marine Conservation Area",555586852
+"163","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Crystal Cove","State Marine Conservation Area",555586853
+"164","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Dana Point","State Marine Conservation Area",555587001
+"165","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Del Mar Landing","State Marine Reserve",312172
+"166","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Double Cone Rock","State Marine Conservation Area",555586868
+"167","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Double Point/Stormy Stack","Special Closure",555547371
+"168","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Drakes Estero","State Marine Conservation Area",555586732
+"169","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Duxbury Reef","State Marine Conservation Area",312838
+"170","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Edward F. Ricketts","State Marine Conservation Area",555586721
+"171","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Egg (Devil's Slide) Rock to Devil's Slide","Special Closure",555547372
+"172","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Elkhorn Slough","State Marine Reserve",555547351
+"173","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Elkhorn Slough","State Marine Conservation Area",555586890
+"174","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Estero Americano","State Marine Recreational Management Area",555586897
+"175","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Estero de Limantour","State Marine Reserve",312840
+"176","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Estero de San Antonio","State Marine Recreational Management Area",555586898
+"177","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","False Klamath Rock","Special Closure",555587009
+"178","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Famosa Slough","State Marine Conservation Area",555586857
+"179","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Farnsworth Offshore (Catalina Island)","State Marine Conservation Area",555586997
+"180","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Farnsworth Onshore (Catalina Island)","State Marine Conservation Area",555586996
+"181","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Footprint","State Marine Reserve",555547362
+"182","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Gerstle Cove","State Marine Reserve",555586441
+"183","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Goleta Slough","State Marine Conservation Area",555586840
+"184","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Greyhound Rock","State Marine Conservation Area",555586718
+"185","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Gull Island (Santa Cruz Island)","State Marine Reserve",352748
+"186","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Harris Point (San Miguel Island)","State Marine Reserve",352744
+"187","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Judith Rock (San Miguel Island)","State Marine Reserve",352743
+"188","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Kashtayit","State Marine Conservation Area",555586837
+"189","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Laguna Beach","State Marine Reserve",555586999
+"190","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Laguna Beach","State Marine Conservation Area",555587000
+"191","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Long Point (Catalina Island)","State Marine Reserve",555586849
+"192","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Lover's Cove (Catalina Island)","State Marine Conservation Area",555586851
+"193","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Lovers Point","State Marine Reserve",555547355
+"194","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","MacKerricher","State Marine Conservation Area",555587020
+"195","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Matlahuayl","State Marine Reserve",555586856
+"196","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Mattole Canyon","State Marine Reserve",555586865
+"197","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Montara","State Marine Reserve",555547368
+"198","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Moro Cojo Slough","State Marine Reserve",555547354
+"199","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Morro Bay","State Marine Recreational Management Area",11115738
+"200","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Morro Bay","State Marine Reserve",555547352
+"201","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Naples","State Marine Conservation Area",555586838
+"202","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Natural Bridges","State Marine Reserve",555547353
+"203","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Navarro River Estuary","State Marine Conservation Area",555586872
+"204","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","North Farallon Islands","Special Closure",555547373
+"205","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","North Farallon Islands","State Marine Reserve",555547375
+"206","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Pacific Grove Marine Gardens","State Marine Conservation Area",555586722
+"207","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Painted Cave (Santa Cruz Island)","State Marine Conservation Area",312330
+"208","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Piedras Blancas","State Marine Reserve",555547360
+"209","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Piedras Blancas","State Marine Conservation Area",555586893
+"210","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Pillar Point","State Marine Conservation Area",555586734
+"211","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Point Arena","State Marine Reserve",555547363
+"212","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Point Arena","State Marine Conservation Area",555586896
+"213","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Point Buchon","State Marine Reserve",555547361
+"214","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Point Buchon","State Marine Conservation Area",555586894
+"215","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Point Cabrillo","State Marine Reserve",312843
+"216","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Point Conception","State Marine Reserve",555586836
+"217","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Point Dume","State Marine Conservation Area",555586994
+"218","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Point Dume","State Marine Reserve",555586995
+"219","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Point Lobos","State Marine Reserve",555547393
+"220","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Point Lobos","State Marine Conservation Area",555586891
+"221","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Point Resistance","Special Closure",555547370
+"222","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Point Reyes","State Marine Reserve",555547366
+"223","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Point Reyes","State Marine Conservation Area",555586899
+"224","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Point Reyes Headlands","Special Closure",555547369
+"225","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Point St. George Reef Offshore","State Marine Conservation Area",555586862
+"226","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Point Sur","State Marine Reserve",555547394
+"227","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Point Sur","State Marine Conservation Area",555586892
+"228","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Point Vicente","State Marine Conservation Area",555586842
+"229","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Portugese Ledge","State Marine Conservation Area",555586720
+"230","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Pyramid Point","State Marine Conservation Area",555586861
+"231","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Reading Rock","State Marine Conservation Area",555587010
+"232","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Reading Rock","State Marine Reserve",555587011
+"233","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Richardson Rock (San Miguel Island)","State Marine Reserve",352742
+"234","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Rockport Rocks","Special Closure",555587015
+"235","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Russian Gulch","State Marine Conservation Area",555586869
+"236","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Russian River","State Marine Recreational Management Area",555547364
+"237","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Russian River","State Marine Conservation Area",555586730
+"238","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Salt Point","State Marine Conservation Area",11115641
+"239","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Samoa","State Marine Conservation Area",555586863
+"240","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","San Diego-Scripps Coastal","State Marine Conservation Area",555586855
+"241","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","San Dieguito Lagoon","State Marine Conservation Area",555586860
+"242","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","San Elijo Lagoon","State Marine Conservation Area",555587002
+"243","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","San Miguel Island","Special Closure A-1",555586888
+"244","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Santa Barbara Island","State Marine Reserve",352750
+"245","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Saunders Reef","State Marine Conservation Area",555586729
+"246","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Scorpion (Santa Cruz Island)","State Marine Reserve",352749
+"247","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Sea Lion Cove","State Marine Conservation Area",555586728
+"248","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Sea Lion Gulch","State Marine Reserve",555586866
+"249","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Skunk Point (Santa Rosa Island)","State Marine Reserve",352745
+"250","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Soquel Canyon","State Marine Conservation Area",555586719
+"251","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","South Cape Mendocino","State Marine Reserve",555586864
+"252","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","South Humboldt Bay","State Marine Recreational Management Area",555587012
+"253","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","South La Jolla","State Marine Reserve",555587003
+"254","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","South La Jolla","State Marine Conservation Area",555587004
+"255","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","South Point (Santa Rosa Island)","State Marine Reserve",352747
+"256","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Southeast Farallon","Special Closure A",555547374
+"257","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Southeast Farallon","Special Closure B",555547376
+"258","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Southeast Farallon Island","State Marine Reserve",555547367
+"259","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Southeast Farallon Island","State Marine Conservation Area",555586733
+"260","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Southwest Seal Rock","Special Closure",555587007
+"261","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Steamboat Rock","Special Closure",555587014
+"262","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Stewarts Point","State Marine Reserve",555547390
+"263","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Stewarts Point","State Marine Conservation Area",555586808
+"264","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Sugarloaf Island","Special Closure",555587013
+"265","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Swami's","State Marine Conservation Area",555586854
+"266","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Ten Mile","State Marine Reserve",555587017
+"267","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Ten Mile Beach","State Marine Conservation Area",555587018
+"268","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Ten Mile Estuary","State Marine Conservation Area",555587019
+"269","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Tijuana River Mouth","State Marine Conservation Area",555586859
+"270","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Tijuana Slough","National Wildlife Refuge",1111291
+"271","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Upper Newport Bay","State Marine Conservation Area",555586998
+"272","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Van Damme","State Marine Conservation Area",555586871
+"273","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Vandenberg","State Marine Reserve",312359
+"274","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","Vizcaino Rock","Special Closure",555587016
+"275","California_MPAs.pdf",101,0,0,0,0,0,0,2,1,1,0,0,0,2,2,NA,8,"United States","USA","2015","White Rock (Cambria)","State Marine Conservation Area",555586726
+"276","555624230_Tobago_Cays_Marine_Park.pdf",102,0,0,0,0,0,0,1,2,2,0,0,0,2,0,NA,7,"St. Vincent and the Grenadines","Caribbean","2007","Tobago Cays-Mayreau","Specially Protected Area (Cartagena Convention)",555624230
+"277","Advice_555557063_Liverpool_Bay_Bae_Lerpwl.pdf",103,0,0,0,0,0,0,1,2,2,0,2,0,0,0,NA,7,"United Kingdom","UK","2012","Liverpool Bay / Bae Lerpwl","Special Protection Area (Birds Directive)",555541883
+"278","Advice_555557063_Liverpool_Bay_Bae_Lerpwl.pdf",103,0,0,0,0,0,0,1,2,2,0,2,0,0,0,NA,7,"United Kingdom","UK","2012","Liverpool Bay / Bae Lerpwl","Marine Protected Area (OSPAR)",555557063
+"279","67794_Roebuck_bay.pdf",104,0,0,0,0,2,0,1,2,2,0,2,2,2,0,NA,13,"Australia","Oceania","2016","Roebuck Bay","Ramsar Site, Wetland of International Importance",67794
+"280","555586988_ChesapeakeMD.pdf",105,0,0,0,0,2,0,1,1,1,0,0,2,2,0,NA,9,"United States","USA","2008","Chesapeake Bay National Estuarine Research Reserve - Maryland","National Estuarine Research Reserve",555586988
+"281","372457_North Inlet_Winyah Bay.pdf",106,0,0,0,2,2,0,1,1,1,0,0,2,2,0,NA,11,"United States","USA","2011","North Inlet-Winyah Bay","National Estuarine Research Reserve",372457
+"282","315063_GuamFinalCCP.pdf",107,2,2,0,2,2,0,1,2,1,0,0,2,2,0,NA,14,"United States","USA","2009","Guam","National Wildlife Refuge",315063
+"283","2973_Featherstone.pdf",108,2,2,0,0,2,0,1,2,1,0,1,0,2,2,NA,13,"United States","USA","2011","Featherstone","National Wildlife Refuge",2973
+"284","315060_Grays Harbor.pdf",109,2,2,0,0,2,0,2,2,1,0,1,0,2,2,NA,14,"United States","USA","2015","Grays Harbor","National Wildlife Refuge",315060
+"285","666669_StSebastian.pdf",110,0,0,0,0,0,0,2,2,1,0,0,0,2,2,NA,9,"United States","USA","2019","St. Sebastian River","Preserve State Park",666669
+"286","Advice_555535783_Pembrokeshire_Marine.pdf",111,0,0,0,0,0,0,1,1,1,0,1,0,0,0,NA,4,"United Kingdom","UK","2009","Pembrokeshire Marine / Sir Benfro Forol","Marine Protected Area (OSPAR)",555557120
+"287","Advice_555535783_Pembrokeshire_Marine.pdf",111,0,0,0,0,0,0,1,1,1,0,1,0,0,0,NA,4,"United Kingdom","UK","2009","Pembrokeshire Marine/ Sir Benfro Forol","Site of Community Importance (Habitats Directive)",555535783
+"288","68316_Delaware Estuary_CCMP.pdf",112,2,2,2,0,2,0,2,2,1,0,0,2,2,2,NA,17,"United States","USA","2019","Delaware Bay Estuary","Ramsar Site, Wetland of International Importance",68316
+"289","Advice_555583057_Norwegian_Boundary_Sediment_Plain_Combo.pdf",113,0,0,0,0,0,0,2,2,0,0,2,0,2,2,NA,10,"United Kingdom","UK","2018","Norwegian Boundary Sediment Plain","Marine Protected Area (OSPAR)",555583057
+"290","2884_Cape Romain.pdf",114,2,2,0,2,2,0,1,2,1,0,1,0,2,2,NA,15,"United States","USA","2010","Cape Romain","National Wildlife Refuge",2884
+"291","300103_Sirmilik_NP.pdf",115,0,0,0,0,0,0,2,1,1,0,2,0,2,0,NA,8,"Canada","Canada","2016","Sirmilik National Park Of Canada","National Park",300103
+"292","1047_Buck_Island_Reef_National_Monument.pdf",116,2,2,2,0,0,0,2,1,1,0,0,0,2,2,NA,12,"United States","USA","2012","Buck Island Reef","National Monument",1047
+"293","75513_EntireDocument_LowResolutionforWebPosting.pdf",117,2,2,0,0,2,0,2,2,1,0,1,2,2,2,NA,16,"United States","USA","2010","Nomans Land Island","National Wildlife Refuge",75513
+"294","Advice_555556947_Cardigan_Bay_CCW.pdf",118,0,0,0,0,0,0,0,2,2,0,2,0,0,0,NA,6,"United Kingdom","UK","2009","Cardigan Bay / Bae Ceredigion","Marine Protected Area (OSPAR)",555556947
+"295","Advice_555556947_Cardigan_Bay_CCW.pdf",118,0,0,0,0,0,0,0,2,2,0,2,0,0,0,NA,6,"United Kingdom","UK","2009","Cardigan Bay/ Bae Ceredigion","Site of Community Importance (Habitats Directive)",555535659
+"296","478034_Gough_and_Inaccessible_Island.pdf",119,2,2,0,0,2,0,2,2,1,0,1,2,2,0,NA,14,"Saint Helena","Africa","2010","Gough Island","Ramsar Site, Wetland of International Importance",478034
+"297","478034_Gough_and_Inaccessible_Island.pdf",119,2,2,0,0,2,0,2,2,1,0,1,2,2,0,NA,14,"Saint Helena","Africa","2010","Inaccessible Island","Ramsar Site, Wetland of International Importance",478035
+"298","555586755_St-Martins-Marsh-AP-Management-Plan.pdf",120,2,2,2,0,0,0,2,2,1,0,0,0,0,0,NA,9,"United States","USA","2017","St. Martins Marsh","Aquatic Preserve",555586755
+"299","Advice_555583056_North-east_Faroe_Shetland_Channel_Combo.pdf",121,0,0,0,0,0,0,2,2,0,0,2,0,2,2,NA,10,"United Kingdom","UK","2018","North-east Faroe-Shetland Channel","Marine Protected Area (OSPAR)",555583056
+"300","555587021_RedfishRocks_MR.pdf",122,0,0,0,0,2,0,2,1,1,0,0,0,0,0,NA,6,"United States","USA","2012","Redfish Rocks","Marine Reserve",555587021
+"301","Advice_555556965_Deben Estuary_NaturalEngland.pdf",123,0,0,0,0,0,0,1,2,2,0,2,0,0,0,NA,7,"United Kingdom","UK","2001","Deben Estuary","Ramsar Site, Wetland of International Importance",127891
+"302","Advice_555556965_Deben Estuary_NaturalEngland.pdf",123,0,0,0,0,0,0,1,2,2,0,2,0,0,0,NA,7,"United Kingdom","UK","2001","Deben Estuary","Marine Protected Area (OSPAR)",555556965
+"303","666642_Crystal River.pdf",124,0,0,0,0,2,0,2,2,1,0,1,0,0,2,NA,10,"United States","USA","2018","Crystal River","Preserve State Park",666642
+"304","10565_Chassahowitzka_Conservation plan.pdf",125,2,2,0,0,2,0,1,2,1,0,1,0,2,2,NA,13,"United States","USA","2012","Chassahowitzka","National Wildlife Refuge",10565
+"305","100676_Aulavik_National_Park_of_Canada.pdf",126,0,0,0,0,0,0,0,0,0,0,0,NA,2,0,NA,2,"Canada","Canada","2012","Aulavik National Park Of Canada","National Park",100676
+"306","2900_Anahuac.pdf",127,0,0,0,2,2,0,1,2,1,0,0,0,2,0,NA,10,"United States","USA","2008","Anahuac","National Wildlife Refuge",2900
+"307","Advice_555583059_The_Barra_Fan_and_Hebrides_Terrace_Seamount_Combo.pdf",128,0,0,0,0,0,0,1,2,0,0,2,0,2,2,NA,9,"United Kingdom","UK","2018","The Barra Fan and Hebrides Terrace Seamount","Marine Protected Area (OSPAR)",555583059
+"308","61706_DryTortugas_NP.pdf",129,0,0,0,0,0,0,2,1,1,0,1,0,0,0,NA,5,"United States","USA","2000","Dry Tortugas","National Park",61706
+"309","555586754_St_Joseph_Bay_Aquatic_Preserve_Management_Plan_2008.pdf",130,0,0,0,0,0,0,2,2,1,0,0,0,2,2,NA,9,"United States","USA","2008","St. Joseph Bay","Aquatic Preserve",555586754
+"310","315470_ProtectionIsland_AquaticReserve.pdf",131,2,2,0,0,0,0,2,2,1,0,0,0,2,2,NA,11,"United States","USA","2010","Protection Island","Aquatic Reserve",555586833
+"311","555586812_WNERR_management-plan_2013_complete_low-res.pdf",132,0,0,0,2,2,0,2,1,1,0,0,2,2,0,NA,12,"United States","USA","2013","Wells","National Estuarine Research Reserve",555586812
+"312","Advice_555557166_Solway_Firth.pdf",133,0,0,0,0,0,0,1,2,2,0,2,0,0,0,NA,7,"United Kingdom","UK","2010","Solway Firth","Marine Protected Area (OSPAR)",555557166
+"313","Advice_555583058_Rosemary_Bank_Seamount_Combo.pdf",134,0,0,0,0,0,0,1,2,0,0,2,0,2,2,NA,9,"United Kingdom","UK","2018","Rosemary Bank Seamount","Marine Protected Area (OSPAR)",555583058
+"314","2952_SVN_2012_CCP.pdf",135,0,2,0,2,2,0,1,2,1,0,0,2,2,2,NA,16,"United States","USA","2012","St. Vincent","National Wildlife Refuge",2952
+"315","13396_Quttinirpaaq_NP.pdf",136,0,0,0,0,2,0,1,1,1,0,1,0,2,0,NA,8,"Canada","Canada","2006","Quttinirpaaq National Park Of Canada","National Park",13396
+"316","555586873_fbnms_mp_eis.pdf",137,2,2,0,2,2,0,1,2,2,0,0,2,2,2,NA,17,"United States","USA","2012","National Marine Sanctuary of American Samoa","National Marine Sanctuary",555586873
+"317","2941_DonEdwardsSFB_NWR.pdf",138,0,2,0,2,2,0,2,2,1,0,1,2,2,2,NA,18,"United States","USA","2012","Don Edwards San Francisco Bay","National Wildlife Refuge",2941
+"318","67795_Eighty-mile_beach.pdf",139,0,0,0,0,2,0,1,2,2,0,1,2,2,0,NA,12,"Australia","Oceania","2014","Eighty-mile Beach","Ramsar Site, Wetland of International Importance",67795
+"319","555586066_Cedar Keys Scrub state reservet.pdf",140,0,0,0,0,0,0,2,2,1,0,1,2,2,0,NA,10,"United States","USA","2019","Cedar Key Scrub","State Reserve",555586066
+"320","555557133_Rathlin_Island.pdf",141,0,0,0,0,2,0,1,2,2,0,2,0,2,2,NA,13,"United Kingdom","UK","2017","Rathlin Island","Marine Protected Area (OSPAR)",555557134
+"321","555557060_Limestone_Coast_of_South_West_Wales_Arfordir_Calchfaen_de_Orllewin_Cymru.pdf",142,0,0,0,0,0,0,1,2,2,1,2,0,0,0,NA,8,"United Kingdom","UK","2008","Limestone Coast of South West Wales / Arfordir Calchfaen de Orllewin Cymru","Marine Protected Area (OSPAR)",555557060
+"322","555586773_Mosquito-Lagoon-AP-Management-Plan-2009.pdf",143,2,2,0,0,2,0,1,2,1,0,0,0,0,0,NA,8,"United States","USA","2009","Mosquito Lagoon","Aquatic Preserve",555586773
+"323","166885_Bolinas.pdf",144,2,2,0,0,0,0,1,1,1,0,0,0,0,0,NA,5,"United States","USA","1996","Bolinas Lagoon","Ramsar Site, Wetland of International Importance",166885
+"324","13793_Crocodile Lake NWR CCP.pdf",145,0,0,0,0,0,0,2,2,1,0,1,0,0,0,NA,6,"United States","USA","2006","Crocodile Lake","National Wildlife Refuge",13793
+"325","1111277_NestuccaBay_NWR.pdf",146,2,2,0,0,2,0,1,2,1,0,2,2,2,2,NA,16,"United States","USA","2013","Nestucca Bay","National Wildlife Refuge",1111277
+"326","68276_The_Wash_and_North_Norfolk_Coast.pdf",147,0,0,0,0,0,0,1,1,1,0,1,0,0,0,NA,4,"United Kingdom","UK","2001","Gibraltar Point","Ramsar Site, Wetland of International Importance",134955
+"327","68276_The_Wash_and_North_Norfolk_Coast.pdf",147,0,0,0,0,0,0,1,1,1,0,1,0,0,0,NA,4,"United Kingdom","UK","2001","Gibraltar Point","Marine Protected Area (OSPAR)",555557006
+"328","68276_The_Wash_and_North_Norfolk_Coast.pdf",147,0,0,0,0,0,0,1,1,1,0,1,0,0,0,NA,4,"United Kingdom","UK","2001","North Norfolk Coast","Marine Protected Area (OSPAR)",555557107
+"329","68276_The_Wash_and_North_Norfolk_Coast.pdf",147,0,0,0,0,0,0,1,1,1,0,1,0,0,0,NA,4,"United Kingdom","UK","2001","The Wash","Ramsar Site, Wetland of International Importance",68276
+"330","68276_The_Wash_and_North_Norfolk_Coast.pdf",147,0,0,0,0,0,0,1,1,1,0,1,0,0,0,NA,4,"United Kingdom","UK","2001","The Wash","Marine Protected Area (OSPAR)",555557206
+"331","68276_The_Wash_and_North_Norfolk_Coast.pdf",147,0,0,0,0,0,0,1,1,1,0,1,0,0,0,NA,4,"United Kingdom","UK","2001","The Wash and North Norfolk Coast","Marine Protected Area (OSPAR)",555557205
+"332","Advice_555583055_Hatton_Rockall_Basin_Combo.pdf",148,0,0,0,0,0,0,1,2,0,0,2,0,2,2,NA,9,"United Kingdom","UK","2018","Hatton-Rockall Basin","Marine Protected Area (OSPAR)",555583055
+"333","1111270_FarallonNWR.pdf",149,2,2,0,2,2,0,2,2,1,0,1,2,2,0,NA,16,"United States","USA","2009","Farallon","National Wildlife Refuge",1111270
+"334","555586835_St. Thomas East End.pdf",150,0,0,0,2,2,2,2,2,2,0,0,2,2,2,NA,18,"United States","USA","2011","St. Thomas East End","Reserves",555586835
+"335","555586763_BigBoggy_Texas Mid_Coast.pdf",151,2,2,2,2,2,0,2,2,2,0,0,2,2,2,NA,20,"United States","USA","2012","Big Boggy","National Wildlife Refuge",555586763
+"336","555586763_BigBoggy_Texas Mid_Coast.pdf",151,2,2,2,2,2,0,2,2,2,0,0,2,2,2,NA,20,"United States","USA","2012","Brazoria","National Wildlife Refuge",10571
+"337","555586763_BigBoggy_Texas Mid_Coast.pdf",151,2,2,2,2,2,0,2,2,2,0,0,2,2,2,NA,20,"United States","USA","2012","San Bernard","National Wildlife Refuge",3333336
+"338","13024_10w_CCP_Entire_Document(7545KB).pdf",152,2,2,2,2,2,0,2,2,1,1,1,2,2,2,NA,21,"United States","USA","2016","Monomoy","National Wildlife Refuge",13024
+"339","2854_Pinellas_NWR.pdf",153,2,2,0,0,0,0,1,2,1,0,1,0,2,0,NA,9,"United States","USA","2010","Pinellas","National Wildlife Refuge",2854
+"340","555586878_NorthCarolina_NERR.pdf",154,2,2,0,0,2,0,2,2,2,0,0,0,2,0,NA,12,"United States","USA","2009","North Carolina","National Estuarine Research Reserve",555586878
+"341","198330_Tubbataha_Reefs_Natural_Park.pdf",155,0,0,0,0,0,2,2,2,2,0,0,2,2,2,NA,14,"Philippines","Asia","2010","Tubbataha Reefs Natural Park","Ramsar Site, Wetland of International Importance",198330
+"342","555586805_management plan_final.pdf",156,0,0,0,0,2,0,1,1,1,0,0,2,2,2,NA,11,"United States","USA","2009","Thunder Bay National Marine Sanctuar","National Marine Sanctuary",555586805
+"343","315058_Currituck_NWR.pdf",157,2,2,0,0,0,0,1,2,1,0,1,0,0,0,NA,7,"United States","USA","2008","Currituck","National Wildlife Refuge",315058
+"344","369098_Grand_Bay_NWR_CCP.pdf",158,0,0,0,0,0,0,1,2,1,0,2,0,0,0,NA,6,"United States","USA","2008","Grand Bay","National Wildlife Refuge",369098
+"345","555586032_JohnULloyd.pdf",159,0,0,0,0,0,0,2,2,2,0,1,0,0,0,NA,7,"United States","USA","2012","John U. Lloyd Beach","State Park",555586032
+"346","Advice_555535784_Pen_Llyn_ar_Sarnau.pdf",160,2,2,0,0,0,0,0,2,1,0,2,0,0,0,NA,7,"United Kingdom","UK","2009","Pen Llyn a`r Sarnau / Lleyn Peninsula and the Sarnau","Marine Protected Area (OSPAR)",555557121
+"347","Advice_555535784_Pen_Llyn_ar_Sarnau.pdf",160,2,2,0,0,0,0,0,2,1,0,2,0,0,0,NA,7,"United Kingdom","UK","2009","Pen Llyn a`r Sarnau/ Lleyn Peninsula and the Sarnau","Site of Community Importance (Habitats Directive)",555535784
+"348","2936_Rose Atoll NWR Final CCP_May 2014(1).pdf",161,2,2,0,2,0,0,2,2,1,0,1,2,2,2,NA,16,"United States","USA","2014","Rose Atoll","National Wildlife Refuge",2936
+"349","21107_Bon Secour NWR CCP.pdf",162,0,0,0,0,0,0,2,2,1,0,1,0,0,0,NA,6,"United States","USA","2005","Bon Secour","National Wildlife Refuge",21107
+"350","555586991_Ebeys Landing.pdf",163,0,0,0,0,0,0,1,1,1,0,0,0,0,0,NA,3,"United States","USA","2009","Ebey's Landing","National Historical Reserve",555586991
+"351","555586968_Salt Ponds Region.pdf",164,2,2,2,0,0,0,1,0,0,0,0,NA,0,0,NA,5,"United States","USA","1999","Salt Ponds Region","Marine Protected Area",555586968
+"352","2926_HowlandIsland_NWR.pdf",165,0,0,0,0,0,0,2,2,1,0,1,2,2,2,NA,12,"United States","USA","2007","Howland Island","National Wildlife Refuge",2926
+"353","555512156_MusquashEstuary_MPA.pdf",166,0,0,0,0,0,0,0,1,1,0,0,0,0,0,NA,2,"Canada","Canada","2017","Musquash Estuary Marine Protected Area","Marine Protected Area",555512156
+"354","Advice_555583028_North East of Farnes Deep_Combo.pdf",167,0,0,0,0,0,0,2,2,0,0,2,0,0,0,NA,6,"United Kingdom","UK","2018","North East of Farnes Deep","Marine Protected Area (OSPAR)",555583028
+"355","10569_CedarIsland_NWR.pdf",168,2,2,0,0,0,0,0,2,1,0,1,0,0,0,NA,6,"United States","USA","2006","Cedar Island","National Wildlife Refuge",10569
+"356","555557128_Poole Harbour.pdf",169,2,2,2,2,0,0,2,2,0,0,0,0,2,0,NA,12,"United Kingdom","UK","2006","Poole Harbour","Ramsar Site, Wetland of International Importance",220076
+"357","555557128_Poole Harbour.pdf",169,2,2,2,2,0,0,2,2,0,0,0,0,2,0,NA,12,"United Kingdom","UK","2006","Poole Harbour","Special Protection Area (Birds Directive)",555541821
+"358","555557128_Poole Harbour.pdf",169,2,2,2,2,0,0,2,2,0,0,0,0,2,0,NA,12,"United Kingdom","UK","2006","Poole Harbour","Marine Protected Area (OSPAR)",555557128
+"359","555558198_TariumNiryutait_MPA.pdf",170,2,2,0,0,0,0,0,1,1,0,1,2,0,0,NA,7,"Canada","Canada","2013","Tarium Niryutait Marine Protected Area","Marine Protected Area",555558198
+"360","Advice_555556974_Duddon_Estuary_NaturalEngland.pdf",171,0,0,0,0,0,0,0,2,2,0,2,0,0,0,NA,6,"United Kingdom","UK","2001","Duddon Estuary","Ramsar Site, Wetland of International Importance",220052
+"361","Advice_555556974_Duddon_Estuary_NaturalEngland.pdf",171,0,0,0,0,0,0,0,2,2,0,2,0,0,0,NA,6,"United Kingdom","UK","2001","Duddon Estuary","Marine Protected Area (OSPAR)",555556974
+"362","555586804_OlympicCoast_NMS.pdf",172,0,0,0,0,2,0,1,1,1,0,0,2,2,2,NA,11,"United States","USA","2011","Olympic Coast","National Marine Sanctuary",555586804
+"363","21116_JNDingDarling_Tritaik_2010_CCP.pdf",173,2,2,2,2,2,0,2,2,1,0,1,2,2,2,NA,20,"United States","USA","2010","J.N. Ding Darling","National Wildlife Refuge",21116
+"364","2851_Pine_Island_and_Matlalcha_Pass_ConservationPlan.pdf",174,2,2,2,2,2,0,1,2,1,0,0,2,2,2,NA,18,"United States","USA","2010","Island Bay","National Wildlife Refuge",2849
+"365","2851_Pine_Island_and_Matlalcha_Pass_ConservationPlan.pdf",174,2,2,2,2,2,0,1,2,1,0,0,2,2,2,NA,18,"United States","USA","2010","Matlacha Pass","National Wildlife Refuge",2851
+"366","2851_Pine_Island_and_Matlalcha_Pass_ConservationPlan.pdf",174,2,2,2,2,2,0,1,2,1,0,0,2,2,2,NA,18,"United States","USA","2010","Pine Island","National Wildlife Refuge",2850
+"367","13863_13864_35897_5555793_5555799_LongIsland_NWR.pdf",175,2,2,0,0,2,0,1,2,1,0,1,0,0,0,NA,9,"United States","USA","2006","Conscience Point","National Wildlife Refuge",35897
+"368","13863_13864_35897_5555793_5555799_LongIsland_NWR.pdf",175,2,2,0,0,2,0,1,2,1,0,1,0,0,0,NA,9,"United States","USA","2006","Oyster Bay","National Wildlife Refuge",13863
+"369","13863_13864_35897_5555793_5555799_LongIsland_NWR.pdf",175,2,2,0,0,2,0,1,2,1,0,1,0,0,0,NA,9,"United States","USA","2006","Seatuck","National Wildlife Refuge",5555793
+"370","13863_13864_35897_5555793_5555799_LongIsland_NWR.pdf",175,2,2,0,0,2,0,1,2,1,0,1,0,0,0,NA,9,"United States","USA","2006","Target Rock","National Wildlife Refuge",5555799
+"371","13863_13864_35897_5555793_5555799_LongIsland_NWR.pdf",175,2,2,0,0,2,0,1,2,1,0,1,0,0,0,NA,9,"United States","USA","2006","Wertheim","National Wildlife Refuge",13864
+"372","23034_555586778_555585996_LittleTalbot_BigTalbot_AmeliaIsland.pdf",176,0,0,0,0,0,0,2,2,2,0,0,0,0,0,NA,6,"United States","USA","2008","Amelia Island","State Park",555585996
+"373","23034_555586778_555585996_LittleTalbot_BigTalbot_AmeliaIsland.pdf",176,0,0,0,0,0,0,2,2,2,0,0,0,0,0,NA,6,"United States","USA","2008","Big Talbot Island","State Park",555586778
+"374","23034_555586778_555585996_LittleTalbot_BigTalbot_AmeliaIsland.pdf",176,0,0,0,0,0,0,2,2,2,0,0,0,0,0,NA,6,"United States","USA","2008","Little Talbot Island","State Park",23034
+"375","368262_ElkhornSlough.pdf",177,0,0,0,0,0,0,2,2,1,0,0,0,0,0,NA,5,"United States","USA","2007","Elkhorn Slough","National Estuarine Research Reserve",368262
+"376","902399_Tijuana River.pdf",178,0,0,0,0,0,0,2,2,1,0,0,2,2,2,NA,11,"United States","USA","2010","Tijuana River","National Estuarine Research Reserve",902399
+"377","902399_Tijuana River.pdf",178,0,0,0,0,0,0,2,2,1,0,0,2,2,2,NA,11,"United States","USA","2010","Tijuana River National Estuarine Research Reserve","Ramsar Site, Wetland of International Importance",555549310
+"378","555542730_Aldabra_Atoll.pdf",179,0,0,0,0,2,0,2,2,2,0,2,2,2,0,NA,14,"Seychelles","Africa","2016","Aldabra Atoll","Ramsar Site, Wetland of International Importance",555542730
+"379","Advice_555557156_Severn_Estuary.pdf",180,2,2,0,0,0,0,2,2,2,0,2,0,0,0,NA,10,"United Kingdom","UK","2009","Severn Estuary","Ramsar Site, Wetland of International Importance",95302
+"380","Advice_555557156_Severn_Estuary.pdf",180,2,2,0,0,0,0,2,2,2,0,2,0,0,0,NA,10,"United Kingdom","UK","2009","Severn Estuary","Special Protection Area (Birds Directive)",555541858
+"381","Advice_555557156_Severn_Estuary.pdf",180,2,2,0,0,0,0,2,2,2,0,2,0,0,0,NA,10,"United Kingdom","UK","2009","Severn Estuary","Marine Protected Area (OSPAR)",555557156
+"382","Advice_555557156_Severn_Estuary.pdf",180,2,2,0,0,0,0,2,2,2,0,2,0,0,0,NA,10,"United Kingdom","UK","2009","Severn Estuary/ Môr Hafren","Site of Community Importance (Habitats Directive)",555535761
+"383","1111260_BandonMarsh_NWR.pdf",181,2,2,0,0,2,0,2,2,1,0,1,2,2,2,NA,16,"United States","USA","2013","Bandon Marsh","National Wildlife Refuge",1111260
+"384","10574_PelicanIsland.pdf",182,0,0,0,0,0,0,1,2,1,0,0,2,0,0,NA,6,"United States","USA","2006","Pelican Island","National Wildlife Refuge",10574
+"385","555557162_Skerries_and_Causeway.pdf",183,0,0,0,0,0,0,1,2,2,0,2,0,0,2,NA,9,"United Kingdom","UK","2017","Skerries and Causeway","Marine Protected Area (OSPAR)",555557162
+"386","Advice_555557225_Y Fenai a Bae Conwy_Menai Strait and Conwy Bay.pdf",184,2,2,0,0,0,0,1,2,1,0,2,0,0,0,NA,8,"United Kingdom","UK","2009","Y Fenai a Bae Conwy / Menai Strait and Conwy Bay","Marine Protected Area (OSPAR)",555557225
+"387","Advice_555557225_Y Fenai a Bae Conwy_Menai Strait and Conwy Bay.pdf",184,2,2,0,0,0,0,1,2,1,0,2,0,0,0,NA,8,"United Kingdom","UK","2009","Y Fenai A Bae Conwy/ Menai Strait And Conwy Bay","Site of Community Importance (Habitats Directive)",555536090
+"388","555557075_Lundy.pdf",185,2,2,0,2,0,0,2,2,0,0,1,2,2,0,NA,13,"United Kingdom","UK","2017","Lundy","Marine Protected Area (OSPAR)",555583014
+"389","629_Kejimkujik_NP.pdf",186,0,0,0,0,0,0,0,1,1,1,0,0,2,2,NA,7,"Canada","Canada","2010","Kejimkujik National Park And National Historic Site Of Canada","National Park",629
+"390","Advice_555556927_Bassurelle Sandbank_Combo.pdf",187,0,0,0,0,0,0,2,2,0,0,2,0,0,0,NA,6,"United Kingdom","UK","2018","Bassurelle sandbank","Marine Protected Area (OSPAR)",555556927
+"391","628_PacRim_NP.pdf",188,0,0,0,0,0,0,0,2,1,0,1,0,0,2,NA,6,"Canada","Canada","2010","Pacific Rim National Park Reserve Of Canada","National Park",628
+"392","555586885_Kaho'olawe.pdf",189,2,0,0,0,0,2,1,2,2,2,2,0,0,2,NA,13,"United States","USA","2014","Kaho'olawe","Island Reserve",555586885
+"393","2931_JarvisIsland_NWR.pdf",190,2,2,0,0,2,0,1,2,1,0,1,2,2,0,NA,13,"United States","USA","2007","Jarvis Island","National Wildlife Refuge",2931
+"394","365317_apalachicola-river.pdf",191,2,2,0,2,2,0,2,2,1,0,1,0,2,0,NA,14,"United States","USA","2014","Apalachicola River","Wildlife and Environmental Area",365317
+"395","372716_OldWomanCreek_NERR.pdf",192,2,2,0,2,2,0,2,2,1,0,0,2,2,0,NA,15,"United States","USA","2011","Old Woman Creek","National Estuarine Research Reserve",372716
+"396","13820_Rachel_Carson.pdf",193,2,2,0,2,2,0,1,2,1,0,0,2,2,0,NA,14,"United States","USA","2007","Rachel Carson","National Wildlife Refuge",13820
+"397","Advice_555557017_Hatton Bank_Combo.pdf",194,0,0,0,0,0,0,1,2,0,0,2,0,2,2,NA,9,"United Kingdom","UK","2018","Hatton Bank","Marine Protected Area (OSPAR)",555557017
+"398","11111518_Olympic_NP.pdf",195,2,2,0,0,2,0,2,1,1,1,0,0,2,2,NA,13,"United States","USA","2006","Olympic","National Park",11111518
+"399","666672_WaccasassaBayPreserveStatePark.pdf",196,2,2,2,0,2,0,2,1,1,0,0,0,2,0,NA,12,"United States","USA","2005","Waccasassa Bay","State Preserve",666672
+"400","555586814_GreatBay_NERR.pdf",197,2,2,0,2,0,0,2,2,1,0,0,0,0,2,NA,11,"United States","USA","2006","Great Bay","National Estuarine Research Reserve",555586814
+"401","6666277_Guana Tolomato Matanzas.pdf",198,0,0,0,2,2,0,2,2,1,0,0,0,2,2,NA,13,"United States","USA","2009","Guana Tolomato Matanzas","National Estuarine Research Reserve",6666277
+"402","555512149_GilbertBay_MPA.pdf",199,0,0,0,0,0,0,2,2,2,1,0,2,0,0,NA,9,"Canada","Canada","2005","Gilbert Bay Marine Protected Area","Marine Protected Area",555512149
+"403","555586877_NarragansettBay_NERR.pdf",200,0,0,0,2,2,0,2,2,1,0,0,2,2,2,NA,15,"United States","USA","2010","Narragansett Bay","National Estuarine Research Reserve",555586877
+"404","13916_13034_Wallops_Chincoteague.pdf",201,2,2,2,2,2,2,2,2,1,1,1,2,2,2,NA,23,"United States","USA","2015","Chincoteague","National Wildlife Refuge",13034
+"405","13916_13034_Wallops_Chincoteague.pdf",201,2,2,2,2,2,2,2,2,1,1,1,2,2,2,NA,23,"United States","USA","2015","Wallops Island","National Wildlife Refuge",13916
+"406","555586775_North-Fork-St-Lucie-AP-Management-Plan.pdf",202,2,2,0,2,2,0,1,2,1,1,1,2,2,2,NA,18,"United States","USA","2009","North Fork, St. Lucie","Aquatic Preserve",555586775
+"407","95312_CT_CELCP_Plan_January_2015.pdf",203,2,2,2,0,0,0,0,0,0,0,0,NA,0,2,NA,6,"United States","USA","2015","Connecticut River Estuary and Tidal River Wetlands Complex","Ramsar Site, Wetland of International Importance",95312
+"408","555586880_SFB_NERR.pdf",204,2,2,2,2,2,0,2,2,0,0,0,0,2,2,NA,16,"United States","USA","2018","San Francisco Bay","National Estuarine Research Reserve",555586880
+"409","555557068_Loch_nam_Madadh.pdf",205,0,0,0,0,0,0,2,2,1,0,2,0,2,0,NA,9,"United Kingdom","UK","2007","Loch nam Madadh","Marine Protected Area (OSPAR)",555557068
+"410","666621_Swanquarter_NWR.pdf",206,2,2,0,0,0,0,1,2,1,0,1,0,2,0,NA,9,"United States","USA","2008","Swanquarter","National Wildlife Refuge",666621
+"411","555586834_Nisqually Reach.pdf",207,2,2,0,2,2,0,1,2,1,0,0,0,2,2,NA,14,"United States","USA","2011","Nisqually Reach","Aquatic Reserve",555586834
+"412","315003_Moriah Harbour Cay National Park.pdf",208,0,0,0,0,0,0,0,0,0,0,0,NA,2,2,NA,4,"Bahamas","Caribbean","2018","Moriah Harbour Cay National Park","National Park",315003
+"413","5555752_GreatBay_NWR.pdf",209,2,2,0,2,2,0,1,2,1,1,1,2,2,2,NA,18,"United States","USA","2012","Great Bay","National Wildlife Refuge",5555752
+"414","75004_Dungeness.pdf",210,2,2,0,0,2,0,1,2,1,0,1,2,2,2,NA,15,"United States","USA","2013","Dungeness","National Wildlife Refuge",75004
+"415","Advice_68296_Carmarthen_Bay_CCW.pdf",211,2,2,0,0,0,0,1,2,1,0,2,0,0,0,NA,8,"United Kingdom","UK","2009","Bae Caerfyrddin / Carmarthen Bay","Marine Protected Area (OSPAR)",555556921
+"416","Advice_68296_Carmarthen_Bay_CCW.pdf",211,2,2,0,0,0,0,1,2,1,0,2,0,0,0,NA,8,"United Kingdom","UK","2009","Bae Caerfyrddin/ Carmarthen Bay","Special Protection Area (Birds Directive)",555541855
+"417","Advice_68296_Carmarthen_Bay_CCW.pdf",211,2,2,0,0,0,0,1,2,1,0,2,0,0,0,NA,8,"United Kingdom","UK","2009","Burry Inlet","Ramsar Site, Wetland of International Importance",68296
+"418","Advice_68296_Carmarthen_Bay_CCW.pdf",211,2,2,0,0,0,0,1,2,1,0,2,0,0,0,NA,8,"United Kingdom","UK","2009","Burry Inlet","Special Protection Area (Birds Directive)",555541857
+"419","Advice_68296_Carmarthen_Bay_CCW.pdf",211,2,2,0,0,0,0,1,2,1,0,2,0,0,0,NA,8,"United Kingdom","UK","2009","Burry Inlet","Marine Protected Area (OSPAR)",555556943
+"420","Advice_68296_Carmarthen_Bay_CCW.pdf",211,2,2,0,0,0,0,1,2,1,0,2,0,0,0,NA,8,"United Kingdom","UK","2009","Carmarthen Bay and Estuaries / Bae Caerfyrddin ac Aberoedd","Marine Protected Area (OSPAR)",555556949
+"421","Advice_68296_Carmarthen_Bay_CCW.pdf",211,2,2,0,0,0,0,1,2,1,0,2,0,0,0,NA,8,"United Kingdom","UK","2009","Carmarthen Bay And Estuaries/ Bae Caerfyrddin Ac Aberoedd","Site of Community Importance (Habitats Directive)",555535919
+"422","75128_SealBeachNWR.pdf",212,2,2,0,2,2,0,1,2,1,0,1,2,2,2,NA,17,"United States","USA","2012","Seal Beach","National Wildlife Refuge",75128
+"423","220003_HawaiianIslands_NMS.pdf",213,2,2,0,2,2,0,1,1,1,1,0,2,2,2,NA,16,"United States","USA","2015","Hawaiian Islands Humpback Whale","National Marine Sanctuary",220003
+"424","555585657_AncloteKeyPreserveSP.pdf",214,0,0,0,0,0,0,2,2,2,0,1,0,2,2,NA,11,"United States","USA","2014","Anclote Key","State Park",555585657
+"425","Advice_555556953_Colne Estuary_Mid-Essex Coast Phase 2.pdf",215,2,2,0,0,0,0,1,2,2,0,2,2,2,0,NA,13,"United Kingdom","UK","2000","Colne Estuary","Ramsar Site, Wetland of International Importance",95293
+"426","Advice_555556953_Colne Estuary_Mid-Essex Coast Phase 2.pdf",215,2,2,0,0,0,0,1,2,2,0,2,2,2,0,NA,13,"United Kingdom","UK","2000","Colne Estuary (Mid-Essex Coast Phase 2)","Marine Protected Area (OSPAR)",555556953
+"427","555586740_Channel_Islands_National_Marine_Sanctuary.pdf",216,2,2,2,2,2,0,1,1,1,0,0,2,2,2,NA,17,"United States","USA","2009","Channel Islands","National Marine Sanctuary",555586740
+"428","312071_Maury Island.pdf",217,2,2,0,0,0,0,2,2,2,0,0,0,0,0,NA,8,"United States","USA","2014","Maury Island","Aquatic Reserve",312071
+"429","55551618_CHN_DFO_2019_SK-B_MgmtPlan.pdf",218,0,0,0,0,0,0,1,1,1,1,1,0,0,0,NA,5,"Canada","Canada","2019","SGaan Kinghlas – Bowie Seamount Marine Protected Area","Marine Protected Area",555516418
+"430","1024_Biscayne_National_Park.pdf",219,2,2,2,2,2,0,1,2,2,1,0,0,2,2,NA,18,"United States","USA","2015","Biscayne","National Park",1024
+"431","555586989_Chesapeake Bay National Estuarine Research Reserve_Virginia.pdf",220,2,2,0,2,2,0,2,2,1,0,0,2,2,2,NA,17,"United States","USA","2008","Chesapeake Bay National Estuarine Research Reserve - Virginia","National Estuarine Research Reserve",555586989
+"432","67763_Kakadu_national_park.pdf",221,2,2,2,2,2,0,2,2,2,1,0,2,2,0,NA,19,"Australia","Oceania","2016","Kakadu National Park","Ramsar Site, Wetland of International Importance",67763
+"433","Farallones_NMS_FMP_12_04_14.pdf",222,0,0,0,2,2,0,2,1,1,0,0,2,2,2,NA,14,"United States","USA","2014","Greater Farallones","National Marine Sanctuary",NA
