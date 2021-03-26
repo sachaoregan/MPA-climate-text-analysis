@@ -19,14 +19,18 @@ components_w_meta$binned_year <-
 components_w_meta <- components_w_meta %>%
   mutate(binned_year_chr = paste0(binned_year, "-", binned_year + 5))
 
+components_w_meta$root_word <- plyr::revalue(components_w_meta$root_word, c(Ph = "pH"))
+
 tot_term_count <- components_w_meta %>%
   group_by(dimension, root_word) %>%
   summarise(mean.freq = mean(freq))
-5
+
 components_by_region <- components_w_meta %>%
   mutate(root_word = stringr::str_to_sentence(root_word), dimension = stringr::str_to_sentence(dimension)) %>%
   group_by(Grouping, dimension, root_word) %>%
   summarise(proportion = mean(count > 0))
+
+components_by_region$root_word <- plyr::revalue(components_by_region$root_word, c(Ph = "pH"))
 
 components_w_meta_yr <- components_w_meta %>%
   filter(pub_yr != "NA") %>%

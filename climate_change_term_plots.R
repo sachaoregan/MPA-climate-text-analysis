@@ -45,7 +45,7 @@ mypalette <- c("#41ae76", "#ffeda0", "#9e9ac8", "#d53e4f", "#4292c6", "#fe9929",
 
 # Plot of the proportion of MPA plans by region that contain the climate change terms.
 
-.blue <- RColorBrewer::brewer.pal(6, "Blues")[4]
+.blue <- RColorBrewer::brewer.pal(6, "Blues")[5]
 
 g <- ggplot(climate_terms_region, aes(x = forcats::fct_reorder(term, proportion), y = proportion)) +
   geom_col(fill = .blue) +
@@ -54,7 +54,7 @@ g <- ggplot(climate_terms_region, aes(x = forcats::fct_reorder(term, proportion)
   theme(legend.position = "none", panel.spacing.x = unit(10, "pt"), plot.margin = margin(11/2, 11/2+5, 11/2, 11/2)) +
   scale_y_continuous(breaks = c(0, .50,1), labels = c("0", "0.50", "1.0")) +
   labs(x = "", y = "Proportion of MPA Plans") + coord_flip(expand = FALSE) +
-  geom_text(aes(label = paste0(numerator, "/", denominator)), y = 0.97, col = "grey30", size = 2.8,
+  geom_text(aes(label = paste0(numerator, "/", denominator)), y = 0.97, col = "black", size = 2.8,
     hjust = 1)
   # scale_fill_brewer(palette = "Set3")
 
@@ -66,18 +66,34 @@ ggsave("figs/prop-climate-terms-by-region.pdf", width = 7.5, height = 2.8)
 
 # smooth_data <- filter(climate_change_terms_yr, Grouping %in% c('Canada','USA', 'UK'))
 
+palette_OkabeIto <- c("#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#999999", "#000000")
+
 g <- ggplot(filter(climate_change_terms_yr, !Grouping %in% "Antarctica"),
   aes(x = as.numeric(pub_yr), y = freq, colour = Grouping)) +
-  geom_jitter(alpha = 0.6, width = 0.25) +
+  geom_jitter(alpha = 0.5, width = 0.25) +
   theme_sleek() +
   theme(legend.title = element_blank(),axis.text.x = element_text(angle = 45, hjust = 1)) +
   labs(x = "MPA plan publication year", y = "Frequencey per 10,000 words in MPA plan") +
-  scale_color_manual(values = mypalette) +
+  scale_color_manual(values = palette_OkabeIto) +
   # scale_colour_brewer(palette = "Set3") +
   coord_cartesian(expand = FALSE, ylim = c(-0.15, max(climate_change_terms_yr$freq) * 1.03))
   # geom_smooth(data=smooth_data)
-ggsave("figs/climate-terms-time.png", width = 8, height = 4)
-ggsave("figs/climate-terms-time.pdf", width = 8, height = 4)
+ggsave("figs/climate-terms-time.png", width = 8, height = 5)
+ggsave("figs/climate-terms-time.pdf", width = 8, height = 5)
+
+ggplot(filter(climate_change_terms_yr, !Grouping %in% "Antarctica"),
+  aes(x = as.numeric(pub_yr), y = freq)) +
+  facet_wrap(~Grouping) +
+  geom_jitter(alpha = 0.5, width = 0.25) +
+  theme_sleek() +
+  theme(legend.title = element_blank(), axis.text.x = element_text(angle = 45, hjust = 1), panel.spacing.x = unit(10, units = "pt")) +
+  labs(x = "MPA plan publication year", y = "Frequencey per 10,000 words in MPA plan") +
+  scale_color_manual(values = palette_OkabeIto) +
+  # scale_colour_brewer(palette = "Set3") +
+  coord_cartesian(expand = FALSE, ylim = c(-0.15, max(climate_change_terms_yr$freq) * 1.03))
+# geom_smooth(data=smooth_data)
+ggsave("figs/climate-terms-time-panelled.png", width = 8, height = 5)
+ggsave("figs/climate-terms-time-panelled.pdf", width = 8, height = 5)
 
 
 # Plot of the frequency of the individual climate change terms per 10,000 words in MPA plans by region and MPA plan publication year. Years are binned to reduce noise in the trend lines.
@@ -139,10 +155,10 @@ ggplot(climate_change_terms_yr_globe, aes(x = as.numeric(pub_yr), y = freq)) +
 
 ggsave("figs/climate-terms-time-binned-globe.png", width = 10, height = 5)
 
-# Plot of the frequency of the the term "climate change" per 10,000 words in MPA plans by region and MPA plan publication year. Note, years are not binned.
+# Plot of the frequency of the term "climate change" per 10,000 words in MPA plans by region and MPA plan publication year. Note, years are not binned.
 g <- ggplot(filter(climate_change_terms_yr_bygroup, term == "Climate change", Grouping != "Asia"), aes(x = as.numeric(pub_yr), y = freq, colour = Grouping)) +
   geom_point(colour = .blue) +
-  geom_line(color=.blue,alpha = 0.4, lwd = 0.5) +
+  geom_line(color=.blue,alpha = 0.5, lwd = 0.5) +
   facet_wrap(~Grouping, nrow = 2) +
   theme_sleek() +
   theme(legend.title = element_blank(), axis.text.x = element_text(angle = 45, hjust = 1),
@@ -153,3 +169,18 @@ g <- ggplot(filter(climate_change_terms_yr_bygroup, term == "Climate change", Gr
   coord_cartesian(xlim = c(2000, 2020))
 ggsave("figs/'climate-change'-bygroup-2000-pres.png", width = 8, height = 4)
 ggsave("figs/'climate-change'-bygroup-2000-pres.pdf", width = 8, height = 4)
+
+# # Plot of the frequency of the all climate change terms per 10,000 words in MPA plans by region and MPA plan publication year. Note, years are not binned.
+# g <- ggplot(filter(climate_change_terms_yr_bygroup, Grouping != "Asia"), aes(x = as.numeric(pub_yr), y = freq, colour = Grouping)) +
+#   geom_point(colour = .blue) +
+#   geom_line(color=.blue,alpha = 0.5, lwd = 0.5) +
+#   facet_wrap(~Grouping, nrow = 2) +
+#   theme_sleek() +
+#   theme(legend.title = element_blank(), axis.text.x = element_text(angle = 45, hjust = 1),
+#     panel.grid.major = element_line(color = "grey96")) +
+#   labs(x = "MPA plan publication year", y = "Frequency per 10,000 words") +
+#   # scale_color_manual(values = mypalette) +
+#   scale_y_continuous(expand = expansion(mult=c(0.01,.1))) +
+#   coord_cartesian(xlim = c(2000, 2020))
+# ggsave("figs/all-climate-terms-bygroup-2000-pres.png", width = 8, height = 4)
+# ggsave("figs/all-climate-terms-bygroup-2000-pres.pdf", width = 8, height = 4)

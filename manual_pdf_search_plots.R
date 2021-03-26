@@ -126,6 +126,7 @@ pdf_data_pull %>% group_by(Grouping, dimension, variable, value) %>%
   group_by(Grouping, variable) %>%
   mutate(proportion = n / sum(n)) %>% ungroup()
 
+mypalette2 <- viridis::viridis(4, begin = 0.05, end = 0.92, direction = 1)
 pdf_data_by_region %>%
   filter(dimension == "Monitoring", variable != "Metrics") %>%
   mutate(variable = gsub("Indicators linked", "Indicators linked\n", variable)) %>%
@@ -198,22 +199,71 @@ unique(pdf_scored_w_park_desig_and_yr$DESIG) %>% sort() %>% dput()
 
 parks <- c("National Wildlife Refuge", "National Estuarine Research Reserve", "Marine Protected Area (OSPAR)", "Special Protection Area (Birds Directive)", "Ramsar Site, Wetland of International Importance", "Marine Protected Area", "National Park")
 
+parks_lu <- tibble(DESIG = parks, DESIG_ABBREV = c("NWR", "NERR", "MPA (OSPAR)", "SPA", "RS WII", "MPA", "NP"))
+
+fit_dat <- pdf_scored_w_park_desig_and_yr %>%
+  filter(DESIG %in% parks, Grouping %in% c("Canada", "Oceania", "UK", "USA")) %>%
+  left_join(parks_lu) %>%
+  group_by(Grouping, DESIG_ABBREV)
+
+out <- fit_dat %>% group_split() %>% purrr::map_dfr(function(x) {
+  if (nrow(x) > 4) {
+    m <- MASS::glm.nb(total ~ as.numeric(pub_yr), data = x)
+    nd <- data.frame(pub_yr = seq(min(x$pub_yr), max(x$pub_yr), length.out = 100))
+    p <- predict(m, newdata = nd, se.fit = TRUE)
+    nd$log_est <- p$fit
+    nd$est <- exp(p$fit)
+    nd$se <- p$se.fit
+    nd$lwr <- exp(nd$log_est - 2 * nd$se)
+    nd$upr <- exp(nd$log_est + 2 * nd$se)
+    nd$DESIG_ABBREV <- x$DESIG_ABBREV[1]
+    nd$Grouping <- x$Grouping[1]
+    nd
+  }
+})
+
+
+lab_dat_lu <- tribble(
+  ~Grouping, ~DESIG_ABBREV, ~pub_yr,
+  "Canada","MPA",2005,
+  "Canada","NP",2016,
+  "Oceania","RS WII",2016,
+  "UK","MPA (OSPAR)",2019,
+  "UK","RS WII",2000,
+  "UK","SPA",2006,
+  "USA","NERR",2019,
+  "USA","NWR", 2016,
+  "USA","RS WII", 1996)
+
+lab_dat <- left_join(lab_dat_lu, out)
+
+
+library(ggrepel)
 pdf_scored_w_park_desig_and_yr %>% filter(DESIG %in% parks, Grouping %in% c("Canada", "Oceania", "UK", "USA")) %>%
+  left_join(parks_lu) %>%
   ggplot(aes(x = as.numeric(pub_yr), y = total)) +
-  geom_jitter(aes(colour = DESIG), width = 0.2, height = 0, alpha = 0.9) +
+  geom_jitter(aes(colour = DESIG_ABBREV), width = 0.2, height = 0, alpha = 0.9) +
   geom_jitter(data = pdf_scored_w_park_desig_and_yr %>% filter(!DESIG %in% parks, Grouping %in% c("Canada", "Oceania", "UK", "USA")), width = 0.2, height = 0, colour = "grey50", alpha = 0.6) +
- geom_smooth(aes(colour = DESIG, fill = DESIG), method = MASS::glm.nb, alpha = 0.1) +
-  geom_smooth(aes(colour = DESIG, fill = DESIG), method = MASS::glm.nb, se= FALSE) +
+ # geom_smooth(aes(colour = DESIG_ABBREV, fill = DESIG_ABBREV), method = MASS::glm.nb, alpha = 0.1) +
+ #  geom_smooth(aes(colour = DESIG_ABBREV, fill = DESIG_ABBREV), method = MASS::glm.nb, se= FALSE) +
+  geom_ribbon(aes(fill = DESIG_ABBREV, x = pub_yr, y = est, ymin = lwr, ymax = upr), data = out, inherit.aes = FALSE, colour = NA, alpha = 0.1) +
+  geom_line(aes(colour = DESIG_ABBREV, x = pub_yr, y = est), data = out, inherit.aes = FALSE) +
   facet_wrap(~Grouping,  nrow = 2) +
   theme_sleek() +
   theme(panel.spacing.x = unit(20, "pt")) +
   scale_y_continuous(breaks = seq(0, 24, 4)) +
   scale_color_brewer(palette = "Dark2") +
   scale_fill_brewer(palette = "Dark2") +
-  labs(x = "MPA plan publication year", y = "Climate change robustness score", colour = "MPA Designation", fill = "MPA Designation")
+  labs(x = "MPA plan publication year", y = "Climate change robustness score", colour = "MPA Designation", fill = "MPA Designation") +
+  ggrepel::geom_text_repel(aes(x = pub_yr, y = est, label = DESIG_ABBREV), data = lab_dat, inherit.aes = FALSE, min.segment.length = 0.15, size = 3.5, colour = "black")
+  # geom_text(aes(label = DESIG_ABBREV, colour = DESIG_ABBREV), data = out)
 
-ggsave("figs/climate_robustness_index_over_time.png", width = 9, height = 4)
-ggsave("figs/climate_robustness_index_over_time.pdf", width = 9, height = 4)
+# gd <- ggplot_build(g)
+# gd$data[[3]] %>% group_by(group) %>% filter(x == max(x)) %>%
+
+
+ggsave("figs/climate_robustness_index_over_time.png", width = 7, height = 5)
+ggsave("figs/climate_robustness_index_over_time.pdf", width = 7, height = 5)
 
 write.csv(pdf_scored_w_park_desig_and_yr, "pdf_scored_w_park_desig_and_yr.csv")
 
