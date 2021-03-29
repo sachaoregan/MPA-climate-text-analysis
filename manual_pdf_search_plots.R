@@ -237,17 +237,25 @@ lab_dat_lu <- tribble(
 
 lab_dat <- left_join(lab_dat_lu, out)
 
+pdf_scored_w_park_desig_and_yr <- left_join(pdf_scored_w_park_desig_and_yr , parks_lu)
+pdf_scored_w_park_desig_and_yr <- mutate(pdf_scored_w_park_desig_and_yr, legend_lab = paste0(DESIG, " (", DESIG_ABBREV, ")"))
+
+out <- left_join(out, parks_lu)
+out <- mutate(out, legend_lab = paste0(DESIG, " (", DESIG_ABBREV, ")"))
+
+pdf_scored_w_park_desig_and_yr$DESIG[pdf_scored_w_park_desig_and_yr$DESIG_ABBREV == "MPA" & pdf_scored_w_park_desig_and_yr$Grouping == "UK" & !is.na(pdf_scored_w_park_desig_and_yr$DESIG_ABBREV == "MPA")] <- "IGNORE ME"
+pdf_scored_w_park_desig_and_yr$DESIG[pdf_scored_w_park_desig_and_yr$DESIG_ABBREV == "MPA" & pdf_scored_w_park_desig_and_yr$Grouping == "USA" & !is.na(pdf_scored_w_park_desig_and_yr$DESIG_ABBREV == "MPA")] <- "IGNORE ME"
+pdf_scored_w_park_desig_and_yr$DESIG[pdf_scored_w_park_desig_and_yr$DESIG_ABBREV == "NP" & pdf_scored_w_park_desig_and_yr$Grouping == "USA" & !is.na(pdf_scored_w_park_desig_and_yr$DESIG_ABBREV == "MPA")] <- "IGNORE ME"
 
 library(ggrepel)
 pdf_scored_w_park_desig_and_yr %>% filter(DESIG %in% parks, Grouping %in% c("Canada", "Oceania", "UK", "USA")) %>%
-  left_join(parks_lu) %>%
   ggplot(aes(x = as.numeric(pub_yr), y = total)) +
-  geom_jitter(aes(colour = DESIG_ABBREV), width = 0.2, height = 0, alpha = 0.9) +
+  geom_jitter(aes(colour = legend_lab), width = 0.2, height = 0, alpha = 0.9) +
   geom_jitter(data = pdf_scored_w_park_desig_and_yr %>% filter(!DESIG %in% parks, Grouping %in% c("Canada", "Oceania", "UK", "USA")), width = 0.2, height = 0, colour = "grey50", alpha = 0.6) +
  # geom_smooth(aes(colour = DESIG_ABBREV, fill = DESIG_ABBREV), method = MASS::glm.nb, alpha = 0.1) +
  #  geom_smooth(aes(colour = DESIG_ABBREV, fill = DESIG_ABBREV), method = MASS::glm.nb, se= FALSE) +
-  geom_ribbon(aes(fill = DESIG_ABBREV, x = pub_yr, y = est, ymin = lwr, ymax = upr), data = out, inherit.aes = FALSE, colour = NA, alpha = 0.1) +
-  geom_line(aes(colour = DESIG_ABBREV, x = pub_yr, y = est), data = out, inherit.aes = FALSE) +
+  geom_ribbon(aes(fill = legend_lab, x = pub_yr, y = est, ymin = lwr, ymax = upr), data = out, inherit.aes = FALSE, colour = NA, alpha = 0.1) +
+  geom_line(aes(colour = legend_lab, x = pub_yr, y = est), data = out, inherit.aes = FALSE) +
   facet_wrap(~Grouping,  nrow = 2) +
   theme_sleek() +
   theme(panel.spacing.x = unit(20, "pt")) +
@@ -262,8 +270,8 @@ pdf_scored_w_park_desig_and_yr %>% filter(DESIG %in% parks, Grouping %in% c("Can
 # gd$data[[3]] %>% group_by(group) %>% filter(x == max(x)) %>%
 
 
-ggsave("figs/climate_robustness_index_over_time.png", width = 7, height = 5)
-ggsave("figs/climate_robustness_index_over_time.pdf", width = 7, height = 5)
+ggsave("figs/climate_robustness_index_over_time.png", width = 10, height = 5)
+ggsave("figs/climate_robustness_index_over_time.pdf", width = 10, height = 5)
 
 write.csv(pdf_scored_w_park_desig_and_yr, "pdf_scored_w_park_desig_and_yr.csv")
 
