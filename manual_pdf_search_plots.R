@@ -126,6 +126,8 @@ pdf_data_pull %>% group_by(Grouping, dimension, variable, value) %>%
   group_by(Grouping, variable) %>%
   mutate(proportion = n / sum(n)) %>% ungroup()
 
+pdf_data_by_region$value <- factor(pdf_data_by_region$value, levels = c("Yes", "Some", "Planned", "No"))
+
 mypalette2 <- viridis::viridis(4, begin = 0.05, end = 0.92, direction = 1)
 pdf_data_by_region %>%
   filter(dimension == "Monitoring", variable != "Metrics") %>%
@@ -138,7 +140,7 @@ pdf_data_by_region %>%
   theme_sleek() +
   theme(legend.title = element_blank(), axis.text.x = element_text(angle = 0, hjust = 1), legend.position = "top", legend.margin = margin(t = 0, r = 0, b = -5, l = 0, unit = "pt"), legend.justification = c(0, 0), panel.spacing.x = unit(15, "pt")) +
   labs(x = "", y = "Proportion") +
-  scale_fill_manual(values = mypalette2) +
+  scale_fill_manual(values = rev(mypalette2)) +
   coord_flip(expand = FALSE) +
   scale_y_continuous(breaks = c(0, 0.5, 1))
 
@@ -195,11 +197,18 @@ plans_with_park_ids <- readRDS("data-generated/plans_with_mpa_ids_for_map.rds") 
   select(report, NAME, DESIG, WDPAID)
 pdf_scored_w_park_desig_and_yr <- left_join(pdf_scored, plans_with_park_ids, by = "report")
 
+pdf_scored_w_park_desig_and_yr$DESIG <- plyr::revalue(pdf_scored_w_park_desig_and_yr$DESIG, c("Site of Community Importance (Habitats Directive)" = "Special Area of Conservation (Habitats Directive)"))
+
+desig_replace <- readr::read_csv("replace_ospar_w_new_desigs.csv")
+pdf_scored_w_park_desig_and_yr <- desig_replace %>% right_join(pdf_scored_w_park_desig_and_yr, by=c("NAME","DESIG")) %>%
+mutate(DESIG = ifelse(!is.na(NEW_DESIG), NEW_DESIG, DESIG)) %>%
+  select(-NEW_DESIG)
+
 unique(pdf_scored_w_park_desig_and_yr$DESIG) %>% sort() %>% dput()
 
-parks <- c("National Wildlife Refuge", "National Estuarine Research Reserve", "Marine Protected Area (OSPAR)", "Special Protection Area (Birds Directive)", "Ramsar Site, Wetland of International Importance", "Marine Protected Area", "National Park")
+parks <- c("National Wildlife Refuge", "National Estuarine Research Reserve", "Special Area of Conservation (Habitats Directive)", "Special Protection Area (Birds Directive)", "Ramsar Site, Wetland of International Importance", "Marine Protected Area", "National Park")
 
-parks_lu <- tibble(DESIG = parks, DESIG_ABBREV = c("NWR", "NERR", "MPA (OSPAR)", "SPA", "RS WII", "MPA", "NP"))
+parks_lu <- tibble(DESIG = parks, DESIG_ABBREV = c("NWR", "NERR", "SAC", "SPA", "RS WII", "MPA", "NP"))
 
 fit_dat <- pdf_scored_w_park_desig_and_yr %>%
   filter(DESIG %in% parks, Grouping %in% c("Canada", "Oceania", "UK", "USA")) %>%
@@ -228,7 +237,7 @@ lab_dat_lu <- tribble(
   "Canada","MPA",2005,
   "Canada","NP",2016,
   "Oceania","RS WII",2016,
-  "UK","MPA (OSPAR)",2019,
+  "UK","SAC",2019,
   "UK","RS WII",2000,
   "UK","SPA",2006,
   "USA","NERR",2019,
@@ -270,8 +279,8 @@ pdf_scored_w_park_desig_and_yr %>% filter(DESIG %in% parks, Grouping %in% c("Can
 # gd$data[[3]] %>% group_by(group) %>% filter(x == max(x)) %>%
 
 
-ggsave("figs/climate_robustness_index_over_time.png", width = 10, height = 5)
-ggsave("figs/climate_robustness_index_over_time.pdf", width = 10, height = 5)
+ggsave("figs/climate_robustness_index_over_time_v2.png", width = 10, height = 5)
+ggsave("figs/climate_robustness_index_over_time_v2.pdf", width = 10, height = 5)
 
 write.csv(pdf_scored_w_park_desig_and_yr, "pdf_scored_w_park_desig_and_yr.csv")
 
