@@ -74,8 +74,6 @@ Plots trends in climate change effects analysis, planning, and monitoring using 
 ## Manual PDF data pull
 PDFs were searched manually for information pertaining to climate change effects analysis, planning, and monitoring. The data were collated in the file `manual-pdf-data-pull.csv`. 222 PDFs were searched. The meaning of the column headings in the file `manual-pdf-data-pull.csv` is described below:
 
-`sort_order` - random sort order assigned to the PDFs in the script `science_terms_plots.R`. PDFs were searched in this order (excluding PDF 219 ["1024_Biscayne_National_Park.pdf"], which was searched prior to generating the random order numbers)
-
 `disc_of_climate_effects_on_park_ecological` - did the PDF discuss any past, present, or future ecological effects of climate change on the park. Not discriminating on level of detail. Yes/No.
 
 `disc_of_climate_effects_on_park_physical` -  did the PDF discuss any past, present, or future physical effects of climate change on the park. Not discriminating on level of detail. Yes/No.
@@ -88,15 +86,17 @@ PDFs were searched manually for information pertaining to climate change effects
 
 `detailed_methods`	- did the PDF contain detailed survey/monitoring methods. Yes/No.
 
-`establishes_baseline_conditions`	- did the PDF discuss baseline conditions in the park(s) or state that they would be established in the future. Yes/No/Ongoing ("Ongoing" was entered if the PDF stated that some type of baseline monitoring had already begun).
+`establishes_baseline_conditions`	- did the PDF discuss baseline conditions in the park(s) or state that they would be established in the future. Yes/Ongoing/Planned/No ("Ongoing" was entered if the PDF stated that some type of baseline monitoring had already begun; Planned was entered if the plan stated that the MPA intends to complete baseline monitoring in the future).
 
-`indicators`	- did the PDF list monitoring indicators or state that they would be established in the future. Yes/No/Planned ("Planned" was entered if the PDF stated that the park(s) intends to select indicators in the future).
+`indicators`	- did the PDF list monitoring indicators or state that they would be established in the future. Yes/Planned/No ("Planned" was entered if the PDF stated that the park(s) intends to select indicators in the future).
 
-`metrics`	- did the PDF list monitoring metrics for the indicators or state that they would be established in the future. Yes/No/Planned ("Planned" was entered if the PDF stated that they intend to select metrics in the future). Generally, it was assumed that PDFs with stated plans to establish indicators would also decide on metrics. 
+`metrics`	- did the PDF list monitoring metrics for the indicators or state that they would be established in the future. Yes/Planned/No. Generally, it was assumed that PDFs with stated plans to establish indicators would also decide on metrics. 
 
-`thresholds`	- did the PDF list targets or thresholds for the condition of the indicators or state that they would be established in the future. Yes/No/Planned ("Planned" was entered if the PDF stated that the park(s) intends to set targets or thresholds in the future).
+`targets`	- did the PDF list targets for the condition of the indicators or state that they would be established in the future. Yes/Some/Planned/No ("Some" was entered if there were targets for some indicators but not all).
 
-`indicat_thresh_metrics_explicitly_linked_to_climate`	- Were the indicators/metrics/thresholds explicitly linked to climate change (i.e., do they directly track climate changes OR are "climate change" or "sea level" mentioned in the same sentence as the indicator/metric/threshold). Yes/No/NA ("NA was entered if there were no indicators listed or planned).
+`thresholds`	- did the PDF list thresholds for the condition of the indicators or state that they would be established in the future. Yes/Some/Planned/No.
+
+`indicat_thresh_metrics_explicitly_linked_to_climate`	- Were the indicators/metrics/threshold explicitly linked to climate change (i.e., do they directly track climate changes OR are "climate change" or "sea level" mentioned in the same sentence as the indicator/metric/threshold). Yes/No/NA ("NA was entered if there were no indicators listed or planned).
 
 `commitment_to_climate_monitoring` - Did the PDF explicitly commit to monitoring or adapting to climate change. Yes/No.
 
@@ -118,4 +118,4 @@ Note, the PDFs were not read in their entirety. For each PDF, I searched for the
 * parameter
 * baseline        
 
-Manual PDF search results were used to calculate climate change robustness scores. 
+Manual PDF search results were used to calculate climate change robustness scores. ‘No’ was assigned a score of 0, ‘Planned’ a score of ‘1’, and ‘Yes’ a score of 2. ‘Yes’ and ‘Ongoing’ were assigned an equivalent score of 2, and ‘Planned’ and ‘Some’ an equivalent score of 1. ‘NA’ was scored as 0. 
