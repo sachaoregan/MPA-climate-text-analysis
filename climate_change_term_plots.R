@@ -73,7 +73,7 @@ g <- ggplot(filter(climate_change_terms_yr, !Grouping %in% "Antarctica"),
   geom_jitter(alpha = 0.5, width = 0.25) +
   theme_sleek() +
   theme(legend.title = element_blank(),axis.text.x = element_text(angle = 45, hjust = 1)) +
-  labs(x = "MPA plan publication year", y = "Frequencey per 10,000 words in MPA plan") +
+  labs(x = "MPA plan publication year", y = "Frequency per 10,000 words in MPA plan") +
   scale_color_manual(values = palette_OkabeIto) +
   # scale_colour_brewer(palette = "Set3") +
   coord_cartesian(expand = FALSE, ylim = c(-0.15, max(climate_change_terms_yr$freq) * 1.03))
@@ -87,7 +87,7 @@ ggplot(filter(climate_change_terms_yr, !Grouping %in% "Antarctica"),
   geom_jitter(alpha = 0.5, width = 0.25) +
   theme_sleek() +
   theme(legend.title = element_blank(), axis.text.x = element_text(angle = 45, hjust = 1), panel.spacing.x = unit(10, units = "pt")) +
-  labs(x = "MPA plan publication year", y = "Frequencey per 10,000 words in MPA plan") +
+  labs(x = "MPA plan publication year", y = "Frequency per 10,000 words in MPA plan") +
   scale_color_manual(values = palette_OkabeIto) +
   # scale_colour_brewer(palette = "Set3") +
   coord_cartesian(expand = FALSE, ylim = c(-0.15, max(climate_change_terms_yr$freq) * 1.03))

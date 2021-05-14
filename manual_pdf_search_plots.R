@@ -126,8 +126,6 @@ pdf_data_pull %>% group_by(Grouping, dimension, variable, value) %>%
   group_by(Grouping, variable) %>%
   mutate(proportion = n / sum(n)) %>% ungroup()
 
-pdf_data_by_region$value <- factor(pdf_data_by_region$value, levels = c("Yes", "Some", "Planned", "No"))
-
 mypalette2 <- viridis::viridis(4, begin = 0.05, end = 0.92, direction = 1)
 pdf_data_by_region %>%
   filter(dimension == "Monitoring", variable != "Metrics") %>%
@@ -140,7 +138,7 @@ pdf_data_by_region %>%
   theme_sleek() +
   theme(legend.title = element_blank(), axis.text.x = element_text(angle = 0, hjust = 1), legend.position = "top", legend.margin = margin(t = 0, r = 0, b = -5, l = 0, unit = "pt"), legend.justification = c(0, 0), panel.spacing.x = unit(15, "pt")) +
   labs(x = "", y = "Proportion") +
-  scale_fill_manual(values = rev(mypalette2)) +
+ scale_fill_manual(values = mypalette2, guide = guide_legend(reverse = TRUE)) +
   coord_flip(expand = FALSE) +
   scale_y_continuous(breaks = c(0, 0.5, 1))
 

@@ -10,6 +10,9 @@
 3. `ManagementPlans_R` folder containing PDF documents
 4. `SearchTerms/searchcomponents.csv` containing climate components
 5. `SearchTerms/search-scienceterms.csv` containing science terms
+6. `manual-pdf-data-pull.csv` containing manual PDF search results
+
+Contact the author to discuss obtaining a copy of the `ManagementPlans_R` folder and `manual-pdf-data-pull.csv`.
 
 ## Required packages
 
@@ -26,6 +29,7 @@
 * stringi
 * stringr
 * future
+* viridis
 * ggsidekick; to install:
 
 ```r
@@ -41,14 +45,12 @@ To begin, open `MPA-climate-text-analysis.Rproj`. Then, either open `runall.R` t
 `1.countTerms_Setup.R`
 This script must be run 1st to generate the data and figure output directories and the .rds files that feed into script 2. The .rds files it creates are `list-of-pdfs.rds`, which lists all PDF files, and `mpa-metadata.rds`, which contains the metadata associated with each PDF (excluding publication year). Does not need to be run again after the directories and .rds files are generated. 
 
-Two PDFs were found to have bad OCR. This script excludes them from the text analysis entirely.
+Two PDFs were found to have bad OCR. This script excludes them from the text analysis.
 
 `2.countTerms_Search.R`
 This script contains the text search code. First, the code searches all PDFs for one of five climate change related terms: "climate change", "global warming", "extreme events", "natural variability", "climate variability". PDFs that contain at least one of these terms are then searched for the component words provided in `searchcomponents.csv `(e.g., abundance, diversity, recreation, etc.). PDFs that contain at least one of the climate change terms are also searched for the science terms provided in `search-scienceterms.csv` (e.g., monitor, metric). 
 
-This script also counts the total words in each PDF and obtains the publication year for each PDF. The year search code works by pulling out the first 4-number string in the PDF text. If the first 4-number string is preceded by the word "act", "regulation", "regulations", it takes the second 4-number string to be the publication year. The reason for this is that the first year on some PDF title pages is the year of enactment of legislation, not the publication year. 
-
-The publication year could not be identified for six PDFs (beyond the two with bad OCR excluded in `1.countTerms_Setup.R`) for reasons noted in `missing-yrs.csv`. These PDFs were therefore excluded from plots where publication year was a dimension of interest. 
+This script also counts the total words in each PDF and obtains the publication year for each PDF. The year search code works by pulling out the first 4-number string in the PDF text. If the first 4-number string is preceded by the word "act", "act of", "regulation", "regulations", it takes the second 4-number string to be the publication year. The reason for this is that the first year on some PDF title pages is the year of enactment of legislation, not the publication year. 
 
 This script must be run before running the plotting scripts.
 
@@ -64,13 +66,13 @@ Plots publication year for all PDFs (with and without climate change related ter
 Plots trends in the climate change related components (e.g., abundance, diversity, recreation, etc.) and their dimensions (ecological, physical, sociological) by geographical region (aka "Grouping" in the code) and publication year.
 
 `science_terms_plots.R`
-Plots the science terms retrieved from the text search. This file also contains the code to filter the PDFs down to a final list of PDFs to be manually searched for evidence of climate change effects analysis, planning, and monitoring. Only PDFs that contained at least two of the words "Metric", "Indicator", "Transects", "Survey", "Target", "Threshold" and contained at least three instances of at least one of the two words were retained. The filter retained 221 PDFs to be searched manually (see the Manual PDF data pull methods below). The code assigns a random sort order to the PDFs.
+Plots the science terms retrieved from the text search. This file also contains the code to filter the PDFs down to a final list of PDFs to be manually searched for evidence of climate change effects analysis, planning, and monitoring. Only PDFs that contained at least two of the words "Metric", "Indicator", "Transects", "Survey", "Target", "Threshold" and contained at least three instances of at least one of the two words were retained. The filter retained 222 PDFs to be searched manually (see the Manual PDF data pull methods below). The code assigns a random sort order to the PDFs.
 
 `manual_pdf_search_plots.R`
 Plots trends in climate change effects analysis, planning, and monitoring using the data pulled manually from the PDFs (data sourced from the file `manual-pdf-data-pull.csv`). 
 
 ## Manual PDF data pull
-PDFs were searched manually (following the random sort order) for information pertaining to climate change effects analysis, planning, and monitoring. The data were collated in the file `manual-pdf-data-pull.csv`. 181 of the 221 PDFs were searched; the remaining PDFS were not searched due to budget. `The manual_pdf_search_plots.R` script can be re-run as more PDFs are searched. The meaning of the column headings in the file `manual-pdf-data-pull.csv` is described below:
+PDFs were searched manually for information pertaining to climate change effects analysis, planning, and monitoring. The data were collated in the file `manual-pdf-data-pull.csv`. 222 PDFs were searched. The meaning of the column headings in the file `manual-pdf-data-pull.csv` is described below:
 
 `sort_order` - random sort order assigned to the PDFs in the script `science_terms_plots.R`. PDFs were searched in this order (excluding PDF 219 ["1024_Biscayne_National_Park.pdf"], which was searched prior to generating the random order numbers)
 
@@ -111,6 +113,9 @@ Note, the PDFs were not read in their entirety. For each PDF, I searched for the
 * strategies
 * indicator
 * threshold
+* target
 * metric
 * parameter
 * baseline        
+
+Manual PDF search results were used to calculate climate change robustness scores. 

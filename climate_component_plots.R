@@ -110,7 +110,7 @@ ggplot(components_w_meta_yr, aes(x = as.numeric(pub_yr), y = prop, colour = Grou
   # facet_wrap(~Grouping, nrow = 2) +
   theme_sleek() +
   theme(legend.title = element_blank(),axis.text.x = element_text(angle = 45, hjust = 1)) +
-  labs(x = "MPA plan publication year", y = "Frequencey per 10,000 words in MPA plan") +
+  labs(x = "MPA plan publication year", y = "Frequency per 10,000 words in MPA plan") +
   scale_color_manual(values = mypalette)
 
 ggsave("figs/components-time.png", width = 8, height = 4)
