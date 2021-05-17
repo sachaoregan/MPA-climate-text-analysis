@@ -12,7 +12,7 @@
 5. `SearchTerms/search-scienceterms.csv` containing science terms
 6. `manual-pdf-data-pull.csv` containing manual PDF search results
 
-Contact the author to discuss obtaining a copy of the `ManagementPlans_R` folder and `manual-pdf-data-pull.csv`.
+`ManagementPlans_R` folder and `manual-pdf-data-pull.csv` available through author.
 
 ## Required packages
 
