@@ -62,7 +62,7 @@ ggplot(filter(tot_term_count, !is.na(root_word)),
 
 ggsave("figs/components.png", width = 5, height = 9)
 ggsave("figs/components.pdf", width = 5, height = 9)
-
+ggsave("figs/components.jpeg", dpi = 300, units = "cm", width = 12.5, height = 23.5)
 
 # Plot of the proportion of MPA plans by region that contain the climate components.
 
@@ -102,6 +102,7 @@ g3 <- make_panel('Sociological')
 g <- cowplot::plot_grid(g1,g2,g3, ncol = 3L, labels = c("A: Ecological", "B: Physical", "C: Sociological"), label_fontface = "plain", label_x = 0, label_y = 0.97)
 ggsave("figs/component-tigure.pdf", width=13, height=5)
 ggsave("figs/component-tigure.png", width=13, height=5)
+ggsave("figs/component-tigure.jpeg", dpi = 300, units = "cm", width = 32, height = 12)
 
 # Plot of the total frequency of the climate components per 10,000 words in MPA plans by region and MPA plan publication year. Each dot is an MPA plan/PDF.
 

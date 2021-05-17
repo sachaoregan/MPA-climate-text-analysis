@@ -118,7 +118,7 @@ g2 <- make_panel('Review of climate effects on park')
 g <- cowplot::plot_grid(g2,g1, ncol = 1L, labels = c("A: Review of climate effects on park","B: Climate objectives and strategies"), label_fontface = "plain", label_x = -0.12, label_y = 0.94, align = "v", label_size = 10)
 ggsave("figs/manual-search-tigure.pdf", width=7, height=4)
 ggsave("figs/manual-search-tigure.png", width=7, height=4)
-
+ggsave("figs/manual-search-tigure.jpeg", dpi = 300, units = "cm", width = 16, height = 10.5)
 # ---------------------------------------------
 
 pdf_data_pull %>% group_by(Grouping, dimension, variable, value) %>%
@@ -144,6 +144,7 @@ pdf_data_by_region %>%
 
 ggsave("figs/manual-pdf-search-climate-monitoring-v3.png", width = 9, height = 4)
 ggsave("figs/manual-pdf-search-climate-monitoring-v3.pdf", width = 9, height = 4)
+ggsave("figs/manual-pdf-search-climate-monitoring-v3.jpeg", dpi = 300, units = "cm", width = 20, height = 9.5)
 
 # Plot of the climate change robustness indices across regions.
 
@@ -190,6 +191,7 @@ ggplot(xx, aes(x = total, y = n)) +
 
 ggsave("figs/climate_robustness_index_v2.png", width = 10, height = 4)
 ggsave("figs/climate_robustness_index_v2.pdf", width = 10, height = 4)
+ggsave("figs/climate_robustness_index_v2.jpeg", dpi = 300, units = "cm", width = 18, height = 8)
 
 plans_with_park_ids <- readRDS("data-generated/plans_with_mpa_ids_for_map.rds") %>%
   select(report, NAME, DESIG, WDPAID)
@@ -279,6 +281,7 @@ pdf_scored_w_park_desig_and_yr %>% filter(DESIG %in% parks, Grouping %in% c("Can
 
 ggsave("figs/climate_robustness_index_over_time_v2.png", width = 10, height = 5)
 ggsave("figs/climate_robustness_index_over_time_v2.pdf", width = 10, height = 5)
+ggsave("figs/climate_robustness_index_over_time_v2.jpeg", dpi = 300, units = "cm", width = 23, height = 11)
 
 write.csv(pdf_scored_w_park_desig_and_yr, "pdf_scored_w_park_desig_and_yr.csv")
 

@@ -60,7 +60,7 @@ g <- ggplot(climate_terms_region, aes(x = forcats::fct_reorder(term, proportion)
 
 ggsave("figs/prop-climate-terms-by-region.png", width = 7.5, height = 2.8)
 ggsave("figs/prop-climate-terms-by-region.pdf", width = 7.5, height = 2.8)
-
+ggsave("figs/prop-climate-terms-by-region.jpeg", dpi = 300, units = "cm", width = 19, height = 7.5)
 
 # Plot of the total frequency of the climate change terms per 10,000 words in MPA plans by region and MPA plan publication year. Each dot is an MPA plan/PDF.
 
@@ -94,7 +94,7 @@ ggplot(filter(climate_change_terms_yr, !Grouping %in% "Antarctica"),
 # geom_smooth(data=smooth_data)
 ggsave("figs/climate-terms-time-panelled.png", width = 8, height = 5)
 ggsave("figs/climate-terms-time-panelled.pdf", width = 8, height = 5)
-
+ggsave("figs/climate-terms-time-panelled.jpeg", dpi = 300, units = "cm", width = 15, height = 10.1)
 
 # Plot of the frequency of the individual climate change terms per 10,000 words in MPA plans by region and MPA plan publication year. Years are binned to reduce noise in the trend lines.
 
@@ -169,6 +169,7 @@ g <- ggplot(filter(climate_change_terms_yr_bygroup, term == "Climate change", Gr
   coord_cartesian(xlim = c(2000, 2020))
 ggsave("figs/'climate-change'-bygroup-2000-pres.png", width = 8, height = 4)
 ggsave("figs/'climate-change'-bygroup-2000-pres.pdf", width = 8, height = 4)
+ggsave("figs/climate-terms-time-panelled.jpeg", dpi = 300, units = "cm", width = 20, height = 10.1)
 
 # # Plot of the frequency of the all climate change terms per 10,000 words in MPA plans by region and MPA plan publication year. Note, years are not binned.
 # g <- ggplot(filter(climate_change_terms_yr_bygroup, Grouping != "Asia"), aes(x = as.numeric(pub_yr), y = freq, colour = Grouping)) +
