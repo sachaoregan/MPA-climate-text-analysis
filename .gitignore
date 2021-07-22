@@ -10,3 +10,10 @@ data-generated
 components_*.csv
 *.png
 *.csv
+*.xlsx
+*.jpg
+*.JPG
+*.tmp
+*.zip
+figs_submission_*
+figs
