@@ -231,7 +231,7 @@ out <- fit_dat %>% group_split() %>% purrr::map_dfr(function(x) {
   }
 })
 
-
+out$pub_yr <- round(out$pub_yr, 3)
 lab_dat_lu <- tribble(
   ~Grouping, ~DESIG_ABBREV, ~pub_yr,
   "Canada","MPA",2005,
@@ -239,7 +239,7 @@ lab_dat_lu <- tribble(
   "Oceania","RS WII",2016,
   "UK","SAC",2019,
   "UK","RS WII",2000,
-  "UK","SPA",2006,
+  "UK","SPA",2006.01,
   "USA","NERR",2019,
   "USA","NWR", 2016,
   "USA","RS WII", 1996)
@@ -255,6 +255,8 @@ out <- mutate(out, legend_lab = paste0(DESIG, " (", DESIG_ABBREV, ")"))
 pdf_scored_w_park_desig_and_yr$DESIG[pdf_scored_w_park_desig_and_yr$DESIG_ABBREV == "MPA" & pdf_scored_w_park_desig_and_yr$Grouping == "UK" & !is.na(pdf_scored_w_park_desig_and_yr$DESIG_ABBREV == "MPA")] <- "IGNORE ME"
 pdf_scored_w_park_desig_and_yr$DESIG[pdf_scored_w_park_desig_and_yr$DESIG_ABBREV == "MPA" & pdf_scored_w_park_desig_and_yr$Grouping == "USA" & !is.na(pdf_scored_w_park_desig_and_yr$DESIG_ABBREV == "MPA")] <- "IGNORE ME"
 pdf_scored_w_park_desig_and_yr$DESIG[pdf_scored_w_park_desig_and_yr$DESIG_ABBREV == "NP" & pdf_scored_w_park_desig_and_yr$Grouping == "USA" & !is.na(pdf_scored_w_park_desig_and_yr$DESIG_ABBREV == "MPA")] <- "IGNORE ME"
+
+out <- filter(out, !(DESIG_ABBREV == "NP" & Grouping == "USA"))
 
 library(ggrepel)
 pdf_scored_w_park_desig_and_yr %>% filter(DESIG %in% parks, Grouping %in% c("Canada", "Oceania", "UK", "USA")) %>%
