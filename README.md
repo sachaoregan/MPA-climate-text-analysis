@@ -5,14 +5,17 @@
 
 ## Required inputs
 
-1. `WDPA_English_Combined_2020-03-25_kg.xlsx`
+1. `WDPA_English_Combined_2021-07-16_so.xlsx`
 2. `luCountryGroup.csv` 
 3. `ManagementPlans_R` folder containing PDF documents
 4. `SearchTerms/searchcomponents.csv` containing climate components
 5. `SearchTerms/search-scienceterms.csv` containing science terms
 6. `manual-pdf-data-pull.csv` containing manual PDF search results
+7. `replace_ospar_w_new_desigs.csv` to switch out OSPAR designation for the MPAs' other designation in one of the figures.
 
 `ManagementPlans_R` folder and `manual-pdf-data-pull.csv` available through author.
+
+**For a summary table of all MPA management plans included in the analysis and the results, download `summary-table-climate-mpa-analysis-management-plans.csv`** 
 
 ## Required packages
 
@@ -66,13 +69,13 @@ Plots publication year for all PDFs (with and without climate change related ter
 Plots trends in the climate change related components (e.g., abundance, diversity, recreation, etc.) and their dimensions (ecological, physical, sociological) by geographical region (aka "Grouping" in the code) and publication year.
 
 `science_terms_plots.R`
-Plots the science terms retrieved from the text search. This file also contains the code to filter the PDFs down to a final list of PDFs to be manually searched for evidence of climate change effects analysis, planning, and monitoring. Only PDFs that contained at least two of the words "Metric", "Indicator", "Transects", "Survey", "Target", "Threshold" and contained at least three instances of at least one of the two words were retained. The filter retained 222 PDFs to be searched manually (see the Manual PDF data pull methods below).
+Plots the science terms retrieved from the text search. This file also contains the code to filter the PDFs down to a final list of PDFs to be manually searched for evidence of climate change effects analysis, planning, and monitoring. Only PDFs that contained at least two of the words "Metric", "Indicator", "Transects", "Survey", "Target", "Threshold" and contained at least three instances of at least one of the two words were retained. The filter retained 223 PDFs to be searched manually (see the Manual PDF data pull methods below).
 
 `manual_pdf_search_plots.R`
 Plots trends in climate change effects analysis, planning, and monitoring using the data pulled manually from the PDFs (data sourced from the file `manual-pdf-data-pull.csv`). 
 
 ## Manual PDF data pull
-PDFs were searched manually for information pertaining to climate change effects analysis, planning, and monitoring. The data were collated in the file `manual-pdf-data-pull.csv`. 222 PDFs were searched. The meaning of the column headings in the file `manual-pdf-data-pull.csv` is described below:
+PDFs were searched manually for information pertaining to climate change effects analysis, planning, and monitoring. The data were collated in the file `manual-pdf-data-pull.csv`. 223 PDFs were searched. The meaning of the column headings in the file `manual-pdf-data-pull.csv` is described below:
 
 `disc_of_climate_effects_on_park_ecological` - did the PDF discuss any past, present, or future ecological effects of climate change on the park. Not discriminating on level of detail. Yes/No.
 
@@ -103,19 +106,5 @@ PDFs were searched manually for information pertaining to climate change effects
 `references_other_monitoring`	- Did the PDF mention other climate change monitoring or mitigation efforts being completed by agencies other than park staff. Yes/No.
 
 `other_monitoring` - List of agencies (other than park staff) working on climate change monitoring or mitigation efforts that the park(s) will work with or rely upon. Or, other climate change initiatives (other than park-specific initiatives) that the park(s) will rely upon.
-
-Note, the PDFs were not read in their entirety. For each PDF, I searched for the following key terms to take me to the sections relevant to each column: 
-
-* climate change
-* warm
-* sea level
-* objective
-* strategies
-* indicator
-* threshold
-* target
-* metric
-* parameter
-* baseline        
 
 Manual PDF search results were used to calculate climate change robustness scores. ‘No’ was assigned a score of 0, ‘Planned’ a score of ‘1’, and ‘Yes’ a score of 2. ‘Yes’ and ‘Ongoing’ were assigned an equivalent score of 2, and ‘Planned’ and ‘Some’ an equivalent score of 1. ‘NA’ was scored as 0. 

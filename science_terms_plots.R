@@ -63,5 +63,5 @@ for_manual_search <- scienceterms_w_meta %>% filter(term %in% c("Metric", "Indic
 set.seed(6)
 manual_pdf_search <- tibble(report = sample(unique(for_manual_search$report), size = length(unique(for_manual_search$report))))
 
-#readr::write_csv(manual_pdf_search, "data-generated/manual-pdf-search.csv") #Unnecessary to run again for the current analysis as this was just used to generate the empty csv and sort order for the PDFs.
+#readr::write_csv(manual_pdf_search, "data-generated/manual-pdf-search.csv") #Unnecessary to run again for the current analysis as this was used to generate the empty csv and sort order for the PDF manual search.
 

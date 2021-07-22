@@ -5,8 +5,11 @@ dir.create("data-generated", showWarnings = FALSE)
 dir.create("figs", showWarnings = FALSE)
 
 # Load list of reports
-dat <- readxl::read_xlsx("WDPA_English_Combined_2020-03-25_kg.xlsx")
+dat <- readxl::read_xlsx("WDPA_English_Combined_2021-07-16_so.xlsx")
+nrow(dat)
 names(dat) <- gsub(" ", ".", names(dat))
+dat <- dat %>% dplyr::filter(!grepl("terrestrial", SF.Notes)) # exclude terrestrial PAs from MPA count
+nrow(dat)
 luCountryGroup <- read.csv("luCountryGroup.csv")
 
 dat2 <- dat[, names(dat) %in% c("NAME", "DESIG", "WDPAID", "Parent.Nation", "Saved.File.Name", "Found", "Simplified.comments")]
@@ -25,7 +28,7 @@ names(dat2)[names(dat2) == "Parent.Nation"] <- c("Country")
 dat2$paper[dat2$paper == "NA.pdf"] <- NA
 dat2 <- merge(dat2, luCountryGroup, by = "Country", all.x = T)
 
-length(unique(dat2$PA.Name)) # 1450 parks
+length(unique(dat2$PA.Name)) # 1517 parks
 dat2 <- dat2 %>% filter(paper != "555557183_Strangford Lough.pdf") # exclude old plan for this mpa
 length(unique(dat2$paper[!is.na(dat2$paper)])) # 649
 
@@ -39,10 +42,10 @@ length(unique(luPaper$paper)) # 649 unique papers
 
 parkPaperSummary <- plyr::ddply(luPaper, c("paper"), plyr::summarize, nParks = length(unique(PA.Name)))
 length(unique(parkPaperSummary$paper)) # 649 papers
-nrow(parkPaperSummary[parkPaperSummary$nParks > 1, ]) # 83 papers refer to more than 1 park
+nrow(parkPaperSummary[parkPaperSummary$nParks > 1, ]) # 132 papers refer to more than 1 park
 
 paperParkSummary <- plyr::ddply(luPaper, c("PA.Name"), plyr::summarize, nPapers = length(unique(paper)))
-length(unique(paperParkSummary$PA.Name)) # 925 parks
+length(unique(paperParkSummary$PA.Name)) # 1000 parks
 nrow(paperParkSummary[paperParkSummary$nPapers > 1, ]) # 0 parks have more than 1 paper
 
 parkPaperByCountry <- plyr::ddply(luPaper, c("Country"), plyr::summarize, nParks = length(unique(PA.Name)), nPapers = length(unique(paper)))
@@ -65,7 +68,6 @@ inXLS_butMissing
 haveFile_butNotInXLS
 
 luPaper <- luPaper %>% distinct(paper, Grouping, Country) %>%
-  filter(paper != "555536253_Southern_Waters_of_Gibraltar_Management_Scheme_2012.pdf" | Grouping != "UK") %>% #Database had two rows for this PDF, one with incorrectly specified grouping. Removed incorrect row b/c wanted only unique PDFs
   filter(!paper %in% inXLS_butMissing) %>%
   filter(!paper %in% c("101534_BoundaryBay_WMA.pdf", "900736_Elizabeth_and_Middleton_reefs_national_nature_reserve.pdf")) #Excluding 2 PDFs with bad OCR
 

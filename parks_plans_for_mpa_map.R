@@ -1,7 +1,7 @@
 library(dplyr)
 
 pub_years <- readRDS("data-generated/MPAplan-pub-year.rds")
-dat <- readxl::read_xlsx("WDPA_English_Combined_2020-03-25_kg.xlsx")
+dat <- readxl::read_xlsx("WDPA_English_Combined_2021-07-16_so.xlsx")
 
 names(dat) <- gsub(" ", ".", names(dat))
 luCountryGroup <- read.csv("luCountryGroup.csv")

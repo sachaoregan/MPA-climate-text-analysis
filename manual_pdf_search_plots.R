@@ -115,7 +115,7 @@ make_panel <- function(component) {
   }
 g1 <- make_panel('Climate objectives and strategies')
 g2 <- make_panel('Review of climate effects on park')
-g <- cowplot::plot_grid(g2,g1, ncol = 1L, labels = c("A: Review of climate effects on park","B: Climate objectives and strategies"), label_fontface = "plain", label_x = -0.12, label_y = 0.94, align = "v", label_size = 10)
+g <- cowplot::plot_grid(g2,g1, ncol = 1L, labels = c("A: Review of climate effects on MPA","B: Climate objectives and strategies"), label_fontface = "plain", label_x = -0.12, label_y = 0.94, align = "v", label_size = 10)
 ggsave("figs/manual-search-tigure.pdf", width=7, height=4)
 ggsave("figs/manual-search-tigure.png", width=7, height=4)
 ggsave("figs/manual-search-tigure.jpeg", dpi = 300, units = "cm", width = 16, height = 10.5)

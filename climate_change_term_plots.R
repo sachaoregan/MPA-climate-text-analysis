@@ -169,7 +169,7 @@ g <- ggplot(filter(climate_change_terms_yr_bygroup, term == "Climate change", Gr
   coord_cartesian(xlim = c(2000, 2020))
 ggsave("figs/'climate-change'-bygroup-2000-pres.png", width = 8, height = 4)
 ggsave("figs/'climate-change'-bygroup-2000-pres.pdf", width = 8, height = 4)
-ggsave("figs/climate-terms-time-panelled.jpeg", dpi = 300, units = "cm", width = 20, height = 10.1)
+ggsave("figs/'climate-change'-bygroup-2000-pres-v2.jpeg", dpi = 300, units = "cm", width = 20, height = 10.1)
 
 # # Plot of the frequency of the all climate change terms per 10,000 words in MPA plans by region and MPA plan publication year. Note, years are not binned.
 # g <- ggplot(filter(climate_change_terms_yr_bygroup, Grouping != "Asia"), aes(x = as.numeric(pub_yr), y = freq, colour = Grouping)) +
