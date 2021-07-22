@@ -13,7 +13,7 @@
 6. `manual-pdf-data-pull.csv` containing manual PDF search results
 7. `replace_ospar_w_new_desigs.csv` to switch out OSPAR designation for the MPAs' other designation in one of the figures.
 
-`ManagementPlans_R` folder and `manual-pdf-data-pull.csv` available through author.
+`ManagementPlans_R` folder and `manual-pdf-data-pull.csv` available through corresponding author, Karen Hunter, Fisheries and Oceans Canada.
 
 **For a summary table of all MPA management plans included in the analysis and the results, download `summary-table-climate-mpa-analysis-management-plans.csv`** 
 
